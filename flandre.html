@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ren0vate/Primes RF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Feuille de style CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+</head>
+<body class="p-4">
+  <div class="container">
+    <h1 class="mb-4">Ren0vate - Simulateur de Primes/Flandre</h1>
+
+    <!-- Sélection du type de demandeur -->
+    <div class="mb-3">
+      <label class="form-label">Qui êtes-vous ?</label>
+      <select id="applicant-type" class="form-select">
+        <option selected disabled>-- Sélectionnez un type --</option>
+        <option value="prive">Propriétaire privé</option>
+        <option value="entreprise">Entreprise</option>
+        <option value="copropriete">Copropriété</option>
+      </select>
+    </div>
+
+    <!-- Section Propriétaire privé -->
+    <div id="form-prive" class="form-section">
+      <h4>Formulaire Propriétaire privé</h4>
+        <h5>Données relatives au propriétaire principal</h5>
+          <input type="text" class="form-control mb-2" placeholder="Nom complet">
+          <input type="text" class="form-control mb-2" placeholder="Prénom">
+          <input type="email" class="form-control mb-2" placeholder="Email">
+          <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
+          <input type="adresse" class="form-control mb-2" placeholder="Rue du c">
+        <h5>Données relatives à votre conjoint</h5>
+          <input type="text" class="form-control mb-2" placeholder="Nom complet du conjoint">
+          <input type="text" class="form-control mb-2" placeholder="Prénom du conjoint">
+          <input type="email" class="form-control mb-2" placeholder="Email du conjoint">
+          <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
+        <h5>Informations sur vos revenus imposables personnels</h5>
+          <input  type="number" class="form-control"
+                  id="revenus" name="revenus"
+                  placeholder="ex. 45000"
+                  min="0" step="100"
+                  required>
+        <h5>Informations sur les revenus imposables de votre conjoint</h5>
+          <input  type="number" class="form-control"
+                  id="revenus" name="revenus"
+                  placeholder="ex. 45000"
+                  required>
+        <h5>Nombre d'enfant de moins de 18 à charge</h5>
+          <input  type="number" class="form-control"
+                  id="enfants" name="enfants"
+                  placeholder="3"
+                  required>
+        <label for="couple" class="form-label">votre couple</label>
+        <select id="couple" name="couple" class="form-select">
+          <option selected disabled>-- Sélectionnez un profil --</option>
+          <option value="marié">marié</option>
+          <option value="cohabitant">cohabitant</option>
+        </select>
+
+        <h5>Adresse de résidence</h5>
+        <div class="mb-3">
+          <label for="rue" class="form-label">Rue</label>
+          <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label for="numero" class="form-label">Numéro</label>
+            <input type="text" class="form-control" id="numero" name="numero" placeholder="ex. 24">
+          </div>
+          <div class="col-md-4">
+            <label for="code-postal" class="form-label">Code postal</label>
+            <input type="text" class="form-control" id="code-postal" name="code_postal" placeholder="ex. 1190">
+          </div>
+          <div class="col-md-4">
+            <label for="commune" class="form-label">Commune</label>
+            <input type="text" class="form-control" id="commune" name="commune" placeholder="ex. Forest">
+          </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="region" class="form-label">Région</label>
+          <select id="region" name="region" class="form-select">
+            <option selected disabled>-- Sélectionnez une région --</option>
+            <option value="flandre">Flandre</option>
+            <option value="bruxelles">Bruxelles-Capitale</option>
+            <option value="wallonie">Wallonie</option>
+          </select>
+        </div>
+
+      <!-- Ajoute ici les champs spécifiques -->
+    </div>
+
+    <!-- Section Entreprise -->
+    <div id="form-entreprise" class="form-section">
+      <h4>Formulaire Entreprise</h4>
+      <input type="text" class="form-control mb-2" placeholder="Nom de l'entreprise">
+      <input type="text" class="form-control mb-2" placeholder="Numéro d'entreprise (BCE)">
+      <input type="text" class="form-control mb-2" placeholder="Nom du dirigeant">
+      <input type="text" class="form-control mb-2" placeholder="Prénom du dirigeant">
+      <input type="email" class="form-control mb-2" placeholder="Email">
+      <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
+      <h5>Adresse du siège de l'entreprise</h5>
+      <div class="mb-3">
+          <label for="rue" class="form-label">Rue</label>
+          <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label for="numero" class="form-label">Numéro</label>
+            <input type="text" class="form-control" id="numero" name="numero" placeholder="ex. 24">
+          </div>
+          <div class="col-md-4">
+            <label for="code-postal" class="form-label">Code postal</label>
+            <input type="text" class="form-control" id="code-postal" name="code_postal" placeholder="ex. 1190">
+          </div>
+          <div class="col-md-4">
+            <label for="commune" class="form-label">Commune</label>
+            <input type="text" class="form-control" id="commune" name="commune" placeholder="ex. Forest">
+          </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="region" class="form-label">Région</label>
+          <select id="region" name="region" class="form-select">
+            <option selected disabled>-- Sélectionnez une région --</option>
+            <option value="flandre">Flandre</option>
+            <option value="bruxelles">Bruxelles-Capitale</option>
+            <option value="wallonie">Wallonie</option>
+          </select>
+        </div>
+      <!-- Ajoute ici les champs spécifiques -->
+    </div>
+
+    <!-- Section Copropriété -->
+    <div id="form-copropriete" class="form-section">
+      <h4>Formulaire Copropriété</h4>
+      <input type="text" class="form-control mb-2" placeholder="Nom du syndic">
+      <input type="text" class="form-control mb-2" placeholder="Numéro d'entreprise (BCE)">
+      <input type="email" class="form-control mb-2" placeholder="Email du syndic">
+      <input type="text" class="form-control mb-2" placeholder="Nom du responsable">
+      <input type="text" class="form-control mb-2" placeholder="Prénom du responsable">
+      <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
+      <h5>Adresse du siège de la copropriété</h5>
+      <div class="mb-3">
+        <label for="rue" class="form-label">Rue</label>
+        <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
+      </div>
+
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label for="numero" class="form-label">Numéro</label>
+            <input type="text" class="form-control" id="numero" name="numero" placeholder="ex. 24">
+          </div>
+          <div class="col-md-4">
+            <label for="code-postal" class="form-label">Code postal</label>
+            <input type="text" class="form-control" id="code-postal" name="code_postal" placeholder="ex. 1190">
+          </div>
+          <div class="col-md-4">
+            <label for="commune" class="form-label">Commune</label>
+            <input type="text" class="form-control" id="commune" name="commune" placeholder="ex. Forest">
+          </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="region" class="form-label">Région</label>
+          <select id="region" name="region" class="form-select">
+            <option selected disabled>-- Sélectionnez une région --</option>
+            <option value="flandre">Flandre</option>
+            <option value="bruxelles">Bruxelles-Capitale</option>
+            <option value="wallonie">Wallonie</option>
+          </select>
+        </div>
+      <!-- Ajoute ici les champs spécifiques -->
+    </div>
+
+    <!-- information sur le bien à rénover -->
+    <div class="form-toggle-wrapper mt-4" id="bien">
+      <div class="d-flex justify-content-between align-items-center">
+        <label class="form-label">Information sur le bien à rénover</label>
+        <i class="bi bi-chevron-down" id="arrow-bien" style="cursor: pointer; font-size: 1.5rem;"></i>
+      </div>
+
+      <div id="form-building" class="form-section mt-3" style="display: none;">
+      <h5>Adresse</h5>
+        <div class="mb-3">
+          <label for="rue" class="form-label">Rue</label>
+          <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label for="numero" class="form-label">Numéro</label>
+            <input type="text" class="form-control" id="numero" name="numero" placeholder="ex. 24">
+          </div>
+          <div class="col-md-4">
+            <label for="code-postal" class="form-label">Code postal</label>
+            <input type="text" class="form-control" id="code-postal" name="code_postal" placeholder="ex. 1190">
+          </div>
+          <div class="col-md-4">
+            <label for="commune" class="form-label">Commune</label>
+            <input type="text" class="form-control" id="commune" name="commune" placeholder="ex. Forest">
+          </div>
+          <div class="col-md-4">
+            <label for="région" class="form-label">Région</label>
+            <input type="text" class="form-control" id="région" name="région" placeholder="Flandre">
+          </div>
+        </div>
+      <div class="mb-3 mt-3">
+          <label for="type" class="form-label">Type de bien</label>
+          <select id="type" name="type" class="form-select">
+            <option selected disabled>-- Sélectionnez une région --</option>
+            <option value="maison">Maison</option>
+            <option value="appartement">Appartement</option>
+            <option value="immeuble de rapport">Immeuble de rapport</option>
+            <option value="unité non résidentielle">Unité non résidentielle</option>
+          </select>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="occupation" class="form-label">Occupation</label>
+          <select id="occupation" name="occupation" class="form-select">
+            <option selected disabled>-- Sélectionnez une région --</option>
+            <option value="résidence principale">Résidence principale</option>
+            <option value="résidence secondaire">Résidence secondaire</option>
+            <option value="location">Location</option>
+          </select>
+        </div>
+        <label for="construction" class="form-label">Date de construction</label>
+        <input  type="number" class="form-control"
+                  id="construction" name="construction"
+                  placeholder="1930"
+                  required>
+        <label for="cadastre" class="form-label">Numéro de parcelle cadastrale</label>
+        <input  type="number" class="form-control"
+                  id="cadastre" name="cadastre"
+                  placeholder="136E"
+                  required>
+    </div>
+    </div>
+
+    <!-- Résultat de la catégorie de prime -->
+    <div id="prime-result" class="alert alert-success mt-4" style="display: none;">
+      <strong>Catégorie de prime :</strong> <span id="categorie-prime">—</span>
+    </div>
+
+    <!-- Tableau des primes -->
+    <div class="form-toggle-wrapper mt-4" id="tableau-primes">
+      <div class="d-flex justify-content-between align-items-center">
+        <label class="form-label">Analyse des primes rénovation</label>
+        <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
+      </div>
+
+      <div id="bloc-primes" style="display: none;" class="mt-3">
+        <table class="table table-bordered table-striped">
+          <thead class="table-light">
+            <tr>
+              <th>Prime rénovation</th>
+              <th>Donnée à encoder</th>
+              <th>Référence métrique</th>
+              <th>Conseil</th>
+              <th>Prime estimée (€)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Isolation de la toiture</td>
+              <td><input type="number" class="form-control" name="toiture" placeholder="m²"></td>
+              <td>≥ 30 m² – R ≥ 4.5 m²K/W</td>
+              <td>Utiliser un isolant certifié (laine minérale, PIR...)</td>
+              <td><input type="text" class="form-control" id="result-toiture" readonly></td>
+            </tr>
+            <tr>
+              <td>Isolation des murs creux</td>
+              <td><input type="number" class="form-control" name="murs_creux" placeholder="m²"></td>
+              <td>≥ 20 m² – R ≥ 1.5 m²K/W</td>
+              <td>Uniquement par entreprise agréée</td>
+              <td><input type="text" class="form-control" id="result-murs" readonly></td>
+            </tr>
+            <tr>
+              <td>Remplacement de châssis</td>
+              <td><input type="number" class="form-control" name="chassis" placeholder="m²"></td>
+              <td>Uw max 1.0 W/m²K</td>
+              <td>Prévoir vitrage HR++ ou triple</td>
+              <td><input type="text" class="form-control" id="result-chassis" readonly></td>
+            </tr>
+            <tr>
+              <td>Pompe à chaleur</td>
+              <td><input type="number" class="form-control" name="pac" placeholder="kW"></td>
+              <td>≥ 4 kW – COP ≥ 3.5</td>
+              <td>Modèle reconnu par l’EPB</td>
+              <td><input type="text" class="form-control" id="result-pac" readonly></td>
+            </tr>
+            <tr>
+              <td>VMC double flux</td>
+              <td><input type="number" class="form-control" name="vmc" placeholder="débit m³/h"></td>
+              <td>Rendement ≥ 85%</td>
+              <td>Obligatoire pour maisons neuves</td>
+              <td><input type="text" class="form-control" id="result-vmc" readonly></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Résultat du total des primes estimées -->
+    <div id="prime-total-result" class="alert alert-success mt-4" style="display: none;">
+      <strong>Total estimé des primes :</strong> <span id="total-primes-affiche">—</span>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
