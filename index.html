@@ -97,6 +97,11 @@
           <option value="wallonie">Wallonie</option>
         </select>
       </div>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-prive">
+          Enregistrer les données
+        </button>
+      </div>
       </div>
 
       <!-- Section Entreprise -->
@@ -138,7 +143,11 @@
             <option value="wallonie">Wallonie</option>
           </select>
         </div>
-      <!-- Ajoute ici les champs spécifiques -->
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-entreprise">
+          Enregistrer les données
+        </button>
+      </div>
       </div>
 
       <!-- Section Copropriété -->
@@ -179,6 +188,11 @@
             <option value="bruxelles">Bruxelles-Capitale</option>
             <option value="wallonie">Wallonie</option>
           </select>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-copropriete">
+            Enregistrer les données
+          </button>
         </div>
       </div>
 
@@ -257,6 +271,11 @@
                   id="certificat-peb" name="certificat-peb"
                   placeholder="F"
                   required>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-bien">
+            Enregistrer les données
+          </button>
+        </div>
       </div>
     </div>
 
@@ -275,7 +294,7 @@
     <div id="section-resultats">
       <div class="form-toggle-wrapper mt-4" id="tableau-primes">
       <div class="d-flex justify-content-between align-items-center">
-        <label class="form-label text-center w-100">Analyse des primes rénovation</label>
+        <label class="form-label text-center w-100">Analyse de vos primes à la rénovation</label>
         <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
       </div>
 
@@ -511,16 +530,16 @@
               <td><input type="text" class="form-control" id="result-boiler-thermodynamique" readonly></td>
             </tr>
             <tr>
-              <td>Chauffage solaire</td>
+              <td>Panneaux solaire pour eau chaude sanitaire</td>
               <td><input type="number" class="form-control" name="chauffage-solaire" placeholder="m²"></td>
               <td>Rendement ≥ 65%</td>
-              <td>Conseils?</td>
+              <td>Placer les panneaux en complément d'une chaudière existante </td>
               <td><input type="text" class="form-control" id="result-chauffage-solaire" readonly></td>
             </tr>
             <tr>
               <td>Certificat PEB après travaux</td>
               <td><input type="text" class="form-control" name="PEB" placeholder="B"></td>
-              <td></td>
+              <td>Aucune</td>
               <td>Doit au moins être supérieur de 2 niveaux par rapport au label avant chantier</td>
               <td><input type="text" class="form-control" id="result-peb" readonly></td>
             </tr>
@@ -528,9 +547,12 @@
         </table>
       </div>
       </div>
-
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
+          Enregistrer les données techniques
+        </button>
+      </div>
     </div>
-
 
   </div>
   <script src="script.js"></script>
