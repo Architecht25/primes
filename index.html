@@ -196,12 +196,13 @@
       </div>
 
       <!-- information sur le bien à rénover -->
-      <div id="bien" class="form-toggle-wrapper mt-4">
+      <div id="bien" class="form-section">
         <div class="d-flex justify-content-between align-items-center">
           <label class="form-label">Information sur le bien à rénover</label>
           <i class="bi bi-chevron-down" id="arrow-bien" style="cursor: pointer; font-size: 1.5rem;"></i>
         </div>
       </div>
+
       <div id="form-building" class="form-section mt-3" style="display: none;">
       <h5>Adresse</h5>
         <div class="mb-3">
@@ -278,6 +279,28 @@
       </div>
     </div>
 
+    <!-- Section : Information sur le chantier -->
+    <div id="section-chantier" class="form-section">
+      <div class="d-flex justify-content-between align-items-center" style="cursor: pointer;" id="toggle-chantier">
+        <label class="form-label mb-0">Information sur le chantier</label>
+        <i class="bi bi-chevron-down toggle-arrow" id="arrow-chantier" style="font-size: 1.5rem;"></i>
+      </div>
+
+      <div id="contenu-chantier" style="display: none; margin-top: 1rem;">
+        <input type="text" class="form-control mb-2" placeholder="Date de début prévue">
+        <input type="text" class="form-control mb-2" placeholder="Date de fin prévue">
+        <input type="text" class="form-control mb-2" placeholder="Nom de l'entrepreneur">
+        <input type="text" class="form-control mb-2" placeholder="Nom de l'architecte (si applicable)">
+        <input type="text" class="form-control mb-2" placeholder="Coût total estimé des travaux">
+        <div class="mb-3">
+        <label for="notes-chantier" class="form-label">Notes / remarques</label>
+        <textarea id="notes-chantier" class="form-control" rows="4" placeholder="Ajoutez ici vos remarques, observations, éléments importants…"></textarea>
+      </div>
+
+      </div>
+    </div>
+
+
     <!-- 3. Résultats des primes (total + catégorie) -->
     <div id="section-resultats-primes" class="mb-4">
       <div id="prime-result" class="alert alert-success mt-4" style="display: none;">
@@ -292,281 +315,285 @@
      <!-- 4. Tableau d’analyse détaillée -->
     <div id="section-resultats">
       <div class="form-toggle-wrapper mt-4" id="tableau-primes">
-      <div class="d-flex justify-content-between align-items-center">
-        <label class="form-label text-center w-100">Analyse de vos primes à la rénovation</label>
-        <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
+        <div class="d-flex justify-content-between align-items-center">
+          <label class="form-label text-center w-100">Analyse de vos primes à la rénovation</label>
+          <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
+        </div>
+          <div id="bloc-primes" style="display: none;" class="mt-3">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead class="table-light">
+                  <tr>
+                    <th>Liste des primes</th>
+                    <th>Données à encoder</th>
+                    <th>Références métriques à respecter</th>
+                    <th>Conseils pour votre dossier de primes</th>
+                    <th>Prime estimée (€)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Démolition structure toiture</td>
+                    <td><input type="number" class="form-control" name="demolition-toiture" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>la démolition des structures de toit existantes et la construction d'éléments porteurs</td>
+                    <td><input type="text" class="form-control" id="result-demolition-toiture" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Champignon toiture</td>
+                    <td><input type="number" class="form-control" name="champignon-toiture" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>le traitement des charpentes en bois contre les champignons et les insectes</td>
+                    <td><input type="text" class="form-control" id="result-champignon-toiture" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Couverture toiture</td>
+                    <td><input type="number" class="form-control" name="couverture-toiture" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>la réparation ou le renouvellement de l'abri et du revêtement imperméable; placer un le surplomb n'est éligible que sur un toit sans amiante couvrant un surplomb n'est éligible que sur un toit sans amiante</td>
+                    <td><input type="text" class="form-control" id="result-couverture-toiture" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Eaux de pluie</td>
+                    <td><input type="number" class="form-control" name="eaux-de-pluie" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>réparer ou renouveler les équipements et accessoires pour évacuer les eaux de pluie</td>
+                    <td><input type="text" class="form-control" id="result-eaux-de-pluie" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Accessoires de toiture</td>
+                    <td><input type="number" class="form-control" name="accessoires-de-toiture" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>les ouvertures de toit, telles que les fenêtres de toit (plates), les lucarnes, les puits de lumière et les cheminés</td>
+                    <td><input type="text" class="form-control" id="result-accessoires-de-toiture" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Chaux toiture</td>
+                    <td><input type="number" class="form-control" name="chaux-toiture" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>l'enduit à la chaux humide ou sèche (par exemple plaque de plâtre) sur la face inférieure des structures de toiture</td>
+                    <td><input type="text" class="form-control" id="result-accessoires-de-toiture" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Isolation toiture</td>
+                    <td><input type="number" class="form-control" name="isolation-toiture" placeholder="m²"></td>
+                    <td>≥ 30 m² – R ≥ 4.5 m²K/W</td>
+                    <td>l'installation d'une isolation de toiture ou de plancher de grenier, dans la mesure où cela est demandé en même temps que la démolition complète des structures de toit existantes et construction d'éléments porteurs</td>
+                    <td><input type="text" class="form-control" id="result-isolation-toiture" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Isolation murs en coulisse</td>
+                    <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
+                    <td>R ≥ 1.5 m²K/W</td>
+                    <td>isolation par remplissage de l'intérieur (L'isolant doit être de 5 cm entre les parois)</td>
+                    <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
+                  </tr>
+                  tr>
+                    <td>Isolation murs par l'extérieur</td>
+                    <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
+                    <td>≥ 20 m² – R ≥ 3 m²K/W</td>
+                    <td>l'application d'une isolation de façade dans la mesure où cela est demandé conjointement avec les travaux de façade structurelle « la démolition des murs existants et la construction de nouveaux murs intérieurs et extérieurs
+                        " ou " la finition des murs extérieurs avec brique de parement, revêtement de façade ou enduit en particulier "</td>
+                    <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
+                  </tr>
+                  tr>
+                    <td>Isolation murs par l'intérieur</td>
+                    <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
+                    <td>≥ 20 m² – R ≥ 2 m²K/W</td>
+                    <td>l'application d'une isolation de façade dans la mesure où cela est demandé conjointement avec les travaux de façade structurelle « la démolition des murs existants et la construction de nouveaux murs intérieurs et extérieurs
+                        " ou " la finition des murs extérieurs avec brique de parement, revêtement de façade ou enduit en particulier "</td>
+                    <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Fondation des murs</td>
+                    <td><input type="number" class="form-control" name="fondation-mur" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>Uniquement par entreprise agréée</td>
+                    <td><input type="text" class="form-control" id="result-fondation-murs" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Démolition murs</td>
+                    <td><input type="number" class="form-control" name="demolition-murs" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>Uniquement par entreprise agréée</td>
+                    <td><input type="text" class="form-control" id="result-demolition-murs" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Construction murs</td>
+                    <td><input type="number" class="form-control" name="construction-murs" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>la construction de nouveaux murs intérieurs et extérieurs, y compris les éléments porteurs ou de support de ces murs, tels que les colonnes, les poutres et les linteaux</td>
+                    <td><input type="text" class="form-control" id="result-construction-murs" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Finition murs</td>
+                    <td><input type="number" class="form-control" name="finition-murs" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>la finition des murs extérieurs avec des briques de parement, des revêtements de façade ou des enduits en matériaux spécialement destinés à cet effet</td>
+                    <td><input type="text" class="form-control" id="result-finition-murs" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Humidité murs</td>
+                    <td><input type="number" class="form-control" name="humidite-murs" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>le traitement des murs contre l'humidité ascensionnelle : mise en place d'une couche de rétention d'eau / injection dans les murs de produits imperméabilisants</td>
+                    <td><input type="text" class="form-control" id="result-humidite-murs" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Humidité murs enterrés</td>
+                    <td><input type="number" class="form-control" name="humidite-murs-enterres" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>le traitement des murs enterrés contre la pénétration d'humidité</td>
+                    <td><input type="text" class="form-control" id="result-humidite-murs-enterres" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Facade</td>
+                    <td><input type="number" class="form-control" name="facade" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>renouveler le jointoiement de la façade; le nettoyage de façade n'est éligible que si le jointoiement est également renouvelé</td>
+                    <td><input type="text" class="form-control" id="result-facade" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Isolation des sols</td>
+                    <td><input type="number" class="form-control" name="isolation-sol" placeholder="m²"></td>
+                    <td>R ≥ 2 m²K/W</td>
+                    <td>Eventuellement placer de l'isolation naturelle</td>
+                    <td><input type="text" class="form-control" id="result-isolation-sol" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Chape de sol</td>
+                    <td><input type="number" class="form-control" name="chape-sol" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>la construction d'éléments de plancher porteurs, de plaques de fondation et de chape (« chape »)</td>
+                    <td><input type="text" class="form-control" id="result-chape-sol" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Champignon-plancher</td>
+                    <td><input type="number" class="form-control" name="champignon-plancher" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>le traitement des planchers porteurs en bois contre les champignons et les insectes</td>
+                    <td><input type="text" class="form-control" id="result-champignon-plancher" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Remplacement de châssis</td>
+                    <td><input type="number" class="form-control" name="chassis" placeholder="m²"></td>
+                    <td>Uw max 1.0 W/m²K</td>
+                    <td>Démolition des élements existants + placement de fenêtres et portes extérieurs.</td>
+                    <td><input type="text" class="form-control" id="result-chassis" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Volets</td>
+                    <td><input type="number" class="form-control" name="volets" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>les volets roulants et la finition, tant à l'intérieur qu'à l'extérieur, à condition que cela comprenne également
+                      de nouvelles fenêtres ou portes extérieures sont placées</td>
+                    <td><input type="text" class="form-control" id="result-volets" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Escalier</td>
+                    <td><input type="number" class="form-control" name="escalier" placeholder="2"></td>
+                    <td>Info utile?</td>
+                    <td>connexion entre étages ok</td>
+                    <td><input type="text" class="form-control" id="resultat-escalier" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Champignon</td>
+                    <td><input type="number" class="form-control" name="champignon" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>ok</td>
+                    <td><input type="text" class="form-control" id="resultat-champignon" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Enduit à la chaux</td>
+                    <td><input type="number" class="form-control" name="enduit-chaux" placeholder="m²"></td>
+                    <td>Chaux humide ou sèche</td>
+                    <td>sur murs intérieurs, l'intérieur des murs extérieurs, bas des planchers porteurs</td>
+                    <td><input type="text" class="form-control" id="resultat-enduit-chaux" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Electricité</td>
+                    <td><input type="number" class="form-control" name="electricité" placeholder="m²"></td>
+                    <td>Info utile?</td>
+                    <td>certificat de conformité obligatoire (200 euros)</td>
+                    <td><input type="text" class="form-control" id="resultat-electricité" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Sanitaire remplacé</td>
+                    <td><input type="number" class="form-control" name="sanitaire-remplacé" placeholder="4"></td>
+                    <td>Info utile?</td>
+                    <td>Etre confortable aux toilettes ou dans sa baignoire</td>
+                    <td><input type="text" class="form-control" id="resultat-sanitaire-remplacé" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Sanitaire complémentaire</td>
+                    <td><input type="number" class="form-control" name="sanitaire-complementaire" placeholder="2"></td>
+                    <td>Info utile?</td>
+                    <td>C'est bien d'avoir plusieurs toilettes</td>
+                    <td><input type="text" class="form-control" id="resultat-sanitaire-complementaire" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Pompe à chaleur/géothermique (sol-eau/eau-eau</td>
+                    <td><input type="number" class="form-control" name="pac-geometrique" placeholder="kW"></td>
+                    <td>≥ 6 kW – COP ≥ 4</td>
+                    <td>Idéale pour les nouvelles constructions ou rénovations lourdes avec grand terrain disponible, recherchant un rendement maximal et stable toute l’année.</td>
+                    <td><input type="text" class="form-control" id="result-pac-geometrique" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Pompe à chaleur/air-eau</td>
+                    <td><input type="number" class="form-control" name="pac-air-eau" placeholder="kW"></td>
+                    <td>≥ 5 kW – COP ≥ 3.2</td>
+                    <td>Parfaite pour les rénovations avec plancher chauffant ou radiateurs basse température, surtout en remplacement d’une chaudière.</td>
+                    <td><input type="text" class="form-control" id="result-pac-air-eau" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Pompe à chaleur/air-air</td>
+                    <td><input type="number" class="form-control" name="pac-air-air" placeholder="kW"></td>
+                    <td>≥ 2 kW – COP ≥ 3.0</td>
+                    <td>Adaptée aux petits logements bien isolés ou comme solution de chauffage/climatisation d’appoint.</td>
+                    <td><input type="text" class="form-control" id="result-pac-air-air" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Pompe à chaleur/hybride avec boiler thermodynamique</td>
+                    <td><input type="number" class="form-control" name="pac-hybride" placeholder="kW"></td>
+                    <td>SCOP PAC : 3,5 à 4,2 - Boiler : COP 2,5 à 3,5 & pour la puissance: PAC : 5 à 10 kW/Chaudière gaz : 15 à 25 kW/Boiler : 150–300 L</td>
+                    <td>Recommandée quand on veut réduire les coûts d’énergie sans se passer complètement du gaz, notamment dans les rénovations où l’isolation reste moyenne.</td>
+                    <td><input type="text" class="form-control" id="result-pac-hybride" readonly></td>
+                  </tr>
+                    <tr>
+                    <td>Boiler thermodynamique</td>
+                    <td><input type="number" class="form-control" name="boiler-thermodynamique" placeholder="1"></td>
+                    <td>Info utile?</td>
+                    <td>Conseils?</td>
+                    <td><input type="text" class="form-control" id="result-boiler-thermodynamique" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Panneaux solaire pour eau chaude sanitaire</td>
+                    <td><input type="number" class="form-control" name="chauffage-solaire" placeholder="m²"></td>
+                    <td>Rendement ≥ 65%</td>
+                    <td>Placer les panneaux en complément d'une chaudière existante </td>
+                    <td><input type="text" class="form-control" id="result-chauffage-solaire" readonly></td>
+                  </tr>
+                  <tr>
+                    <td>Certificat PEB après travaux</td>
+                    <td><input type="text" class="form-control" name="PEB" placeholder="B"></td>
+                    <td>Info utile?</td>
+                    <td>Doit au moins être supérieur de 2 niveaux par rapport au label avant chantier</td>
+                    <td><input type="text" class="form-control" id="result-peb" readonly></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div id="bloc-primes" style="display: none;" class="mt-3">
-        <table class="table table-bordered table-striped">
-          <thead class="table-light">
-            <tr>
-              <th>Liste des primes</th>
-              <th>Données à encoder</th>
-              <th>Références métriques à respecter</th>
-              <th>Conseils pour votre dossier de primes</th>
-              <th>Prime estimée (€)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Démolition structure toiture</td>
-              <td><input type="number" class="form-control" name="demolition-toiture" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>la démolition des structures de toit existantes et la construction d'éléments porteurs</td>
-              <td><input type="text" class="form-control" id="result-demolition-toiture" readonly></td>
-            </tr>
-            <tr>
-              <td>Champignon toiture</td>
-              <td><input type="number" class="form-control" name="champignon-toiture" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>le traitement des charpentes en bois contre les champignons et les insectes</td>
-              <td><input type="text" class="form-control" id="result-champignon-toiture" readonly></td>
-            </tr>
-            <tr>
-              <td>Couverture toiture</td>
-              <td><input type="number" class="form-control" name="couverture-toiture" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>la réparation ou le renouvellement de l'abri et du revêtement imperméable; placer un le surplomb n'est éligible que sur un toit sans amiante couvrant un surplomb n'est éligible que sur un toit sans amiante</td>
-              <td><input type="text" class="form-control" id="result-couverture-toiture" readonly></td>
-            </tr>
-            <tr>
-              <td>Eaux de pluie</td>
-              <td><input type="number" class="form-control" name="eaux-de-pluie" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>réparer ou renouveler les équipements et accessoires pour évacuer les eaux de pluie</td>
-              <td><input type="text" class="form-control" id="result-eaux-de-pluie" readonly></td>
-            </tr>
-            <tr>
-              <td>Accessoires de toiture</td>
-              <td><input type="number" class="form-control" name="accessoires-de-toiture" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>les ouvertures de toit, telles que les fenêtres de toit (plates), les lucarnes, les puits de lumière et les cheminés</td>
-              <td><input type="text" class="form-control" id="result-accessoires-de-toiture" readonly></td>
-            </tr>
-            <tr>
-              <td>Chaux toiture</td>
-              <td><input type="number" class="form-control" name="chaux-toiture" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>l'enduit à la chaux humide ou sèche (par exemple plaque de plâtre) sur la face inférieure des structures de toiture</td>
-              <td><input type="text" class="form-control" id="result-accessoires-de-toiture" readonly></td>
-            </tr>
-            <tr>
-              <td>Isolation toiture</td>
-              <td><input type="number" class="form-control" name="isolation-toiture" placeholder="m²"></td>
-              <td>≥ 30 m² – R ≥ 4.5 m²K/W</td>
-              <td>l'installation d'une isolation de toiture ou de plancher de grenier, dans la mesure où cela est demandé en même temps que la démolition complète des structures de toit existantes et construction d'éléments porteurs</td>
-              <td><input type="text" class="form-control" id="result-isolation-toiture" readonly></td>
-            </tr>
-            <tr>
-              <td>Isolation murs en coulisse</td>
-              <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
-              <td>R ≥ 1.5 m²K/W</td>
-              <td>isolation par remplissage de l'intérieur (L'isolant doit être de 5 cm entre les parois)</td>
-              <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
-            </tr>
-            tr>
-              <td>Isolation murs par l'extérieur</td>
-              <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
-              <td>≥ 20 m² – R ≥ 3 m²K/W</td>
-              <td>l'application d'une isolation de façade dans la mesure où cela est demandé conjointement avec les travaux de façade structurelle « la démolition des murs existants et la construction de nouveaux murs intérieurs et extérieurs
-                  " ou " la finition des murs extérieurs avec brique de parement, revêtement de façade ou enduit en particulier "</td>
-              <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
-            </tr>
-            tr>
-              <td>Isolation murs par l'intérieur</td>
-              <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
-              <td>≥ 20 m² – R ≥ 2 m²K/W</td>
-              <td>l'application d'une isolation de façade dans la mesure où cela est demandé conjointement avec les travaux de façade structurelle « la démolition des murs existants et la construction de nouveaux murs intérieurs et extérieurs
-                  " ou " la finition des murs extérieurs avec brique de parement, revêtement de façade ou enduit en particulier "</td>
-              <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
-            </tr>
-            <tr>
-              <td>Fondation des murs</td>
-              <td><input type="number" class="form-control" name="fondation-mur" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>Uniquement par entreprise agréée</td>
-              <td><input type="text" class="form-control" id="result-fondation-murs" readonly></td>
-            </tr>
-            <tr>
-              <td>Démolition murs</td>
-              <td><input type="number" class="form-control" name="demolition-murs" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>Uniquement par entreprise agréée</td>
-              <td><input type="text" class="form-control" id="result-demolition-murs" readonly></td>
-            </tr>
-            <tr>
-              <td>Construction murs</td>
-              <td><input type="number" class="form-control" name="construction-murs" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>la construction de nouveaux murs intérieurs et extérieurs, y compris les éléments porteurs ou de support de ces murs, tels que les colonnes, les poutres et les linteaux</td>
-              <td><input type="text" class="form-control" id="result-construction-murs" readonly></td>
-            </tr>
-            <tr>
-              <td>Finition murs</td>
-              <td><input type="number" class="form-control" name="finition-murs" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>la finition des murs extérieurs avec des briques de parement, des revêtements de façade ou des enduits en matériaux spécialement destinés à cet effet</td>
-              <td><input type="text" class="form-control" id="result-finition-murs" readonly></td>
-            </tr>
-            <tr>
-              <td>Humidité murs</td>
-              <td><input type="number" class="form-control" name="humidite-murs" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>le traitement des murs contre l'humidité ascensionnelle : mise en place d'une couche de rétention d'eau / injection dans les murs de produits imperméabilisants</td>
-              <td><input type="text" class="form-control" id="result-humidite-murs" readonly></td>
-            </tr>
-            <tr>
-              <td>Humidité murs enterrés</td>
-              <td><input type="number" class="form-control" name="humidite-murs-enterres" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>le traitement des murs enterrés contre la pénétration d'humidité</td>
-              <td><input type="text" class="form-control" id="result-humidite-murs-enterres" readonly></td>
-            </tr>
-            <tr>
-              <td>Facade</td>
-              <td><input type="number" class="form-control" name="facade" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>renouveler le jointoiement de la façade; le nettoyage de façade n'est éligible que si le jointoiement est également renouvelé</td>
-              <td><input type="text" class="form-control" id="result-facade" readonly></td>
-            </tr>
-            <tr>
-              <td>Isolation des sols</td>
-              <td><input type="number" class="form-control" name="isolation-sol" placeholder="m²"></td>
-              <td>R ≥ 2 m²K/W</td>
-              <td>Eventuellement placer de l'isolation naturelle</td>
-              <td><input type="text" class="form-control" id="result-isolation-sol" readonly></td>
-            </tr>
-            <tr>
-              <td>Chape de sol</td>
-              <td><input type="number" class="form-control" name="chape-sol" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>la construction d'éléments de plancher porteurs, de plaques de fondation et de chape (« chape »)</td>
-              <td><input type="text" class="form-control" id="result-chape-sol" readonly></td>
-            </tr>
-            <tr>
-              <td>Champignon-plancher</td>
-              <td><input type="number" class="form-control" name="champignon-plancher" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>le traitement des planchers porteurs en bois contre les champignons et les insectes</td>
-              <td><input type="text" class="form-control" id="result-champignon-plancher" readonly></td>
-            </tr>
-            <tr>
-              <td>Remplacement de châssis</td>
-              <td><input type="number" class="form-control" name="chassis" placeholder="m²"></td>
-              <td>Uw max 1.0 W/m²K</td>
-              <td>Démolition des élements existants + placement de fenêtres et portes extérieurs.</td>
-              <td><input type="text" class="form-control" id="result-chassis" readonly></td>
-            </tr>
-            <tr>
-              <td>Volets</td>
-              <td><input type="number" class="form-control" name="volets" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>les volets roulants et la finition, tant à l'intérieur qu'à l'extérieur, à condition que cela comprenne également
-                de nouvelles fenêtres ou portes extérieures sont placées</td>
-              <td><input type="text" class="form-control" id="result-volets" readonly></td>
-            </tr>
-            <tr>
-              <td>Escalier</td>
-              <td><input type="number" class="form-control" name="escalier" placeholder="2"></td>
-              <td>Info utile?</td>
-              <td>connexion entre étages ok</td>
-              <td><input type="text" class="form-control" id="resultat-escalier" readonly></td>
-            </tr>
-            <tr>
-              <td>Champignon</td>
-              <td><input type="number" class="form-control" name="champignon" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>ok</td>
-              <td><input type="text" class="form-control" id="resultat-champignon" readonly></td>
-            </tr>
-            <tr>
-              <td>Enduit à la chaux</td>
-              <td><input type="number" class="form-control" name="enduit-chaux" placeholder="m²"></td>
-              <td>Chaux humide ou sèche</td>
-              <td>sur murs intérieurs, l'intérieur des murs extérieurs, bas des planchers porteurs</td>
-              <td><input type="text" class="form-control" id="resultat-enduit-chaux" readonly></td>
-            </tr>
-            <tr>
-              <td>Electricité</td>
-              <td><input type="number" class="form-control" name="electricité" placeholder="m²"></td>
-              <td>Info utile?</td>
-              <td>certificat de conformité obligatoire (200 euros)</td>
-              <td><input type="text" class="form-control" id="resultat-electricité" readonly></td>
-            </tr>
-            <tr>
-              <td>Sanitaire remplacé</td>
-              <td><input type="number" class="form-control" name="sanitaire-remplacé" placeholder="4"></td>
-              <td>Info utile?</td>
-              <td>Etre confortable aux toilettes ou dans sa baignoire</td>
-              <td><input type="text" class="form-control" id="resultat-sanitaire-remplacé" readonly></td>
-            </tr>
-            <tr>
-              <td>Sanitaire complémentaire</td>
-              <td><input type="number" class="form-control" name="sanitaire-complementaire" placeholder="2"></td>
-              <td>Info utile?</td>
-              <td>C'est bien d'avoir plusieurs toilettes</td>
-              <td><input type="text" class="form-control" id="resultat-sanitaire-complementaire" readonly></td>
-            </tr>
-            <tr>
-              <td>Pompe à chaleur/géothermique (sol-eau/eau-eau</td>
-              <td><input type="number" class="form-control" name="pac-geometrique" placeholder="kW"></td>
-              <td>≥ 6 kW – COP ≥ 4</td>
-              <td>Idéale pour les nouvelles constructions ou rénovations lourdes avec grand terrain disponible, recherchant un rendement maximal et stable toute l’année.</td>
-              <td><input type="text" class="form-control" id="result-pac-geometrique" readonly></td>
-            </tr>
-             <tr>
-              <td>Pompe à chaleur/air-eau</td>
-              <td><input type="number" class="form-control" name="pac-air-eau" placeholder="kW"></td>
-              <td>≥ 5 kW – COP ≥ 3.2</td>
-              <td>Parfaite pour les rénovations avec plancher chauffant ou radiateurs basse température, surtout en remplacement d’une chaudière.</td>
-              <td><input type="text" class="form-control" id="result-pac-air-eau" readonly></td>
-            </tr>
-             <tr>
-              <td>Pompe à chaleur/air-air</td>
-              <td><input type="number" class="form-control" name="pac-air-air" placeholder="kW"></td>
-              <td>≥ 2 kW – COP ≥ 3.0</td>
-              <td>Adaptée aux petits logements bien isolés ou comme solution de chauffage/climatisation d’appoint.</td>
-              <td><input type="text" class="form-control" id="result-pac-air-air" readonly></td>
-            </tr>
-             <tr>
-              <td>Pompe à chaleur/hybride avec boiler thermodynamique</td>
-              <td><input type="number" class="form-control" name="pac-hybride" placeholder="kW"></td>
-              <td>SCOP PAC : 3,5 à 4,2 - Boiler : COP 2,5 à 3,5 & pour la puissance: PAC : 5 à 10 kW/Chaudière gaz : 15 à 25 kW/Boiler : 150–300 L</td>
-              <td>Recommandée quand on veut réduire les coûts d’énergie sans se passer complètement du gaz, notamment dans les rénovations où l’isolation reste moyenne.</td>
-              <td><input type="text" class="form-control" id="result-pac-hybride" readonly></td>
-            </tr>
-              <tr>
-              <td>Boiler thermodynamique</td>
-              <td><input type="number" class="form-control" name="boiler-thermodynamique" placeholder="1"></td>
-              <td>Info utile?</td>
-              <td>Conseils?</td>
-              <td><input type="text" class="form-control" id="result-boiler-thermodynamique" readonly></td>
-            </tr>
-            <tr>
-              <td>Panneaux solaire pour eau chaude sanitaire</td>
-              <td><input type="number" class="form-control" name="chauffage-solaire" placeholder="m²"></td>
-              <td>Rendement ≥ 65%</td>
-              <td>Placer les panneaux en complément d'une chaudière existante </td>
-              <td><input type="text" class="form-control" id="result-chauffage-solaire" readonly></td>
-            </tr>
-            <tr>
-              <td>Certificat PEB après travaux</td>
-              <td><input type="text" class="form-control" name="PEB" placeholder="B"></td>
-              <td>Info utile?</td>
-              <td>Doit au moins être supérieur de 2 niveaux par rapport au label avant chantier</td>
-              <td><input type="text" class="form-control" id="result-peb" readonly></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
-          Enregistrer les données techniques
-        </button>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
+            Enregistrer les données techniques
+          </button>
+        </div>
       </div>
     </div>
+  </div>
 
   </div>
   <script src="script.js"></script>

@@ -82,3 +82,14 @@ function afficherCategoriePrime(categorie) {
 
 // Exemple pour test
 afficherCategoriePrime("Catégorie B");
+
+// Dépliage du bloc "chantier"
+  const toggleChantier = document.getElementById("toggle-chantier");
+  const contenuChantier = document.getElementById("contenu-chantier");
+  const arrowChantier = document.getElementById("arrow-chantier");
+
+  toggleChantier.addEventListener("click", () => {
+    const isVisible = contenuChantier.style.display === "block";
+    contenuChantier.style.display = isVisible ? "none" : "block";
+    arrowChantier.classList.toggle("rotated", !isVisible);
+  });
