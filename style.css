@@ -9,8 +9,9 @@
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1140px;
   margin: auto;
+  padding: 0 1rem;
 }
 
 :root {
@@ -81,4 +82,57 @@ select.form-select:focus {
 
 #arrow-primes {
   transition: transform 0.3s ease;
+}
+
+#section-demandeur,
+#section-formulaires,
+#section-resultats-primes,
+#section-resultats {
+  margin-bottom: 2.5rem;
+}
+
+#bloc-primes {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+table input.form-control {
+  font-size: 14px;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0; /* évite l'espacement excessif dans les cellules */
+}
+
+#prime-result,
+#prime-total-result {
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .row.g-2 .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+#section-demandeur,
+#section-formulaires,
+#section-resultats-primes {
+  max-width: 800px;
+  margin: auto;
+}
+
+#section-resultats {
+  width: 100%;
+}
+
+#bloc-primes {
+  overflow-x: auto;
+  min-width: 1200px;
 }
