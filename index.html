@@ -43,19 +43,30 @@
         <input type="text" class="form-control mb-2" placeholder="Prénom du conjoint">
         <input type="email" class="form-control mb-2" placeholder="Email du conjoint">
         <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
-      <h5>Vos revenus imposables personnels (année de référence 2023-2024)</h5>
+      <h5>Vos "Revenus Imposables Globalement" personnels (référence 2023-2024)</h5>
         <input  type="number" class="form-control"
-                id="revenus" name="revenus"
+                id="revenus-globalement-personnels" name="revenus-globalement-personnlels"
                 placeholder="ex. 45000"
                 min="0" step="100"
                 required>
-      <h5>Les revenus imposables de votre conjoint (année de référence 2023-2024)</h5>
+      <h5>Vos "Revenus Imposables Distinctement" personnels (référence 2023-2024)</h5>
         <input  type="number" class="form-control"
-                id="revenus" name="revenus"
+                id="revenus-distinct-personnels" name="revenus-distinct-personnels"
+                placeholder="ex. 45000"
+                min="0" step="100"
+                required>
+      <h5>Les "Revenus Imposables Globalement" de votre conjoint (référence 2023-2024)</h5>
+      <input  type="number" class="form-control"
+                id="revenus-globalement-conjoint" name="revenus-globalement-conjoint"
+                placeholder="ex. 45000"
+                required>
+      <h5>Les "Revenus Imposables Distinctement" de votre conjoint (référence 2023-2024)</h5>
+      <input  type="number" class="form-control"
+                id="revenus-distinct-conjoint" name="revenus-distinct-conjoint"
                 placeholder="ex. 45000"
                 required>
       <h5>Nombre d'enfant à charge (- de 18 ans)</h5>
-        <input  type="number" class="form-control"
+      <input  type="number" class="form-control"
                 id="enfants" name="enfants"
                 placeholder="3"
                 required>
