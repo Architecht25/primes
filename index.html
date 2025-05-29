@@ -8,13 +8,22 @@
   <!-- Feuille de style CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "sweetalert2": "https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/+esm",
+      "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    }
+  }
+</script>
 </head>
 <body class="p-4">
   <div class="container">
-    <h1 class="mb-4 text-center w-100">Ren0vate - Simulateur de Primes/Flandre</h1>
+    <h1 class="mb-4 text-center w-100">Ren0vate - Simulateur de Primes</h1>
 
     <!-- 1. SÉLECTION DU TYPE DE DEMANDEUR -->
     <div id="section-demandeur" class="mb-5">
@@ -38,44 +47,52 @@
         <input type="text" class="form-control mb-2" placeholder="Prénom">
         <input type="email" class="form-control mb-2" placeholder="Email">
         <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
-      <h5>Données relatives à votre conjoint</h5>
-        <input type="text" class="form-control mb-2" placeholder="Nom complet du conjoint">
-        <input type="text" class="form-control mb-2" placeholder="Prénom du conjoint">
-        <input type="email" class="form-control mb-2" placeholder="Email du conjoint">
-        <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
+
+      <h5>Etat civile</h5>
+        <select id="couple" name="couple" class="form-select">
+          <option selected disabled>-- Sélectionnez votre état civil --</option>
+          <option value="marié">célibataire</option>
+          <option value="marié">marié</option>
+          <option value="cohabitant">cohabitant</option>
+        </select>
+
       <h5>Vos "Revenus Imposables Globalement" personnels (référence 2023-2024)</h5>
         <input  type="number" class="form-control"
                 id="revenus-globalement-personnels" name="revenus-globalement-personnlels"
                 placeholder="ex. 45000"
                 min="0" step="100"
                 required>
-      <h5>Vos "Revenus Imposables Distinctement" personnels (référence 2023-2024)</h5>
+
+      <h5>Vos "Revenus Imposables Distinctement" personnels régions (référence 2023-2024)</h5>
         <input  type="number" class="form-control"
                 id="revenus-distinct-personnels" name="revenus-distinct-personnels"
                 placeholder="ex. 45000"
                 min="0" step="100"
                 required>
+
+      <h5>Données relatives à votre conjoint</h5>
+        <input type="text" class="form-control mb-2" placeholder="Nom complet du conjoint">
+        <input type="text" class="form-control mb-2" placeholder="Prénom du conjoint">
+        <input type="email" class="form-control mb-2" placeholder="Email du conjoint">
+        <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
+
       <h5>Les "Revenus Imposables Globalement" de votre conjoint (référence 2023-2024)</h5>
-      <input  type="number" class="form-control"
-                id="revenus-globalement-conjoint" name="revenus-globalement-conjoint"
-                placeholder="ex. 45000"
-                required>
+        <input  type="number" class="form-control"
+                  id="revenus-globalement-conjoint" name="revenus-globalement-conjoint"
+                  placeholder="ex. 45000"
+                  required>
+
       <h5>Les "Revenus Imposables Distinctement" de votre conjoint (référence 2023-2024)</h5>
-      <input  type="number" class="form-control"
-                id="revenus-distinct-conjoint" name="revenus-distinct-conjoint"
-                placeholder="ex. 45000"
-                required>
+        <input  type="number" class="form-control"
+                  id="revenus-distinct-conjoint" name="revenus-distinct-conjoint"
+                  placeholder="ex. 45000"
+                  required>
+
       <h5>Nombre d'enfant à charge (- de 18 ans)</h5>
-      <input  type="number" class="form-control"
-                id="enfants" name="enfants"
-                placeholder="3"
-                required>
-      <h5>votre couple</h5>
-      <select id="couple" name="couple" class="form-select">
-        <option selected disabled>-- Marié ou en cohabitation légale? --</option>
-        <option value="marié">marié</option>
-        <option value="cohabitant">cohabitant</option>
-      </select>
+        <input  type="number" class="form-control"
+                  id="enfants" name="enfants"
+                  placeholder="3"
+                  required>
 
       <h5>Adresse de résidence</h5>
       <div class="mb-3">
@@ -326,7 +343,7 @@
     <div id="section-resultats">
       <div class="form-toggle-wrapper mt-4" id="tableau-primes">
         <div class="d-flex justify-content-between align-items-center">
-          <label class="form-label text-center w-100">Analyse de vos primes à la rénovation</label>
+          <label class="form-label text-center w-100">Tableau Flandre - Analyse de vos primes à la rénovation</label>
           <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
         </div>
           <div id="bloc-primes" style="display: none;" class="mt-3">
@@ -335,16 +352,16 @@
                 <thead class="table-light">
                   <tr>
                     <th>Liste des primes</th>
-                    <th>Données à encoder</th>
-                    <th>Références métriques à respecter</th>
-                    <th>Conseils pour votre dossier de primes</th>
+                    <th>A remplir</th>
+                    <th>Conditions à respecter</th>
+                    <th>Conseils pour votre dossier</th>
                     <th>Prime estimée (€)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Démolition structure toiture</td>
-                    <td><input type="number" class="form-control" name="demolition-toiture" placeholder="m²"></td>
+                    <td class="bg-warning-subtle"><input type="number" class="form-control" name="demolition-toiture" placeholder="m²"></td>
                     <td>Info utile?</td>
                     <td>la démolition des structures de toit existantes et la construction d'éléments porteurs</td>
                     <td><input type="text" class="form-control" id="result-demolition-toiture" readonly></td>
@@ -398,7 +415,7 @@
                     <td>isolation par remplissage de l'intérieur (L'isolant doit être de 5 cm entre les parois)</td>
                     <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
                   </tr>
-                  tr>
+                  <tr>
                     <td>Isolation murs par l'extérieur</td>
                     <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
                     <td>≥ 20 m² – R ≥ 3 m²K/W</td>
@@ -406,7 +423,7 @@
                         " ou " la finition des murs extérieurs avec brique de parement, revêtement de façade ou enduit en particulier "</td>
                     <td><input type="text" class="form-control" id="result-isolation-murs" readonly></td>
                   </tr>
-                  tr>
+                  <tr>
                     <td>Isolation murs par l'intérieur</td>
                     <td><input type="number" class="form-control" name="isolation-murs" placeholder="m²"></td>
                     <td>≥ 20 m² – R ≥ 2 m²K/W</td>
@@ -592,16 +609,24 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
+              <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
+                  Enregistrer les données techniques
+                </button>
+              </div>
           </div>
+          </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <label class="form-label text-center w-100">Tableau Bruxelles - Analyse de vos primes à la rénovation</label>
+          <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
         </div>
-    </div>
-    <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
-            Enregistrer les données techniques
-          </button>
+        <div class="d-flex justify-content-between align-items-center">
+          <label class="form-label text-center w-100">Tableau Wallonie - Analyse de vos primes à la rénovation</label>
+          <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
+        </div>
+      </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

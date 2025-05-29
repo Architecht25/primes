@@ -1,3 +1,6 @@
+import 'bootstrap'; // Active les composants JS de Bootstrap (modal, dropdown, etc.)
+import Swal from 'sweetalert2'; // Pour les alertes stylisées
+
 document.addEventListener("DOMContentLoaded", () => {
   // 🔹 Sélecteurs des blocs de formulaire selon le profil
   const select = document.getElementById("applicant-type");
@@ -93,3 +96,9 @@ afficherCategoriePrime("Catégorie B");
     contenuChantier.style.display = isVisible ? "none" : "block";
     arrowChantier.classList.toggle("rotated", !isVisible);
   });
+
+  Swal.fire({
+  title: 'Test réussi 🎉',
+  text: 'SweetAlert2 fonctionne correctement avec importmap.',
+  icon: 'success',
+});
