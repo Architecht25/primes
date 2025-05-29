@@ -97,8 +97,8 @@ afficherCategoriePrime("Catégorie B");
     arrowChantier.classList.toggle("rotated", !isVisible);
   });
 
-  Swal.fire({
-  title: 'Test réussi 🎉',
-  text: 'SweetAlert2 fonctionne correctement avec importmap.',
-  icon: 'success',
-});
+//   Swal.fire({
+//   title: 'Test réussi 🎉',
+//   text: 'SweetAlert2 fonctionne correctement avec importmap.',
+//   icon: 'success',
+// });
