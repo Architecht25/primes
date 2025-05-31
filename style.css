@@ -1,6 +1,6 @@
 /* ======================= GÉNÉRAL ======================= */
 :root {
-  --primary: #28a745;          /* Vert professionnel */
+  --primary: #03bd2e;          /* Vert professionnel */
   --primary-light: #e9f9ee;    /* Vert clair de fond */
   --text-dark: #1a1a1a;
   --border-color: #cde7d6;
@@ -28,7 +28,7 @@ body {
   padding: 0 1rem;
 }
 
-body h1, body h2 {
+body h1, body h2, body h4 {
   color: rgb(105, 213, 105);
   font-weight: 600;
 }
@@ -47,7 +47,7 @@ h4 {
 /* ======================= FORMULAIRES ======================= */
 label, .form-label {
   font-weight: 500;
-  color: #333;
+  color: #333333;
   text-align: center;
 }
 
@@ -108,6 +108,12 @@ select.form-select:focus {
   border-radius: 8px;
   padding: 1rem;
   background-color: #fff;
+}
+
+#section-resultats .form-label {
+  color: rgb(215, 28, 28);
+  width: 200px;
+  font-weight: 600;
 }
 
 #bloc-primes table input.form-control {
