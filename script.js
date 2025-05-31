@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🔹 Calcul des primes
   const taux = {
     isolation_toiture: 30,
-    isolation_murs: 20,
+    isolation_murs_ext: 30,
     chassis: 80,
   };
 
@@ -54,15 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let total = 0;
 
     const champs = [
-      { name: "isolation-toiture", taux: taux.isolation_toiture, id: "result-isolation-toiture" },
-      { name: "isolation-murs", taux: taux.isolation_murs, id: "result-isolation-murs" },
+      { name: "isolation_toiture", taux: taux.isolation_toiture, id: "result-isolation-toiture" },
+      { name: "isolation_murs_ext", taux: taux.isolation_murs_ext, id: "result-isolation-murs-ext" },
       { name: "chassis", taux: taux.chassis, id: "result-chassis" },
-      ];
+    ];
 
     champs.forEach(({ name, taux, id }) => {
       const val = parseFloat(document.querySelector(`input[name="${name}"]`)?.value) || 0;
       const montant = val * taux;
-      document.getElementById(id).value = montant.toFixed(2) + " €";
+      document.getElementById(id).textContent = montant.toFixed(2) + " €";
       total += montant;
     });
 
@@ -115,4 +115,3 @@ function calculerEtAfficherPrimes() {
 }
 
 document.querySelector('input[name="isolation_toiture"]').addEventListener("input", calculerEtAfficherPrimes);
-
