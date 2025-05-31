@@ -146,11 +146,23 @@ select.form-select:focus {
   background-color: #fff;
   border: 1px solid #cde7d6;
   border-radius: 12px;
-  padding: 1.5rem;
+  overflow: hidden;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease;
 }
+
+.prime-card img {
+  width: 100%;
+  height: 160px; /* ou auto ou ce que tu veux */
+  object-fit: cover;
+  display: block;
+}
+
+.prime-card-content {
+  padding: 1.5rem;
+}
+
 
 .prime-card:hover {
   transform: translateY(-4px);
