@@ -102,3 +102,17 @@ afficherCategoriePrime("Catégorie B");
 //   text: 'SweetAlert2 fonctionne correctement avec importmap.',
 //   icon: 'success',
 // });
+
+// carte produits
+const taux = {
+  isolation_toiture: 30
+};
+
+function calculerEtAfficherPrimes() {
+  const val = parseFloat(document.querySelector('input[name="isolation_toiture"]')?.value) || 0;
+  const montant = val * taux.isolation_toiture;
+  document.getElementById("result-isolation-toiture").textContent = montant.toFixed(2) + " €";
+}
+
+document.querySelector('input[name="isolation_toiture"]').addEventListener("input", calculerEtAfficherPrimes);
+
