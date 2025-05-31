@@ -24,6 +24,7 @@
 <body class="p-4">
   <div class="container">
     <h1 class="mb-4 text-center w-100">Ren0vate - Simulateur de Primes</h1>
+    <h2 class="mb-4 text-center w-100">Primes à la rénovation - Région Flamande</h2>
 
     <!-- 1. SÉLECTION DU TYPE DE DEMANDEUR -->
     <div id="section-demandeur" class="mb-5">
@@ -36,7 +37,6 @@
           <option value="copropriete">Copropriété</option>
           <option value="asbl">ASBL</option>
           <option value="société cooperative">société coopérative</option>
-          <option value="autres">autres</option>
         </select>
       </div>
     </div>
@@ -67,13 +67,6 @@
                 min="0" step="100"
                 required>
 
-      <h5>Vos "Revenus Imposables Distinctement" personnels régions (référence 2023-2024)</h5>
-        <input  type="number" class="form-control"
-                id="revenus-distinct-personnels" name="revenus-distinct-personnels"
-                placeholder="ex. 45000"
-                min="0" step="100"
-                required>
-
       <h5>Données relatives à votre conjoint</h5>
         <input type="text" class="form-control mb-2" placeholder="Nom complet du conjoint">
         <input type="text" class="form-control mb-2" placeholder="Prénom du conjoint">
@@ -87,12 +80,6 @@
                   placeholder="ex. 45000"
                   required>
 
-      <h5>Les "Revenus Imposables Distinctement" de votre conjoint (référence 2023-2024)</h5>
-        <input  type="number" class="form-control"
-                  id="revenus-distinct-conjoint" name="revenus-distinct-conjoint"
-                  placeholder="ex. 45000"
-                  required>
-
       <h5>Nombre de personnes fiscalement à charge (enfants et personnes agées)</h5>
         <input  type="number" class="form-control"
                   id="enfants" name="enfants"
@@ -103,16 +90,7 @@
                   id="handicap" name="handicap"
                   placeholder="1"
                   required>
-      <h5>Je bénéficie d'un revenu d'intégration majoré (BIM)</h5>
-        <input  type="number" class="form-control"
-                  id="revenu-majoré" name="revenu-majoré"
-                  placeholder="oui/non"
-                  required>
-      <h5>Je bénéficie d'un revenu d'intégration social</h5>
-        <input  type="number" class="form-control"
-                  id="revenu-social" name="revenu-social"
-                  placeholder="oui/non"
-                  required>
+
       <h5>Adresse de résidence</h5>
       <div class="mb-3">
         <label for="rue" class="form-label">Rue</label>
@@ -147,13 +125,13 @@
         <label for="type-de-propriété" class="form-label">Type de propriété</label>
         <select id="type-de-propriété" name="type-de-propriété" class="form-select">
           <option selected disabled>-- Sélectionnez un type de propriété --</option>
+          <option value="propriétaire complet">Propriétaire à 100%</option>
+          <option value="copropriétaire">Copropriétaire avec mon conjoint</option>
           <option value="nu-propriétaire">nu propriétaire</option>
           <option value="usufruitié">usufruitié</option>
-          <option value="pleine-propriété">Pleine propriété</option>
-          <option value="occupant et copropriétaire">occupant et copropriétaire</option>
-          <option value="locataire">locataire</option>
-          <option value="emphythéose">emphythéose</option>
           <option value="propriétaire-indivision-non-occupant">Propriétaire en indivision et n'occupe pas le bien</option>
+          <option value="non-propriétaire">Je ne suis pas le propriétaire du bien</option>
+          <option value="locataire">locataire</option>
         </select>
       </div>
       <div class="d-flex justify-content-center">
@@ -307,15 +285,7 @@
             <option value="location">Location</option>
           </select>
         </div>
-        <div class="mb-3 mt-3">
-          <label for="propriétaire" class="form-label">Quel type de propriétaire êtes-vous?</label>
-          <select id="propriétaire" name="propriétaire" class="form-select">
-            <option selected disabled>-- Sélectionnez une option --</option>
-            <option value="propriétaire complet">Propriétaire à 100%</option>
-            <option value="copropriétaire">Copropriétaire avec mon conjoint</option>
-            <option value="non-propriétaire">Je ne suis pas le propriétaire du bien</option>
-          </select>
-        </div>
+
         <label for="construction" class="form-label">Date de construction</label>
         <input  type="number" class="form-control"
                   id="construction" name="construction"
@@ -380,7 +350,7 @@
     <div id="section-resultats">
       <div class="form-toggle-wrapper mt-4" id="tableau-primes">
         <div class="d-flex justify-content-between align-items-center">
-          <label class="form-label text-center w-100">Tableau Flandre - Analyse de vos primes à la rénovation</label>
+          <label class="form-label text-center w-100">Tables d'analyse de vos primes</label>
           <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
         </div>
           <div id="bloc-primes" style="display: none;" class="mt-3">
