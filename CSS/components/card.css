@@ -1,0 +1,74 @@
+/* ======================= CARTES PRODUITS ======================= */
+#section-primes {
+  margin-bottom: 2rem;
+}
+
+.prime-card {
+  background-color: #fff;
+  border: 1px solid #cde7d6;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease;
+}
+
+.prime-card img {
+  width: 100%;
+  height: 160px; /* ou auto ou ce que tu veux */
+  object-fit: cover;
+  display: block;
+}
+
+.prime-card-content {
+  padding: 1.5rem;
+}
+
+
+.prime-card:hover {
+  transform: translateY(-4px);
+}
+
+.prime-title {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.prime-condition,
+.prime-advice {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.input-group-text {
+  min-width: 90px;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.prime-card .input-group .form-control,
+.prime-card .input-group .input-group-text {
+  height: 48px; /* hauteur uniforme */
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  border-radius: 6px;
+}
+
+
+@media (max-width: 992px) {
+  .prime-card {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .prime-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

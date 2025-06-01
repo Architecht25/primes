@@ -1,0 +1,93 @@
+@import url("components/card.css");
+@import url("components/form.css");
+@import url("components/tableau.css");
+
+/* ======================= GÉNÉRAL ======================= */
+:root {
+  --primary: #03bd2e;          /* Vert professionnel */
+  --primary-light: #e9f9ee;    /* Vert clair de fond */
+  --text-dark: #1a1a1a;
+  --border-color: #cde7d6;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: #f4f6f9;
+  color: #2c3e50;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+  padding: 2rem;
+  background-image: url("images/brique.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  image-rendering: auto;          /* Laisse le navigateur gérer le rendu */
+}
+
+.container {
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+body h1, body h2, body h4 {
+  color: rgb(105, 213, 105);
+  font-weight: 600;
+}
+
+h1 {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+h4 {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+/* ======================= STRUCTURE DES SECTIONS ======================= */
+#section-demandeur,
+#section-formulaires,
+#section-resultats-primes {
+  max-width: 800px;
+  margin: auto;
+}
+
+#section-resultats {
+  width: 100%;
+}
+
+#section-demandeur,
+#section-formulaires,
+#section-resultats-primes,
+#section-resultats {
+  margin-bottom: 2.5rem;
+}
+
+/* ======================= RÉSULTATS ======================= */
+#prime-result,
+#prime-total-result {
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
+/* ======================= ICÔNES TOGGLE / FLÈCHES ======================= */
+.toggle-arrow,
+#arrow-primes,
+#form-toggle-arrow {
+  transition: transform 0.3s ease;
+}
+
+#form-toggle-arrow.rotated {
+  transform: rotate(180deg);
+}

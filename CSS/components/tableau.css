@@ -1,0 +1,30 @@
+
+/* ======================= TABLEAU DES PRIMES ======================= */
+#bloc-primes {
+  overflow-x: auto;
+  min-width: 1200px;
+  max-height: 1000px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+#section-resultats .form-label {
+  color: rgb(215, 28, 28);
+  width: 200px;
+  font-weight: 600;
+}
+
+#bloc-primes table input.form-control {
+  font-size: 14px;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0; /* évite l'espacement excessif dans les cellules */
+}
+
+@media (max-width: 576px) {
+  table th, table td {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
