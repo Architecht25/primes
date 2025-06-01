@@ -18,7 +18,7 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 2rem;
-  background-image: url("../images/mur.jpg");
+  background-image: url("../images/mur_blanc.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,7 +33,7 @@ body {
 }
 
 body h1, body h2, body h4 {
-  color: rgb(2, 48, 2);
+  color: rgb(2, 43, 2);
   font-weight: 600;
 }
 
