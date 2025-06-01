@@ -17,13 +17,14 @@ body {
   line-height: 1.6;
   font-size: 16px;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
   background-image: url("../images/mur_blanc.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   image-rendering: auto;          /* Laisse le navigateur gérer le rendu */
+  min-height: 100vh; /* garantit que le fond couvre toute la hauteur de la page */
 }
 
 .container {
@@ -90,4 +91,11 @@ h4 {
 
 #form-toggle-arrow.rotated {
   transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: url("../images/mur-mobile.jpg");
+    background-attachment: scroll;
+  }
 }
