@@ -95,7 +95,7 @@ h4 {
 
 @media (max-width: 767px) {
   body {
-    background-image: url("../images/mur-mobile.jpg");
+    background-image: url("../images/mur_blanc.jpg");
     background-attachment: scroll;
   }
 }
