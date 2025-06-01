@@ -1,3 +1,12 @@
+html {
+  height: 100%;
+  background-image: url("primes/images/mur_blanc.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
 @import url("components/card.css");
 @import url("components/form.css");
 @import url("components/tableau.css");
