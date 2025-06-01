@@ -1,0 +1,19 @@
+/* ======================= STRUCTURE DES SECTIONS ======================= */
+#section-demandeur,
+#section-formulaires,
+#section-resultats-primes {
+  max-width: 800px;
+  margin: auto;
+}
+
+#section-resultats {
+  width: 100%;
+}
+
+#section-demandeur,
+#section-formulaires,
+#section-resultats-primes,
+#section-resultats {
+  margin-bottom: 2.5rem;
+}
+

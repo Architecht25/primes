@@ -1,0 +1,10 @@
+/* ======================= ICÔNES TOGGLE / FLÈCHES ======================= */
+.toggle-arrow,
+#arrow-primes,
+#form-toggle-arrow {
+  transition: transform 0.3s ease;
+}
+
+#form-toggle-arrow.rotated {
+  transform: rotate(180deg);
+}

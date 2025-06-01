@@ -15,11 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🔹 Afficher la section sélectionnée
   select.addEventListener("change", (e) => {
-    Object.values(sections).forEach(section => section.style.display = "none");
-    if (sections[e.target.value]) {
-      sections[e.target.value].style.display = "block";
-    }
-  });
+  const selectedType = e.target.value;
+
+  // Affiche une alerte si "entreprise" est sélectionné
+  if (selectedType === "entreprise") {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops...',
+      html: '<b>Les entreprises</b> ne sont plus éligibles aux demandes depuis le 1er juillet 2025.',
+      footer: '<a href="https://www.primes-services.be" target="_blank" rel="noopener">Contactez-nous pour plus d\'infos</a>'
+
+    });
+    return; // Stoppe l'exécution ici
+  }
+
+  // Affiche uniquement la section sélectionnée
+  Object.values(sections).forEach(section => section.style.display = "none");
+  if (sections[selectedType]) {
+    sections[selectedType].style.display = "block";
+  }
+});
 
   // 🔹 Dépliage du bloc "bien à rénover"
   const arrowBien = document.getElementById("arrow-bien");
@@ -41,6 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
     blocPrimes.style.display = isVisible ? "none" : "block";
     arrowPrimes.classList.toggle("bi-chevron-down", isVisible);
     arrowPrimes.classList.toggle("bi-chevron-up", !isVisible);
+  });
+
+  // Dépliage du bloc "chantier"
+  const toggleChantier = document.getElementById("toggle-chantier");
+  const contenuChantier = document.getElementById("contenu-chantier");
+  const arrowChantier = document.getElementById("arrow-chantier");
+
+  toggleChantier.addEventListener("click", () => {
+    const isVisible = contenuChantier.style.display === "block";
+    contenuChantier.style.display = isVisible ? "none" : "block";
+    arrowChantier.classList.toggle("rotated", !isVisible);
   });
 
   // 🔹 Calcul des primes
@@ -87,33 +113,3 @@ function afficherCategoriePrime(categorie) {
 
 // Exemple pour test
 afficherCategoriePrime("Catégorie B");
-
-// Dépliage du bloc "chantier"
-  const toggleChantier = document.getElementById("toggle-chantier");
-  const contenuChantier = document.getElementById("contenu-chantier");
-  const arrowChantier = document.getElementById("arrow-chantier");
-
-  toggleChantier.addEventListener("click", () => {
-    const isVisible = contenuChantier.style.display === "block";
-    contenuChantier.style.display = isVisible ? "none" : "block";
-    arrowChantier.classList.toggle("rotated", !isVisible);
-  });
-
-//   Swal.fire({
-//   title: 'Test réussi 🎉',
-//   text: 'SweetAlert2 fonctionne correctement avec importmap.',
-//   icon: 'success',
-// });
-
-// carte produits
-const taux = {
-  isolation_toiture: 30
-};
-
-function calculerEtAfficherPrimes() {
-  const val = parseFloat(document.querySelector('input[name="isolation_toiture"]')?.value) || 0;
-  const montant = val * taux.isolation_toiture;
-  document.getElementById("result-isolation-toiture").textContent = montant.toFixed(2) + " €";
-}
-
-document.querySelector('input[name="isolation_toiture"]').addEventListener("input", calculerEtAfficherPrimes);

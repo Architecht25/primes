@@ -1,0 +1,14 @@
+/* ======================= RÉSULTATS ======================= */
+#prime-result,
+#prime-total-result {
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
