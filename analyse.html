@@ -52,17 +52,17 @@
         <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
         <input type="text" class="form-control mb-2" placeholder="date de naissance (jj/mm/aaaa)">
 
-      <h5>Etat civile</h5>
-        <select id="couple" name="couple" class="form-select">
-          <option selected disabled>-- Sélectionnez votre état civil --</option>
-          <option value="marié">célibataire</option>
-          <option value="marié">marié</option>
-          <option value="cohabitant">cohabitant</option>
+      <h5>Situation familiale</h5>
+        <select id="situation" name="situation" class="form-select">
+          <option selected disabled>-- Sélectionnez votre situation --</option>
+          <option value="couple">Couple</option>
+          <option value="isole">Isolé</option>
+          <option value="isole_avec_enfant">Isolé avec enfant à charge</option>
         </select>
 
       <h5>Vos "Revenus Imposables Globalement" personnels (référence 2023-2024)</h5>
         <input  type="number" class="form-control"
-                id="revenus-globalement-personnels" name="revenus-globalement-personnlels"
+                id="revenu-demandeur" name="revenu-demandeur"
                 placeholder="ex. 45000"
                 min="0" step="100"
                 required>
@@ -76,7 +76,7 @@
 
       <h5>Les "Revenus Imposables Globalement" de votre conjoint (référence 2023-2024)</h5>
         <input  type="number" class="form-control"
-                  id="revenus-globalement-conjoint" name="revenus-globalement-conjoint"
+                  id="revenu-conjoint" name="revenu-conjoint"
                   placeholder="ex. 45000"
                   required>
 
@@ -135,9 +135,7 @@
         </select>
       </div>
       <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-prive">
-          Enregistrer les données
-        </button>
+        <button id="btn-calcul-prime" class="btn btn-success">Calculer votre catégorie de prime</button>
       </div>
       </div>
 
@@ -337,11 +335,12 @@
 
     <!-- 4. Résultats des primes (total + catégorie) -->
     <div id="section-resultats-primes" class="mb-4">
-      <div id="prime-result" class="alert alert-success mt-4" style="display: none;">
-        <strong>Catégorie de prime :</strong> <span id="categorie-prime">—</span>
+
+      <div id="categorie-resultat" class="alert alert-success mt-4">
+        <strong>Catégorie de prime :</strong> <span id="categorie-prime">Veuillez encoder vos données personnelles.</span>
       </div>
 
-      <div id="prime-total-result" class="alert alert-success mt-4" style="display: none;">
+      <div id="prime-total-result" class="alert alert-success mt-4">
         <strong>Total estimé des primes :</strong> <span id="total-primes-affiche">—</span>
       </div>
     </div>
