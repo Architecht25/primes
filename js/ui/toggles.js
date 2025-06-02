@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+export function initialiserFleches() {
+console.log("🔄 initialiserFleches lancé");
+
   // 🔹 Dépliage "bien à rénover"
   const arrowBien = document.getElementById("arrow-bien");
   const formBien = document.getElementById("form-building");
@@ -28,4 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
     arrowPrimes.classList.toggle("bi-chevron-down", isVisible);
     arrowPrimes.classList.toggle("bi-chevron-up", !isVisible);
   });
-});
+};

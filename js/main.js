@@ -1,16 +1,16 @@
 import 'bootstrap'; // Active les composants JS de Bootstrap
-import Swal from 'sweetalert2'; // Pour les alertes stylisées
 
-import { initialiserFormulaires } from './ui/forms.js';
-import { initialiserCategorie } from './logic/categorie.js';
-import { initialiserCartes } from './ui/cartes.js';
-import { initialiserPrimes } from './logic/primes.js';
 import { initialiserFleches}  from './ui/toggles.js';
+import { initialiserFormulaires } from './ui/forms.js';
+import { initialiserCartes } from './ui/cartes.js';
+
+import { initialiserCategories } from './logic/categories.js';
+import { initialiserPrimes } from './logic/primes.js';
 
 document.addEventListener("DOMContentLoaded", () => {
+  initialiserFleches();
   initialiserFormulaires();
-  initialiserCategorie();
+  initialiserCategories();
   initialiserCartes();
   initialiserPrimes();
-  initialiserFleches();
 });

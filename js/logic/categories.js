@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+export function initialiserCategories() {
 // 🔹 Lien bouton "Calculer catégorie de prime"
   const bouton = document.getElementById("btn-calcul-prime");
   const bloc = document.getElementById("categorie-resultat");
@@ -53,4 +53,4 @@ document.addEventListener("DOMContentLoaded", () => {
     texte.textContent = categorieTexte;
     bloc.className = `alert ${couleur} mt-4`;
   });
-});
+};

@@ -1,4 +1,6 @@
- document.addEventListener("DOMContentLoaded", () => {
+import Swal from 'sweetalert2';
+
+export function initialiserFormulaires() {
  // 🔹 Sélection du type de demandeur
   const select = document.getElementById("applicant-type");
   const sections = {
@@ -29,4 +31,4 @@
       sections[selectedType].style.display = "block";
     }
   });
- });
+ };
