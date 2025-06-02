@@ -20,14 +20,4 @@ console.log("🔄 initialiserFleches lancé");
     contenuChantier.style.display = isVisible ? "none" : "block";
     arrowChantier.classList.toggle("rotated", !isVisible);
   });
-
-  // 🔹 Dépliage "tableau des primes"
-  const arrowPrimes = document.getElementById("arrow-primes");
-  const blocPrimes = document.getElementById("bloc-primes");
-  arrowPrimes?.addEventListener("click", () => {
-    const isVisible = blocPrimes.style.display !== "none";
-    blocPrimes.style.display = isVisible ? "none" : "block";
-    arrowPrimes.classList.toggle("bi-chevron-down", isVisible);
-    arrowPrimes.classList.toggle("bi-chevron-up", !isVisible);
-  });
 };

@@ -349,7 +349,7 @@
     <!-- Container pour les cartes -->
     <div id="prime-cards-container" class="row gx-3 gy-4 mt-4"></div>
 
-    <!-- Template HTML pour une carte -->
+    <!-- 7. Template HTML pour une carte -->
     <template id="prime-card-template">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="prime-card p-3 h-100 shadow-sm bg-white border rounded">
@@ -366,117 +366,13 @@
       </div>
     </template>
 
-    <!-- A supprimer. Tableau d’analyse détaillée -->
-    <div id="section-resultats">
-      <div class="form-toggle-wrapper mt-4" id="tableau-primes">
-        <div class="d-flex justify-content-between align-items-center">
-          <label class="form-label text-center w-100">Tables d'analyse de vos primes</label>
-          <i class="bi bi-chevron-down" id="arrow-primes" style="cursor: pointer; font-size: 1.5rem;"></i>
-        </div>
-          <div id="bloc-primes" style="display: none;" class="mt-3">
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped">
-                <thead class="table-light">
-                  <tr>
-                    <th>Liste des primes</th>
-                    <th>A remplir</th>
-                    <th>Conditions à respecter</th>
-                    <th>Conseils pour votre dossier</th>
-                    <th>Prime estimée (€)</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-
-                
-                  <tr>
-                    <td>Champignon</td>
-                    <td><input type="number" class="form-control" name="champignon" placeholder="m²"></td>
-                    <td>Bas revenus et moyens revenus</td>
-                    <td>ok</td>
-                    <td><input type="text" class="form-control" id="resultat-champignon" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Enduit à la chaux</td>
-                    <td><input type="number" class="form-control" name="enduit-chaux" placeholder="m²"></td>
-                    <td>Bas revenus et moyens revenus - Chaux humide ou sèche</td>
-                    <td>sur murs intérieurs, l'intérieur des murs extérieurs, bas des planchers porteurs</td>
-                    <td><input type="text" class="form-control" id="resultat-enduit-chaux" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Electricité</td>
-                    <td><input type="number" class="form-control" name="electricité" placeholder="m²"></td>
-                    <td>Bas revenus et moyens revenus</td>
-                    <td>certificat de conformité obligatoire (200 euros)</td>
-                    <td><input type="text" class="form-control" id="resultat-electricité" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Sanitaire remplacé</td>
-                    <td><input type="number" class="form-control" name="sanitaire-remplacé" placeholder="4"></td>
-                    <td>Bas revenus et moyens revenus</td>
-                    <td>Etre confortable aux toilettes ou dans sa baignoire</td>
-                    <td><input type="text" class="form-control" id="resultat-sanitaire-remplacé" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Sanitaire complémentaire</td>
-                    <td><input type="number" class="form-control" name="sanitaire-complementaire" placeholder="2"></td>
-                    <td>Bas revenus et moyens revenus</td>
-                    <td>C'est bien d'avoir plusieurs toilettes</td>
-                    <td><input type="text" class="form-control" id="resultat-sanitaire-complementaire" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Pompe à chaleur/géothermique (sol-eau/eau-eau)</td>
-                    <td><input type="number" class="form-control" name="pac-geometrique" placeholder="kW"></td>
-                    <td>≥ 6 kW – COP ≥ 4</td>
-                    <td>Idéale pour les nouvelles constructions ou rénovations lourdes avec grand terrain disponible, recherchant un rendement maximal et stable toute l’année.</td>
-                    <td><input type="text" class="form-control" id="result-pac-geometrique" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Pompe à chaleur/air-eau</td>
-                    <td><input type="number" class="form-control" name="pac-air-eau" placeholder="kW"></td>
-                    <td>≥ 5 kW – COP ≥ 3.2</td>
-                    <td>Parfaite pour les rénovations avec plancher chauffant ou radiateurs basse température, surtout en remplacement d’une chaudière.</td>
-                    <td><input type="text" class="form-control" id="result-pac-air-eau" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Pompe à chaleur/air-air</td>
-                    <td><input type="number" class="form-control" name="pac-air-air" placeholder="kW"></td>
-                    <td>≥ 2 kW – COP ≥ 3.0</td>
-                    <td>Adaptée aux petits logements bien isolés ou comme solution de chauffage/climatisation d’appoint.</td>
-                    <td><input type="text" class="form-control" id="result-pac-air-air" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Pompe à chaleur/hybride avec boiler thermodynamique</td>
-                    <td><input type="number" class="form-control" name="pac-hybride" placeholder="kW"></td>
-                    <td>SCOP PAC : 3,5 à 4,2 - Boiler : COP 2,5 à 3,5 & pour la puissance: PAC : 5 à 10 kW/Chaudière gaz : 15 à 25 kW/Boiler : 150–300 L</td>
-                    <td>Recommandée quand on veut réduire les coûts d’énergie sans se passer complètement du gaz, notamment dans les rénovations où l’isolation reste moyenne.</td>
-                    <td><input type="text" class="form-control" id="result-pac-hybride" readonly></td>
-                  </tr>
-                    <tr>
-                    <td>Boiler thermodynamique</td>
-                    <td><input type="number" class="form-control" name="boiler-thermodynamique" placeholder="1"></td>
-                    <td>Info utile?</td>
-                    <td>Conseils?</td>
-                    <td><input type="text" class="form-control" id="result-boiler-thermodynamique" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Panneaux solaire pour eau chaude sanitaire</td>
-                    <td><input type="number" class="form-control" name="chauffage-solaire" placeholder="m²"></td>
-                    <td>Rendement ≥ 65%</td>
-                    <td>Placer les panneaux en complément d'une chaudière existante </td>
-                    <td><input type="text" class="form-control" id="result-chauffage-solaire" readonly></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
-                  Enregistrer les données techniques
-                </button>
-              </div>
-          </div>
-          </div>
-      </div>
+    <!-- 8. Bouton pour enregistrer les données techniques -->
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
+        Enregistrer les données techniques
+      </button>
     </div>
+
   </div>
   <script type="module" src="js/main.js"></script>
 </body>

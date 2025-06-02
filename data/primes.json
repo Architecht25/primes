@@ -240,163 +240,113 @@
     "image": "images/escalier.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "champignon maison",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "champignon_maison",
+    "image": "images/champignon_maison.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "enduit à la chaux",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "enduit_chaux",
+    "image": "images/enduit_chaux.webp"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Electricité",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "électricité",
+    "image": "images/electricité.webp"
  },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Sanitaire à remplacer",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "sanitaire_à_remplacer",
+    "image": "images/sanitaire_remplacé.jpg"
 },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Sanitaire complémentaire",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "sanitaire_complementaire",
+    "image": "images/sanitaire_complémentaire.jpg"
  },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Pompe à chaleur/géothermique (sol-eau/eau-eau)",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "pac_géothermique",
+    "image": "images/pac_géothermique.png"
  },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Pompe à chaleur/air-eau",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "pac_air_eau",
+    "image": "images/pac_air_eau.webp"
  },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Pompe à chaleur air/air",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "pac_air_air",
+    "image": "images/pac_air_air.jpg"
 },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Pompe à chaleur/hybride avec boiler thermodynamique",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "pac_hybride",
+    "image": "images/pac_hybride.webp"
 },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Boiler thermodynamique",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "boiler_thermodynamique",
+    "image": "images/boiler_thermodynamique.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Panneaux solaires pour eau chaude sanitaire",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
-},
-  {
-    "titre": "Isolation murs par l'extérieur",
-    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
-    "conseil": "l'application d'une isolation de façade [...]",
-    "document": "Info utile?",
-    "placeholder": "m²",
-    "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
-},
-  {
-    "titre": "Isolation murs par l'extérieur",
-    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
-    "conseil": "l'application d'une isolation de façade [...]",
-    "document": "Info utile?",
-    "placeholder": "m²",
-    "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
- },
-  {
-    "titre": "Isolation murs par l'extérieur",
-    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
-    "conseil": "l'application d'une isolation de façade [...]",
-    "document": "Info utile?",
-    "placeholder": "m²",
-    "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
-},
-  {
-    "titre": "Isolation murs par l'extérieur",
-    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
-    "conseil": "l'application d'une isolation de façade [...]",
-    "document": "Info utile?",
-    "placeholder": "m²",
-    "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
-},
-  {
-    "titre": "Isolation murs par l'extérieur",
-    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
-    "conseil": "l'application d'une isolation de façade [...]",
-    "document": "Info utile?",
-    "placeholder": "m²",
-    "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
-  }
+    "slug": "chauffe_eau_solaire",
+    "image": "images/chauffe_eau_solaire.jpeg"
+}
 ]
