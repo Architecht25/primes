@@ -5,12 +5,12 @@ import { initialiserFormulaires } from './ui/forms.js';
 import { initialiserCartes } from './ui/cartes.js';
 
 import { initialiserCategories } from './logic/categories.js';
-import { initialiserPrimes } from './logic/primes.js';
+// import { initialiserPrimes } from './logic/primes.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   initialiserFleches();
   initialiserFormulaires();
   initialiserCategories();
   initialiserCartes();
-  initialiserPrimes();
+  // initialiserPrimes();
 });
