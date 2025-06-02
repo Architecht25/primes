@@ -120,124 +120,124 @@
     "image": "images/isolation_mur_interieur.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Fondation des murs",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "Fondation_murs",
+    "image": "images/fondation_murs.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Démolition murs",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "démolitions_murs",
+    "image": "images/démolition_murs.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Finition murs",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "finition_murs",
+    "image": "images/finition_murs.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Humidité murs",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "humidité_murs",
+    "image": "images/humidité_murs.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Humidité murs enterrés",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "humidité_murs_enterrés",
+    "image": "images/humidite_murs_enterrés.webp"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "façade",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "facade",
+    "image": "images/facade.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Isolation du sol",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "isolation_sol",
+    "image": "images/isolation_sol.avif"
  },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Chape de sol",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "Chape de sol",
+    "image": "images/chape_sol.jpg"
  },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Champignon plancher",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "champignon_plancher",
+    "image": "images/champignon_plancher.jpg"
  },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Remplacement des châssis",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "remplacement_chassis",
+    "image": "images/remplacement_chassis.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Volets de fenêtres",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "volets",
+    "image": "images/volets.jpg"
   },
   {
-    "titre": "Isolation murs par l'extérieur",
+    "titre": "Escalier",
     "condition": "≥ 20 m² – R ≥ 3 m²K/W",
     "conseil": "l'application d'une isolation de façade [...]",
     "document": "Info utile?",
     "placeholder": "m²",
     "montant_m2": 35,
-    "slug": "isolation_murs_par_lexterieur",
-    "image": "images/isolation_murs_par_lexterieur.jpg"
+    "slug": "escalier",
+    "image": "images/escalier.jpg"
   },
   {
     "titre": "Isolation murs par l'extérieur",
