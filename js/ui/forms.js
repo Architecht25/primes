@@ -1,3 +1,4 @@
+ document.addEventListener("DOMContentLoaded", () => {
  // 🔹 Sélection du type de demandeur
   const select = document.getElementById("applicant-type");
   const sections = {
@@ -28,3 +29,4 @@
       sections[selectedType].style.display = "block";
     }
   });
+ });

@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", () => {
 // Liste des primes – chargées depuis un fichier JSON local
 fetch('data/primes.json')
   .then(response => response.json())
@@ -49,3 +49,4 @@ function afficherCartes(primes) {
     });
   });
 }
+}); 

@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", () => {
   // 🔹 Calcul dynamique des montants de primes
   const taux = {
     isolation_toiture: 30,
@@ -32,5 +32,4 @@
   });
 
   calculerEtAfficherPrimes(); // Initialisation automatique
-
-
+});

@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", () => {
   // 🔹 Dépliage "bien à rénover"
   const arrowBien = document.getElementById("arrow-bien");
   const formBien = document.getElementById("form-building");
@@ -28,4 +28,4 @@
     arrowPrimes.classList.toggle("bi-chevron-down", isVisible);
     arrowPrimes.classList.toggle("bi-chevron-up", !isVisible);
   });
-
+});
