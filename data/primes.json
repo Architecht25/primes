@@ -1,0 +1,402 @@
+[
+  {
+    "titre": "Normes de ventilation (invisivent ou VMC)",
+    "condition": "norme obligatoire",
+    "conseil": "Si pas respecté, pas de primes",
+    "document": "Info utile?",
+    "placeholder": "oui/non",
+    "montant_m2": 0,
+    "slug": "normes_de_ventilation_invisivent_ou_vmc",
+    "image": "images/ventilation.jpg"
+  },
+  {
+    "titre": "Certificat PEB après travaux",
+    "condition": "Très bon montant de prime actuellement",
+    "conseil": "Avoir au moins 2 classes de différence avec le certificat de départ",
+    "document": "voir la fiche technique",
+    "placeholder": "F",
+    "montant_m2": 0,
+    "slug": "certificat_peb_après_travaux",
+    "image": "images/certificat.png"
+  },
+  {
+    "titre": "Isolation toiture",
+    "condition": "R ≥ 4.5 m²K/W",
+    "conseil": "l'installation d'une isolation de toiture ou de plancher de grenier [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 30,
+    "slug": "isolation_toiture",
+    "image": "images/isolation_toiture.jpg"
+  },
+  {
+    "titre": "Démolition structure toiture",
+    "condition": "Info utile?",
+    "conseil": "la démolition des structures de toit existantes et la construction d'éléments porteurs",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 25,
+    "slug": "demolition_structure_toiture",
+    "image": "images/démolition_toiture.jpg"
+  },
+  {
+    "titre": "Champignon toiture",
+    "condition": "Info utile?",
+    "conseil": "le traitement des charpentes en bois contre les champignons et les insectes",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 20,
+    "slug": "champignon_toiture",
+    "image": "images/champignon_toiture.jpeg"
+  },
+  {
+    "titre": "Couverture toiture",
+    "condition": "Info utile?",
+    "conseil": "la réparation ou le renouvellement de l'abri et du revêtement imperméable [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 28,
+    "slug": "couverture_toiture",
+    "image": "images/couverture_toiture.webp"
+  },
+  {
+    "titre": "Eaux de pluie",
+    "condition": "Info utile?",
+    "conseil": "réparer ou renouveler les équipements et accessoires pour évacuer les eaux de pluie",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 15,
+    "slug": "eaux_de_pluie",
+    "image": "images/eaux_de_pluie.jpg"
+  },
+  {
+    "titre": "Accessoires de toiture",
+    "condition": "Info utile?",
+    "conseil": "les ouvertures de toit, telles que les fenêtres de toit (plates), les lucarnes, [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 20,
+    "slug": "accessoires_de_toiture",
+    "image": "images/accessoires_de_toiture.jpg"
+  },
+  {
+    "titre": "Toiture végétale",
+    "condition": "Info utile?",
+    "conseil": "l'enduit à la chaux humide ou sèche [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 20,
+    "slug": "chaux_toiture",
+    "image": "images/toiture_végétale.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "R ≥ 3,5 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_ext.jpeg"
+  },
+  {
+    "titre": "Isolation murs en coulisse",
+    "condition": "R ≥ 1.5 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_coulisse",
+    "image": "images/isolation_murs_coulisse.png"
+  },
+  {
+    "titre": "Isolation murs par l'intérieur",
+    "condition": "R ≥ 2 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_interieur",
+    "image": "images/isolation_mur_interieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+},
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+},
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+},
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+},
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+},
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+ },
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+},
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+},
+  {
+    "titre": "Isolation murs par l'extérieur",
+    "condition": "≥ 20 m² – R ≥ 3 m²K/W",
+    "conseil": "l'application d'une isolation de façade [...]",
+    "document": "Info utile?",
+    "placeholder": "m²",
+    "montant_m2": 35,
+    "slug": "isolation_murs_par_lexterieur",
+    "image": "images/isolation_murs_par_lexterieur.jpg"
+  }
+]
