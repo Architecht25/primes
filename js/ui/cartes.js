@@ -1,4 +1,3 @@
-import { initialiserPrimes } from '../logic/primes.js'; // ← à placer en haut du fichier si pas déjà fait
 // Cette fonction initialise les cartes de primes en chargeant les données depuis un fichier JSON
 // et en les affichant dans le conteneur prévu. Elle gère également les événements
 // pour le calcul dynamique des montants en fonction de la surface saisie par l'utilisateur.
@@ -10,8 +9,6 @@ export function initialiserCartes() {
     .then(response => response.json())
     .then(primes => {
       afficherCartes(primes);
-      // Appeler le calcul global APRÈS avoir injecté les cartes
-      initialiserPrimes();
     })
     .catch(error => console.error("Erreur de chargement JSON :", error));
 

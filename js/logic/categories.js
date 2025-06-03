@@ -47,7 +47,7 @@ export function initialiserCategories() {
       couleur = "alert-warning";
     } else {
       categorieTexte = "Catégorie A (revenus élevés)";
-      couleur = "alert-danger";
+      couleur = "alert-primary";
     }
 
     texte.textContent = categorieTexte;
