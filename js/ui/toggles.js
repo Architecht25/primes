@@ -1,3 +1,5 @@
+// le toggle des flèches permet de déplier ou replier les sections de la page,
+
 export function initialiserFleches() {
 console.log("🔄 initialiserFleches lancé");
 

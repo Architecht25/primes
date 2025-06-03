@@ -1,4 +1,8 @@
 import { initialiserPrimes } from '../logic/primes.js'; // ← à placer en haut du fichier si pas déjà fait
+// Cette fonction initialise les cartes de primes en chargeant les données depuis un fichier JSON
+// et en les affichant dans le conteneur prévu. Elle gère également les événements
+// pour le calcul dynamique des montants en fonction de la surface saisie par l'utilisateur.
+
 
 export function initialiserCartes() {
   // Liste des primes – chargées depuis un fichier JSON local
@@ -42,7 +46,7 @@ export function initialiserCartes() {
       container.appendChild(clone);
     });
 
-    // Calcul dynamique local (facultatif si calcul centralisé ailleurs)
+    // Calcul dynamique local (facultatif si calcul centralisé ailleurs - cette partie sera insérée dans initialiserPrimes)
     document.querySelectorAll(".prime-input").forEach(input => {
       input.addEventListener("input", (e) => {
         const slug = e.target.dataset.slug;

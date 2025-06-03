@@ -6,7 +6,9 @@ export function initialiserFormulaires() {
   const sections = {
     prive: document.getElementById("form-prive"),
     entreprise: document.getElementById("form-entreprise"),
-    copropriete: document.getElementById("form-copropriete")
+    copropriete: document.getElementById("form-copropriete"),
+    asbl: document.getElementById("form-asbl"),
+    cooperative: document.getElementById("form-cooperative")
   };
 
   Object.values(sections)

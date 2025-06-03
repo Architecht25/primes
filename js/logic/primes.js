@@ -1,3 +1,9 @@
+// cette fonction initialise les primes en fonction des champs de saisie
+// et calcule les montants en fonction des taux définis.
+// nous devons d'abord calculer ici les montants par carte prime, en fonction de la catégorie de prime (1, 2, 3 ou 4) et des données saisies.
+// ensuite nous calculerons le total des primes affichées dans la section "total des primes".
+// nous devons donc calculer 2 niveaux de primes puis afficher 2 niveaux de primes. 
+
 export function initialiserPrimes() {
   // 🔹 Calcul dynamique des montants de primes
   const taux = {
