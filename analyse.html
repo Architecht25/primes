@@ -23,8 +23,7 @@
 </head>
 <body class="p-4">
   <div class="container">
-    <h1 class="mb-4 text-center w-100">Ren0vate - Simulateur de Primes</h1>
-    <h2 class="mb-4 text-center w-100">Primes à la rénovation - Région Flamande</h2>
+    <h2 class="mb-4 text-center w-100">Déterminez votre catérgorie de prime (1, 2, 3 ou 4)!</h2>
 
     <!-- 1. SÉLECTION DU TYPE DE DEMANDEUR -->
     <div id="section-demandeur" class="mb-5">
@@ -304,7 +303,7 @@
                   required>
         <div class="d-flex justify-content-center">
           <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-bien">
-            Enregistrer les données
+            Enregistrer les données de votre bien
           </button>
         </div>
       </div>
@@ -324,55 +323,62 @@
         <input type="text" class="form-control mb-2" placeholder="Nom de l'architecte (si applicable)">
         <input type="text" class="form-control mb-2" placeholder="Coût total estimé des travaux">
         <div class="mb-3">
-        <label for="notes-chantier" class="form-label">Notes / remarques</label>
-        <textarea id="notes-chantier" class="form-control" rows="4" placeholder="Ajoutez ici vos remarques, observations, éléments importants…"></textarea>
-      </div>
-
+          <label for="notes-chantier" class="form-label">Notes / remarques</label>
+          <textarea id="notes-chantier" class="form-control" rows="4" placeholder="Ajoutez ici vos remarques, observations, éléments importants…"></textarea>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-success text-center mt-3" id="btn-toggle-chantier">
+            Enregistrer les données du chantier
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- 4. RESULTATS DES PRIMES (total + catégorie) ici je vais séparer les 2 affichages pour les rendre plus lisible-->
+    <!-- 4.1 RESULTATS - catégorie de prime -->
     <div id="section-resultats-primes" class="mb-4">
-
-      <div id="categorie-resultat" class="alert alert-success mt-4">
+      <div id="categorie-resultat" class="alert alert-primary mt-4">
         <strong>Catégorie de prime :</strong> <span id="categorie-prime">Veuillez encoder vos données personnelles.</span>
       </div>
+    </div>
 
-      <div id="prime-total-result" class="alert alert-success mt-4">
+    <h2 class="mb-4 text-center w-100">Calculez la valeur de vos primes!</h2>
+
+    <!-- 4.2 RESULTATS - calcul des primes -->
+    <div id="section-resultats-primes" class="mb-4">
+      <div id="prime-total-result" class="alert alert-primary mt-4">
         <strong>Total estimé des primes :</strong> <span id="total-primes-affiche">0 €</span>
       </div>
     </div>
 
-    <!-- 6. TEMPLATE - CARTES PRIMES/PRODUITS -->
-    <!-- Container pour les cartes -->
-    <div id="prime-cards-container" class="row gx-3 gy-4 mt-4"></div>
+    <!-- 5. TEMPLATE - CARTES PRIMES/PRODUITS -->
+    <div id="prime-cards-container" class="row gx-3 gy-4 mt-4">
+      <!-- Template HTML pour une carte -->
+      <template id="prime-card-template">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="prime-card p-3 h-100 shadow-sm bg-white border rounded">
+          <img class="card-img-top" src="" alt="Image prime">
+          <h5 class="prime-title"></h5>
+          <p class="prime-condition"></p>
+          <p class="prime-advice"></p>
+          <p class="prime-document"></p>
 
-    <!-- Template HTML pour une carte -->
-    <template id="prime-card-template">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="prime-card p-3 h-100 shadow-sm bg-white border rounded">
-        <img class="card-img-top" src="" alt="Image prime">
-        <h5 class="prime-title"></h5>
-        <p class="prime-condition"></p>
-        <p class="prime-advice"></p>
-        <p class="prime-document"></p>
-
-        <div class="input-group mb-3">
-          <input type="number"
-                class="form-control prime-input"
-                data-slug=""
-                name=""
-                placeholder="Surface en m²">
-          <span class="input-group-text bg-success text-white prime-result">0 €</span>
+          <div class="input-group mb-3">
+            <input type="number"
+                  class="form-control prime-input"
+                  data-slug=""
+                  name=""
+                  placeholder="Surface en m²">
+            <span class="input-group-text bg-success text-white prime-result">0 €</span>
+          </div>
         </div>
       </div>
+      </template>
     </div>
-  </template>
 
-    <!-- 7. BOUTON POUR ENREGISTRER LES DONNES TECHNIQUES DES CARTES PRIMES -->
+    <!-- 6. BOUTON POUR ENREGISTRER LES DONNES TECHNIQUES DES CARTES PRIMES -->
     <div class="d-flex justify-content-center">
       <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
-        Enregistrer les données techniques
+        Enregistrer votre simulation
       </button>
     </div>
 
