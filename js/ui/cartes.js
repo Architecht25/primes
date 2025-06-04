@@ -1,8 +1,3 @@
-// Cette fonction initialise les cartes de primes en chargeant les données depuis un fichier JSON
-// et en les affichant dans le conteneur prévu. Elle gère également les événements
-// pour le calcul dynamique des montants en fonction de la surface saisie par l'utilisateur.
-
-
 export function initialiserCartes() {
   // Liste des primes – chargées depuis un fichier JSON local
   fetch('data/primes.json')
@@ -33,24 +28,29 @@ export function initialiserCartes() {
 
       // ✅ Ajout des attributs nécessaires
       input.id = `input-${slug}`;
-      input.name = slug; // ← nécessaire pour initialiserPrimes()
+      input.name = slug;
       input.dataset.slug = slug;
-      input.dataset.montant = prime.montant_m2;
+      input.dataset.valeurs = JSON.stringify(prime.valeursParCategorie);
       input.placeholder = prime.placeholder || "Surface en m²";
 
-      resultSpan.id = `result-${slug}`; // ← nécessaire pour initialiserPrimes()
+      resultSpan.id = `result-${slug}`;
 
       container.appendChild(clone);
     });
 
-    // Calcul dynamique local (facultatif si calcul centralisé ailleurs - cette partie sera insérée dans initialiserPrimes)
+    // 🔄 Calcul dynamique selon la catégorie
     document.querySelectorAll(".prime-input").forEach(input => {
       input.addEventListener("input", (e) => {
         const slug = e.target.dataset.slug;
-        const montant = parseFloat(e.target.dataset.montant);
+        const valeurs = JSON.parse(e.target.dataset.valeurs);
         const surface = parseFloat(e.target.value) || 0;
-        const result = surface * montant;
 
+        // 🔹 Récupérer la catégorie sélectionnée ailleurs dans le formulaire
+        const categorieInput = document.getElementById("categorie-select");
+        const categorie = categorieInput ? categorieInput.value : "3"; // défaut à 3 si non trouvé
+        const montant = parseFloat(valeurs[categorie]) || 0;
+
+        const result = surface * montant;
         document.getElementById(`result-${slug}`).textContent = `${result.toLocaleString()} €`;
       });
     });
