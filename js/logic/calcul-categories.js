@@ -44,3 +44,12 @@ export function initialiserCalculCategorie() {
     resultElt.className = `alert alert-${couleur} mt-4`;
   });
 }
+
+export function getCategorieId() {
+  const span = document.getElementById("categorie-prime");
+  if (!span) return "3"; // Catégorie par défaut si rien trouvé
+
+  const texte = span.textContent.trim();
+  const match = texte.match(/\d+/); // Extrait le chiffre
+  return match ? match[0] : "3"; // Retourne "1", "2", "3", etc.
+}
