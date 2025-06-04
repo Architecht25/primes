@@ -1,21 +1,4 @@
 [
-{
-  "id": "ventilation_normes",
-  "slug": "normes_de_ventilation_invisivent_ou_vmc",
-  "titre": "Normes de ventilation (invisivent ou VMC)",
-  "unite": "oui/non",
-  "typeDeValeur": "binaire",
-  "valeursParCategorie": {
-    "1": 0,
-    "2": 0,
-    "3": 0
-  },
-  "condition": "Norme obligatoire",
-  "conseil": "Si pas respecté, pas de primes",
-  "document": "Preuve d’installation conforme (certificat ou photo)",
-  "placeholder": "oui/non",
-  "image": "images/ventilation.jpg"
-},
   {
   "id": "certificat_peb_apres",
   "slug": "certificat_peb_apres_travaux",
@@ -25,13 +8,32 @@
   "valeursParCategorie": {
     "1": 0,
     "2": 0,
-    "3": 0
+    "3": 0,
+    "4": 0
     },
-  "condition": "Très bon montant de prime actuellement",
-  "conseil": "Avoir au moins 2 classes de différence avec le certificat de départ",
-  "document": "Voir la fiche technique ou fournir le certificat PEB final",
-  "placeholder": "Ex : F",
+  "condition": "doit respecter les normes de ventilation 'invisivent ou double flux' et avoir une classe PEB au moins 2 classes inférieure à celle du certificat de départ",
+  "conseil": "Le certificat PEB final doit être réalisé par un certificateur agréé. Il doit attester de la conformité aux normes de ventilation et de l’amélioration de la performance énergétique.",
+  "document": "Certificat PEB final délivré par un certificateur agréé",
+  "placeholder": "Ex : C",
   "image": "images/certificat.png"
+},
+{
+  "id": "travaux_de_préparation_en_vue_de_lisolation",
+  "slug": "preparation_isolation",
+  "titre": "Travaux de préparation en vue de l’isolation",
+  "unite": "forfait",
+  "typeDeValeur": "surface",
+  "valeursParCategorie": {
+    "1": 15,
+    "2": 25,
+    "3": 35,
+    "4": 45
+  },
+  "condition": "travaux ok: démoussage, traitement contre les champignons, nettoyage des surfaces, etc. avant l’isolation",
+  "conseil": "Ces travaux préalables sont essentiels pour garantir l’efficacité de l’isolation. Ils incluent le nettoyage, le traitement des surfaces et la préparation des zones à isoler.",
+  "document": "Facture + diagnostic ou rapport d'expertise + attestation de traitement professionnel",
+  "placeholder": "Surface en m²",
+  "image": "images/preparation_isolation.jpg"
 },
 {
   "id": "isolation_toiture",
@@ -40,9 +42,10 @@
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
-    "1": 10,
-    "2": 20,
-    "3": 30
+    "1": 15,
+    "2": 25,
+    "3": 35,
+    "4": 45
   },
   "condition": "R ≥ 4.5 m²K/W",
   "conseil": "Prévoir une isolation continue et éviter les ponts thermiques. L'installation d'une isolation de toiture ou de plancher de grenier est généralement exigée.",
@@ -57,9 +60,10 @@
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
-    "1": 10,
-    "2": 18,
-    "3": 25
+    "1": 15,
+    "2": 25,
+    "3": 35,
+    "4": 45
   },
   "condition": "Travaux de démolition justifiés par une reconstruction ou transformation de la toiture",
   "conseil": "Inclut la démolition des structures de toit existantes et la construction d'éléments porteurs neufs",
@@ -68,32 +72,16 @@
   "image": "images/démolition_toiture.jpg"
 },
 {
-  "id": "traitement_champignons_toiture",
-  "slug": "champignon_toiture",
-  "titre": "Traitement toiture contre champignons",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 8,
-    "2": 14,
-    "3": 20
-  },
-  "condition": "Traitement curatif ou préventif de charpente contre champignons ou insectes xylophages",
-  "conseil": "Effectuer un diagnostic préalable pour cibler le bon traitement. Inclut l'application de produits fongicides ou insecticides sur bois de charpente.",
-  "document": "Facture détaillée + rapport de diagnostic ou attestation de traitement par un professionnel agréé",
-  "placeholder": "Surface en m²",
-  "image": "images/champignon_toiture.jpeg"
-},
-{
   "id": "couverture_toiture",
   "slug": "couverture_toiture",
   "titre": "Rénovation de la couverture de toiture",
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
-    "1": 12,
-    "2": 20,
-    "3": 28
+    "1": 15,
+    "2": 25,
+    "3": 35,
+    "4": 45
   },
   "condition": "Remplacement ou réparation complète de la couverture pour assurer l'étanchéité",
   "conseil": "La prime couvre le renouvellement ou la réparation de l’abri et du revêtement imperméable. Pensez à vérifier l’état du support et de l’isolation.",
@@ -108,9 +96,10 @@
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
-    "1": 6,
-    "2": 10,
-    "3": 15
+    "1": 15,
+    "2": 25,
+    "3": 35,
+    "4": 45
   },
   "condition": "Travaux visant à réparer ou renouveler les équipements d'évacuation des eaux pluviales (gouttières, descentes, raccords, etc.)",
   "conseil": "Vérifier l’état des gouttières, chéneaux et descentes. Une bonne évacuation protège la façade et les fondations.",
@@ -125,9 +114,10 @@
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
-    "1": 8,
-    "2": 14,
-    "3": 20
+    "1": 15,
+    "2": 25,
+    "3": 35,
+    "4": 45
   },
   "condition": "Installation ou remplacement d’accessoires de toiture tels que lucarnes, fenêtres de toit, sorties de ventilation ou éléments d’accès",
   "conseil": "Inclut les ouvertures de toit (lucarnes, fenêtres plates ou inclinées) et autres éléments non porteurs. Vérifier l’étanchéité autour des ouvertures.",
@@ -142,9 +132,10 @@
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
-    "1": 8,
-    "2": 14,
-    "3": 20
+    "1": 15,
+    "2": 25,
+    "3": 35,
+    "4": 45
   },
   "condition": "Application d’un enduit à la chaux humide ou sèche sur toiture pour protection ou isolation complémentaire",
   "conseil": "Veiller à l’homogénéité de l’application. L’enduit à la chaux régule l’humidité et améliore la durabilité des matériaux.",
@@ -161,7 +152,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "R ≥ 3,5 m²K/W (isolation thermique par l'extérieur)",
   "conseil": "L’application d’un isolant en façade améliore fortement les performances thermiques. Privilégier les matériaux résistants à l’humidité.",
@@ -178,7 +170,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "R ≥ 1.5 m²K/W (isolation dans la coulisse entre les murs)",
   "conseil": "L’application d’un isolant dans la coulisse permet de préserver l’esthétique de la façade tout en améliorant la performance énergétique.",
@@ -195,30 +188,14 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "R ≥ 2 m²K/W (isolation thermique par l’intérieur)",
   "conseil": "L’isolation par l’intérieur est moins coûteuse que par l’extérieur, mais attention aux ponts thermiques et à la condensation. Privilégier les matériaux à faible conductivité.",
   "document": "Facture + attestation de l’entreprise + localisation précise des parois isolées",
   "placeholder": "Surface en m²",
   "image": "images/isolation_mur_interieur.jpg"
-},
-{
-  "id": "isolation_fondation_murs",
-  "slug": "fondation_murs",
-  "titre": "Isolation des fondations des murs",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W",
-  "conseil": "L’isolation des fondations permet de réduire les déperditions par le bas. Elle est particulièrement utile pour améliorer le confort au niveau des murs bas et des sols.",
-  "document": "Facture + attestation de l’entreprise + schéma des zones de fondations isolées",
-  "placeholder": "Surface en m²",
-  "image": "images/fondation_murs.jpg"
 },
 {
   "id": "demolition_murs",
@@ -229,7 +206,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W si reconstruction avec isolation",
   "conseil": "La prime couvre la démolition de murs lorsqu’elle s’accompagne d’une reconstruction intégrant une isolation performante. Veiller à respecter les règles de stabilité et d’urbanisme.",
@@ -238,55 +216,22 @@
   "image": "images/démolition_murs.jpg"
 },
 {
-  "id": "finition_murs",
-  "slug": "finition_murs",
-  "titre": "Finition des murs après isolation",
+  "id": "finition_murs_interieur",
+  "slug": "finition_murs_interieur",
+  "titre": "Finition des murs intérieurs après isolation",
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W (uniquement si liée à un chantier d’isolation)",
   "conseil": "La finition comprend les enduits, bardages ou parements qui protègent l’isolant. Veillez à la compatibilité des matériaux avec l’isolant posé.",
   "document": "Facture + preuve que la finition est liée à un chantier d’isolation (photos ou attestation)",
   "placeholder": "Surface en m²",
   "image": "images/finition_murs.jpg"
-},
-{
-  "id": "humidite_murs_enterres",
-  "slug": "humidite_murs_enterres",
-  "titre": "Traitement de l’humidité des murs enterrés",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W si isolation associée",
-  "conseil": "Les murs enterrés nécessitent un traitement spécifique contre l’humidité avant toute isolation : drainage, étanchéité par l’extérieur ou barrière contre les remontées capillaires.",
-  "document": "Facture + attestation de traitement de l’humidité + photos avant/après ou schéma technique",
-  "placeholder": "Surface en m²",
-  "image": "images/humidite_murs_enterrés.webp"
-},
-{
-  "id": "isolation_facade",
-  "slug": "facade",
-  "titre": "Isolation de la façade",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W (isolation thermique de façade)",
-  "conseil": "L’application d’une isolation en façade permet une amélioration significative des performances énergétiques. Elle peut se faire par l’extérieur ou l’intérieur selon les contraintes architecturales.",
-  "document": "Facture + attestation de l’entreprise + indication du type de façade et du système isolant utilisé",
-  "placeholder": "Surface en m²",
-  "image": "images/facade.jpg"
 },
 {
   "id": "isolation_sol",
@@ -297,7 +242,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W (isolation thermique du sol)",
   "conseil": "L’isolation du sol réduit les pertes de chaleur par le bas et améliore le confort intérieur. Elle peut se faire par le dessous (vide ventilé) ou par le dessus (plancher isolant).",
@@ -314,7 +260,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W (chape avec isolation thermique)",
   "conseil": "Une chape isolante permet de traiter les pertes thermiques par le sol. Elle est souvent utilisée en complément d’un plancher chauffant ou d’une rénovation complète du sol.",
@@ -323,32 +270,16 @@
   "image": "images/chape_sol.jpg"
 },
 {
-  "id": "traitement_champignon_plancher",
-  "slug": "champignon_plancher",
-  "titre": "Traitement du plancher contre champignons",
+  "id": "remplacement_chassis_et_portes",
+  "slug": "remplacement_chassis_et_portes",
+  "titre": "Remplacement des châssis et portes",
   "unite": "m²",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
-  },
-  "condition": "Surface ≥ 20 m² (traitement curatif préalablement à une isolation ou rénovation du plancher)",
-  "conseil": "Un traitement antifongique du plancher est indispensable avant toute isolation ou pose de nouveaux matériaux si des signes d’humidité ou de champignons sont présents.",
-  "document": "Facture + attestation de traitement + diagnostic préalable ou photos des zones traitées",
-  "placeholder": "Surface en m²",
-  "image": "images/champignon_plancher.jpg"
-},
-{
-  "id": "remplacement_chassis",
-  "slug": "remplacement_chassis",
-  "titre": "Remplacement des châssis",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Vitrage superisolant et châssis avec Uw ≤ 1,5 W/m²K",
   "conseil": "Le remplacement des châssis améliore l’étanchéité à l’air et les performances thermiques. Optez pour des vitrages superisolants (type 1.1 ou triple) et des châssis performants.",
@@ -365,64 +296,14 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Volets intégrés ou ajoutés à des fenêtres à haute performance thermique",
   "conseil": "Les volets contribuent à l’isolation thermique et à la sécurité. Ils sont souvent admis en complément d’un remplacement de châssis ou d’une rénovation complète de l’enveloppe.",
   "document": "Facture + descriptif du modèle posé + lien avec le remplacement des fenêtres si applicable",
   "placeholder": "Surface en m²",
   "image": "images/volets.jpg"
-},
-{
-  "id": "renovation_escalier",
-  "slug": "escalier",
-  "titre": "Rénovation ou reconstruction d’escalier",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Travaux liés à un réaménagement global ou à une amélioration de la performance énergétique",
-  "conseil": "Les travaux d’escalier peuvent être subsidiés s’ils s’intègrent dans un chantier plus large (isolation, réaménagement de volume habitable, accessibilité). Documentez le lien avec ces travaux.",
-  "document": "Facture + attestation de lien avec des travaux structurels ou d’isolation + photos avant/après",
-  "placeholder": "Surface en m²",
-  "image": "images/escalier.jpg"
-},
-{
-  "id": "traitement_champignons_maison",
-  "slug": "champignon_maison",
-  "titre": "Traitement contre les champignons dans l’habitation",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Surface ≥ 20 m² (traitement curatif contre champignons ou moisissures, dans le cadre d’un assainissement ou d’une rénovation énergétique)",
-  "conseil": "Un traitement antifongique est indispensable avant toute isolation ou rénovation de parois humides. Il peut inclure des injections, décapages ou pulvérisations selon le type de contamination.",
-  "document": "Facture + diagnostic ou rapport d'expertise + attestation de traitement professionnel",
-  "placeholder": "Surface en m²",
-  "image": "images/champignon_maison.jpg"
-},
-{
-  "id": "enduit_chaux",
-  "slug": "enduit_chaux",
-  "titre": "Application d’enduit à la chaux",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Surface ≥ 20 m² (utilisation d’un enduit à la chaux dans le cadre d’une rénovation thermique ou d’assainissement)",
-  "conseil": "L’enduit à la chaux est adapté aux bâtiments anciens. Il favorise la régulation de l’humidité et améliore la perspirance des murs. À privilégier avec des isolants naturels.",
-  "document": "Facture + fiche technique du produit + attestation de mise en œuvre professionnelle",
-  "placeholder": "Surface en m²",
-  "image": "images/enduit_chaux.webp"
 },
 {
   "id": "renovation_electricite",
@@ -433,7 +314,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Travaux de rénovation globale incluant la mise en conformité de l’électricité intérieure",
   "conseil": "La mise en conformité électrique est souvent exigée lors de rénovations profondes. Veiller à obtenir un rapport de contrôle conforme (RGIE) en fin de chantier.",
@@ -442,38 +324,22 @@
   "image": "images/electricité.webp"
 },
 {
-  "id": "remplacement_sanitaire",
-  "slug": "sanitaire_a_remplacer",
-  "titre": "Remplacement d’équipements sanitaires",
-  "unite": "m²",
+  "id": "préparation_sanitaire",
+  "slug": "équipements_sanitaires",
+  "titre": "Préapration des équipements sanitaires",
+  "unite": "forfait",
   "typeDeValeur": "surface",
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Remplacement d’équipements sanitaires vétustes dans le cadre d’une rénovation globale",
   "conseil": "Le remplacement des sanitaires est subsidiable s’il s’intègre à une rénovation énergétique complète (ex. remplacement de la tuyauterie, raccordement à une production d’eau chaude plus efficace).",
   "document": "Facture détaillée + attestation de l’entrepreneur + photos avant/après ou plan d’intervention",
   "placeholder": "Surface en m²",
   "image": "images/sanitaire_remplacé.jpg"
-},
-{
-  "id": "installation_sanitaire_complementaire",
-  "slug": "sanitaire_complementaire",
-  "titre": "Installation sanitaire complémentaire",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Ajout de sanitaires dans le cadre d’une extension ou d’un réaménagement global",
-  "conseil": "L’ajout d’un WC, d’une salle de bain ou d’un point d’eau peut être subsidié s’il est justifié dans un contexte de transformation ou d’amélioration des conditions de vie.",
-  "document": "Facture + plan ou croquis du réaménagement + attestation de l’entrepreneur",
-  "placeholder": "Surface en m²",
-  "image": "images/sanitaire_complémentaire.jpg"
 },
 {
   "id": "pac_geothermique",
@@ -484,7 +350,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Installation d’une PAC géothermique certifiée, couplée à un système de chauffage central",
   "conseil": "Très performante, mais nécessite un forage ou un réseau enterré. Faire réaliser une étude de sol préalable.",
@@ -501,7 +368,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Installation d’une PAC air-eau avec label de performance énergétique (COP ≥ 3,5)",
   "conseil": "Solution répandue et efficace en rénovation, idéale avec chauffage par le sol ou radiateurs basse température.",
@@ -518,7 +386,8 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Installation d’un système air-air avec fonction chauffage (PAC réversible, split ou multisplit)",
   "conseil": "Système souvent utilisé en appoint ou dans les logements sans chauffage central. Peut aussi rafraîchir en été.",
@@ -535,46 +404,13 @@
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
-    "3": 35
+    "3": 35,
+    "4": 45
   },
   "condition": "Système combiné intégrant une PAC et un boiler thermodynamique pour chauffage et ECS",
   "conseil": "Idéal en rénovation pour combiner gain énergétique et confort sanitaire. Vérifier l’espace disponible pour le ballon.",
   "document": "Facture + schéma d’installation + fiche produit certifiée",
   "placeholder": "Surface en m²",
   "image": "images/pac_hybride.webp"
-},
-{
-  "id": "boiler_thermodynamique",
-  "slug": "boiler_thermodynamique",
-  "titre": "Boiler thermodynamique",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Installation d’un boiler thermodynamique pour eau chaude sanitaire (COP ≥ 2,5)",
-  "conseil": "Consomme peu d’électricité pour produire de l’eau chaude. À installer dans un local ventilé non chauffé.",
-  "document": "Facture + fiche technique + attestation de performance",
-  "placeholder": "Surface en m²",
-  "image": "images/boiler_thermodynamique.jpg"
-},
-{
-  "id": "chauffe_eau_solaire",
-  "slug": "chauffe_eau_solaire",
-  "titre": "Panneaux solaires pour eau chaude sanitaire",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35
-  },
-  "condition": "Installation d’un système solaire thermique certifié (capteurs + ballon d’eau chaude)",
-  "conseil": "Solution renouvelable idéale pour réduire la consommation d’énergie primaire. Fonctionne même en hiver avec appoint électrique ou gaz.",
-  "document": "Facture + plan d’installation + certificat Solar Keymark",
-  "placeholder": "Surface en m²",
-  "image": "images/chauffe_eau_solaire.jpeg"
 }
 ]

@@ -1,17 +1,17 @@
-import 'bootstrap'; // Active les composants JS de Bootstrap
+import 'bootstrap';
 
-import { initialiserFleches}  from './ui/toggles.js';
+import { initialiserFleches }  from './ui/toggles.js';
 import { initialiserFormulaires } from './ui/forms.js';
 import { initialiserCartes } from './ui/cartes.js';
 
-import { initialiserCategories } from './logic/categories.js';
+import { initialiserCalculCategorie } from './logic/calcul-categories.js';
 import { initialiserPrimes } from './logic/primes.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("main.js chargé");
   initialiserFleches();
   initialiserFormulaires();
-  initialiserCategories();
+  initialiserCalculCategorie(); // ✅ lance le calcul avec le bouton
   initialiserCartes();
   initialiserPrimes();
 });
