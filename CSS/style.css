@@ -59,3 +59,82 @@ h4 {
       background-color: lightblue;
       border: 1px solid #000;
     }
+
+    /* ======================= RESPONSIVE ======================= */
+
+/* Smartphones (portrait et paysage, moins de 576px) */
+@media (max-width: 575.98px) {
+  body {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  .prime-card {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  .prime-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-group .form-control {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .input-group .input-group-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-section,
+  #prime-cards-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .form-control,
+  select {
+    font-size: 1rem;
+  }
+
+  .prime-title {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .prime-condition,
+  .prime-advice,
+  .prime-document {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ==================== RESPONSIVE GÉNÉRAL ==================== */
+@media (max-width: 576px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-chantier {
+    flex-direction: column;
+  }
+
+  .box {
+    padding: 1rem;
+  }
+}
