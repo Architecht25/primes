@@ -22,8 +22,8 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  image-rendering: auto;          /* Laisse le navigateur gérer le rendu */
+  /* background-attachment: fixed; */ /* ⚠️ À activer uniquement si utile */
+  image-rendering: auto;
 }
 
 .container {
@@ -49,24 +49,26 @@ h4 {
 }
 
 .container-chantier {
-      display: flex;
-      gap: 20px; /* espace entre les divs */
-    }
+  display: flex;
+  gap: 20px;
+}
 
 .box {
-      flex: 1; /* prend la moitié de l'espace */
-      padding: 20px;
-      background-color: lightblue;
-      border: 1px solid #000;
-    }
+  flex: 1;
+  padding: 20px;
+  background-color: var(--primary-light);
+  border: 1px solid #000;
+}
 
-    /* ======================= RESPONSIVE ======================= */
-
-/* Smartphones (portrait et paysage, moins de 576px) */
-@media (max-width: 575.98px) {
+/* ======================= RESPONSIVE ======================= */
+@media (max-width: 576px) {
   body {
     font-size: 0.95rem;
     padding: 1rem;
+  }
+
+  .container {
+    padding: 0.5rem;
   }
 
   .prime-card {
@@ -115,21 +117,7 @@ h4 {
   .prime-document {
     font-size: 0.95rem;
   }
-}
 
-
-/* ==================== RESPONSIVE GÉNÉRAL ==================== */
-@media (max-width: 576px) {
-  body {
-    padding: 1rem;
-  }
-
-  .container {
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 576px) {
   .container-chantier {
     flex-direction: column;
   }
