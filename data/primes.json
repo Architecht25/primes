@@ -1,57 +1,347 @@
 [
-  {
-  "id": "certificat_peb_apres",
-  "slug": "certificat_peb_apres_travaux",
-  "titre": "Certificat PEB après travaux",
-  "unite": "classe PEB",
-  "typeDeValeur": "binaire",
-  "valeursParCategorie": {
-    "1": 0,
-    "2": 0,
-    "3": 0,
-    "4": 0
-    },
-  "condition": "doit respecter les normes de ventilation 'invisivent ou double flux' et avoir une classe PEB au moins 2 classes inférieure à celle du certificat de départ",
-  "conseil": "Le certificat PEB final doit être réalisé par un certificateur agréé. Il doit attester de la conformité aux normes de ventilation et de l’amélioration de la performance énergétique.",
-  "document": "Certificat PEB final délivré par un certificateur agréé",
-  "placeholder": "Ex : C",
-  "image": "images/certificat.png"
-},
-{
-  "id": "travaux_de_préparation_en_vue_de_lisolation",
-  "slug": "preparation_isolation",
-  "titre": "Travaux de préparation en vue de l’isolation",
-  "unite": "forfait",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "travaux ok: démoussage, traitement contre les champignons, nettoyage des surfaces, etc. avant l’isolation",
-  "conseil": "Ces travaux préalables sont essentiels pour garantir l’efficacité de l’isolation. Ils incluent le nettoyage, le traitement des surfaces et la préparation des zones à isoler.",
-  "document": "Facture + diagnostic ou rapport d'expertise + attestation de traitement professionnel",
-  "placeholder": "Surface en m²",
-  "image": "images/preparation_isolation.jpg"
-},
-{
+ {
   "id": "isolation_toiture",
   "slug": "isolation_toiture",
   "titre": "Isolation de la toiture",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 5750,
+      "condition": "isolation et rénovation"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 4025,
+      "condition": "isolation et rénovation"
+    },
+    "2": {
+      "type": "montant_m2_et_limite",
+      "montant_m2": 16,
+      "surface_max": 100,
+      "plafond_pourcentage": 25,
+      "condition": "isolation seule"
+    },
+    "1": {
+      "type": "montant_m2_et_limite",
+      "montant_m2": 8,
+      "surface_max": 100,
+      "plafond_pourcentage": 20,
+      "condition": "isolation seule"
+    }
   },
   "condition": "R ≥ 4.5 m²K/W",
-  "conseil": "Prévoir une isolation continue et éviter les ponts thermiques. L'installation d'une isolation de toiture ou de plancher de grenier est généralement exigée.",
-  "document": "Facture + attestation de l’entreprise",
+  "conseil": "Utiliser un isolant certifié (laine minérale, PIR, etc.) et vérifier l'étanchéité.",
+  "document": "Facture détaillée + attestation de conformité de l’entreprise",
   "placeholder": "Surface en m²",
   "image": "images/isolation_toiture.jpg"
+},
+{
+  "id": "isolation_murs",
+  "slug": "isolation_murs_ext",
+  "titre": "Isolation des murs extérieurs",
+  "unite": "m²",
+  "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 5000,
+      "condition": "isolation et rénovation"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 3500,
+      "condition": "isolation et rénovation"
+    },
+    "2": {
+      "type": "montant_variable_m2_et_limite",
+      "montants_m2": {
+        "spouwmuur": 7.5,
+        "interieur": 15,
+        "exterieur": 22.5
+      },
+      "surface_max": 100,
+      "plafond_pourcentage": 25,
+      "condition": "isolation seule"
+    },
+    "1": {
+      "type": "montant_variable_m2_et_limite",
+      "montants_m2": {
+        "spouwmuur": 5,
+        "interieur": 10,
+        "exterieur": 15
+      },
+      "surface_max": 100,
+      "plafond_pourcentage": 20,
+      "condition": "isolation seule"
+    }
+  },
+  "condition": "R ≥ 3.5 m²K/W (selon méthode – spouwmuur, intérieur ou extérieur)",
+  "conseil": "Vérifiez les ponts thermiques, choisissez la méthode adaptée (spouwmuur, intérieur, extérieur).",
+  "document": "Facture + attestation de l’entreprise avec méthode utilisée",
+  "placeholder": "Surface en m²",
+  "image": "images/isolation_murs.jpg"
+},
+{
+  "id": "isolation_sol",
+  "slug": "isolation_sol",
+  "titre": "Isolation du sol / plancher bas",
+  "unite": "m²",
+  "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 1500,
+      "condition": "isolation et rénovation"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 1050,
+      "condition": "isolation et rénovation"
+    },
+    "2": {
+      "type": "montant_m2_et_limite",
+      "montant_m2": 9,
+      "surface_max": 75,
+      "plafond_pourcentage": 25,
+      "condition": "isolation seule"
+    },
+    "1": {
+      "type": "montant_m2_et_limite",
+      "montant_m2": 6,
+      "surface_max": 75,
+      "plafond_pourcentage": 20,
+      "condition": "isolation seule"
+    }
+  },
+  "condition": "Isolation thermique du plancher bas sur vide sanitaire ou terre-plein",
+  "conseil": "Privilégier les isolants à forte résistance thermique. Traiter également les ponts thermiques si possible.",
+  "document": "Facture détaillée + preuve du type d’isolation installée",
+  "placeholder": "Surface en m²",
+  "image": "images/isolation_sol.jpg"
+},
+{
+  "id": "chassis_portes",
+  "slug": "ramen_deuren",
+  "titre": "Remplacement des châssis et portes extérieures",
+  "unite": "m²",
+  "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 5250,
+      "condition": "remplacement du vitrage et des menuiseries extérieures – ventilation obligatoire"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 3675,
+      "condition": "remplacement du vitrage et des menuiseries extérieures – ventilation obligatoire"
+    },
+    "2": {
+      "type": "montant_m2_et_limite",
+      "montant_m2": 64,
+      "surface_max": 20,
+      "plafond_pourcentage": 25,
+      "condition": "remplacement du vitrage uniquement – ventilation obligatoire"
+    },
+    "1": {
+      "type": "montant_m2_et_limite",
+      "montant_m2": 30,
+      "surface_max": 20,
+      "plafond_pourcentage": 20,
+      "condition": "remplacement du vitrage uniquement – ventilation obligatoire"
+    }
+  },
+  "condition": "Vitrage HR++ (U ≤ 1.1 W/m²K) + ventilation conforme (type invisivent ou VMC)",
+  "conseil": "Veillez à intégrer un système de ventilation efficace lors du remplacement des menuiseries.",
+  "document": "Facture + attestation de l’entreprise + preuve du respect des normes de ventilation",
+  "placeholder": "Surface vitrée en m²",
+  "image": "images/chassis_portes.jpg"
+},
+{
+  "id": "preparatifs_isolation",
+  "slug": "voorbereiding_isolatie",
+  "titre": "Travaux préparatoires pour l’isolation",
+  "unite": "€",
+  "typeDeValeur": "facture",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 2000,
+      "condition": "Travaux préparatoires en vue d'une isolation – uniquement si la prime isolation est demandée"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 1400,
+      "condition": "Travaux préparatoires en vue d'une isolation – uniquement si la prime isolation est demandée"
+    },
+    "2": {
+      "type": "prime_conditionnelle",
+      "valeur": 0,
+      "condition": "Prime complémentaire uniquement si la prime isolation est demandée"
+    },
+    "1": {
+      "type": "prime_conditionnelle",
+      "valeur": 0,
+      "condition": "Prime complémentaire uniquement si la prime isolation est demandée"
+    }
+  },
+  "condition": "Les travaux doivent précéder une isolation effective et être facturés séparément",
+  "conseil": "Pensez à intégrer ces travaux dans le devis global mais à les distinguer clairement",
+  "document": "Facture détaillée + preuve des travaux réalisés en amont d’une isolation",
+  "placeholder": "Montant des travaux préparatoires",
+  "image": "images/preparatifs_isolation.jpg"
+},
+{
+  "id": "preparatifs_techniques",
+  "slug": "voorbereiding_sanitair_elec",
+  "titre": "Travaux préparatoires sanitaires et électricité",
+  "unite": "€",
+  "typeDeValeur": "facture",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 3000,
+      "condition": "Travaux liés au renouvellement des réseaux en vue d'une rénovation – prime uniquement si la prime principale est demandée"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 2100,
+      "condition": "Travaux liés au renouvellement des réseaux en vue d'une rénovation – prime uniquement si la prime principale est demandée"
+    },
+    "2": {
+      "type": "prime_conditionnelle",
+      "valeur": 0,
+      "condition": "Prime complémentaire uniquement si une prime principale (type isolation ou équipement) est demandée"
+    },
+    "1": {
+      "type": "prime_conditionnelle",
+      "valeur": 0,
+      "condition": "Prime complémentaire uniquement si une prime principale (type isolation ou équipement) est demandée"
+    }
+  },
+  "condition": "Doit concerner les réseaux intérieurs à remplacer avant travaux principaux (chauffage, électricité, sanitaire)",
+  "conseil": "Séparez ces interventions dans le devis pour les rendre éligibles",
+  "document": "Facture + justificatif des travaux concernés",
+  "placeholder": "Montant des travaux techniques",
+  "image": "images/preparatifs_techniques.jpg"
+},
+{
+  "id": "pompe_a_chaleur",
+  "slug": "warmtepomp",
+  "titre": "Pompe à chaleur",
+  "unite": "type_de_pompe",
+  "typeDeValeur": "forfait",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "forfait_et_plafond_facture",
+      "forfaits": {
+        "geothermique": 8000,
+        "air_eau": 6000,
+        "air_air": 600,
+        "hybride": 4000
+      },
+      "plafond_pourcentage": 50,
+      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+    },
+    "3": {
+      "type": "forfait_et_plafond_facture",
+      "forfaits": {
+        "geothermique": 6000,
+        "air_eau": 4500,
+        "air_air": 450,
+        "hybride": 3000
+      },
+      "plafond_pourcentage": 35,
+      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+    },
+    "2": {
+      "type": "forfait_et_plafond_facture",
+      "forfaits": {
+        "geothermique": 4000,
+        "air_eau": 2250,
+        "air_air": 300,
+        "hybride": 1500
+      },
+      "plafond_pourcentage": 25,
+      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+    },
+    "1": {
+      "type": "forfait_et_plafond_facture",
+      "forfaits": {
+        "geothermique": 4000,
+        "air_eau": 2250,
+        "air_air": 300,
+        "hybride": 1500
+      },
+      "plafond_pourcentage": 20,
+      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+    }
+  },
+  "condition": "Uniquement pour bâtiments de plus de 5 ans avec permis d’environnement",
+  "conseil": "Vérifiez si le type de pompe est bien éligible et installé par un professionnel agréé",
+  "document": "Facture détaillée + attestation de conformité de l’installateur",
+  "placeholder": "Sélectionnez le type de pompe",
+  "image": "images/pompe_chaleur.jpg"
+},
+{
+  "id": "chauffe_eau_thermodynamique",
+  "slug": "warmtepompboiler",
+  "titre": "Chauffe-eau thermodynamique",
+  "unite": "forfait",
+  "typeDeValeur": "forfait",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "forfait_et_plafond_facture",
+      "forfait": 1200,
+      "plafond_pourcentage": 50,
+      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+    },
+    "3": {
+      "type": "forfait_et_plafond_facture",
+      "forfait": 1050,
+      "plafond_pourcentage": 35,
+      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+    },
+    "2": {
+      "type": "forfait_et_plafond_facture",
+      "forfait": 900,
+      "plafond_pourcentage": 25,
+      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+    },
+    "1": {
+      "type": "forfait_et_plafond_facture",
+      "forfait": 900,
+      "plafond_pourcentage": 20,
+      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+    }
+  },
+  "condition": "Système à pompe à chaleur pour eau chaude sanitaire – non combiné avec boiler électrique classique",
+  "conseil": "L’installation doit être effectuée par un professionnel agréé et être bien dimensionnée selon les besoins du foyer.",
+  "document": "Facture + attestation de conformité de l’installateur",
+  "placeholder": "Montant total facturé",
+  "image": "images/chauffe_eau.jpg"
 },
 {
   "id": "demolition_toiture",
@@ -59,6 +349,7 @@
   "titre": "Démolition de la structure de toiture",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -95,6 +386,7 @@
   "titre": "Gestion des eaux de pluie",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -113,6 +405,7 @@
   "titre": "Accessoires de toiture",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -131,6 +424,7 @@
   "titre": "Traitement de toiture à la chaux",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -144,29 +438,12 @@
   "image": "images/toiture_chaux.jpeg"
 },
 {
-  "id": "isolation_murs_ext",
-  "slug": "isolation_murs_par_lexterieur",
-  "titre": "Isolation des murs par l'extérieur",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "R ≥ 3,5 m²K/W (isolation thermique par l'extérieur)",
-  "conseil": "L’application d’un isolant en façade améliore fortement les performances thermiques. Privilégier les matériaux résistants à l’humidité.",
-  "document": "Facture + attestation de l’entreprise + croquis ou plan précisant la zone isolée",
-  "placeholder": "Surface en m²",
-  "image": "images/isolation_murs_ext.jpeg"
-},
-{
   "id": "isolation_murs_coulisse",
   "slug": "isolation_murs_coulisse",
   "titre": "Isolation des murs en coulisse",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -185,6 +462,7 @@
   "titre": "Isolation des murs par l'intérieur",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -203,6 +481,7 @@
   "titre": "Démolition de murs",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -221,6 +500,7 @@
   "titre": "Finition des murs intérieurs après isolation",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -234,29 +514,12 @@
   "image": "images/finition_murs.jpg"
 },
 {
-  "id": "isolation_sol",
-  "slug": "isolation_sol",
-  "titre": "Isolation du sol",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W (isolation thermique du sol)",
-  "conseil": "L’isolation du sol réduit les pertes de chaleur par le bas et améliore le confort intérieur. Elle peut se faire par le dessous (vide ventilé) ou par le dessus (plancher isolant).",
-  "document": "Facture + attestation de l’entreprise + plan ou photos des zones isolées",
-  "placeholder": "Surface en m²",
-  "image": "images/isolation_sol.avif"
-},
-{
   "id": "chape_sol",
   "slug": "chape_de_sol",
   "titre": "Chape de sol isolante",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -270,29 +533,12 @@
   "image": "images/chape_sol.jpg"
 },
 {
-  "id": "remplacement_chassis_et_portes",
-  "slug": "remplacement_chassis_et_portes",
-  "titre": "Remplacement des châssis et portes",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Vitrage superisolant et châssis avec Uw ≤ 1,5 W/m²K",
-  "conseil": "Le remplacement des châssis améliore l’étanchéité à l’air et les performances thermiques. Optez pour des vitrages superisolants (type 1.1 ou triple) et des châssis performants.",
-  "document": "Facture + fiche technique du châssis + attestation de performance thermique",
-  "placeholder": "Surface en m²",
-  "image": "images/remplacement_chassis.jpg"
-},
-{
   "id": "volets_fenetres",
   "slug": "volets",
   "titre": "Pose de volets de fenêtres",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -306,47 +552,12 @@
   "image": "images/volets.jpg"
 },
 {
-  "id": "renovation_electricite",
-  "slug": "electricite",
-  "titre": "Mise en conformité de l’installation électrique",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Travaux de rénovation globale incluant la mise en conformité de l’électricité intérieure",
-  "conseil": "La mise en conformité électrique est souvent exigée lors de rénovations profondes. Veiller à obtenir un rapport de contrôle conforme (RGIE) en fin de chantier.",
-  "document": "Facture + schéma unifilaire + certificat de conformité délivré par un organisme agréé",
-  "placeholder": "Surface en m²",
-  "image": "images/electricité.webp"
-},
-{
-  "id": "préparation_sanitaire",
-  "slug": "équipements_sanitaires",
-  "titre": "Préapration des équipements sanitaires",
-  "unite": "forfait",
-  "typeDeValeur": "surface",
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Remplacement d’équipements sanitaires vétustes dans le cadre d’une rénovation globale",
-  "conseil": "Le remplacement des sanitaires est subsidiable s’il s’intègre à une rénovation énergétique complète (ex. remplacement de la tuyauterie, raccordement à une production d’eau chaude plus efficace).",
-  "document": "Facture détaillée + attestation de l’entrepreneur + photos avant/après ou plan d’intervention",
-  "placeholder": "Surface en m²",
-  "image": "images/sanitaire_remplacé.jpg"
-},
-{
   "id": "pac_geothermique",
   "slug": "pac_geothermique",
   "titre": "Pompe à chaleur géothermique (sol-eau / eau-eau)",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -365,6 +576,7 @@
   "titre": "Pompe à chaleur air-eau",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -383,6 +595,7 @@
   "titre": "Pompe à chaleur air-air",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -401,6 +614,7 @@
   "titre": "Pompe à chaleur hybride avec boiler thermodynamique",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -412,5 +626,24 @@
   "document": "Facture + schéma d’installation + fiche produit certifiée",
   "placeholder": "Surface en m²",
   "image": "images/pac_hybride.webp"
+},
+{
+  "id": "certificat_peb_apres",
+  "slug": "certificat_peb_apres_travaux",
+  "titre": "Certificat PEB après travaux",
+  "unite": "classe PEB",
+  "typeDeValeur": "binaire",
+  "eligible_categories": ["1", "2", "3", "4"],
+  "valeursParCategorie": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0
+    },
+  "condition": "doit respecter les normes de ventilation 'invisivent ou double flux' et avoir une classe PEB au moins 2 classes inférieure à celle du certificat de départ",
+  "conseil": "Le certificat PEB final doit être réalisé par un certificateur agréé. Il doit attester de la conformité aux normes de ventilation et de l’amélioration de la performance énergétique.",
+  "document": "Certificat PEB final délivré par un certificateur agréé",
+  "placeholder": "Ex : C",
+  "image": "images/certificat.png"
 }
 ]
