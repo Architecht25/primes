@@ -16,3 +16,22 @@
 #section-resultats {
   margin-bottom: 2.5rem;
 }
+
+@media (max-width: 768px) {
+  #section-demandeur,
+  #section-formulaires,
+  #section-resultats-primes,
+  #section-resultats {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #section-demandeur,
+  #section-formulaires,
+  #section-resultats-primes,
+  #section-resultats {
+    padding: 0.25rem;
+  }
+}

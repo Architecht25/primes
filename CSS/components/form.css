@@ -33,3 +33,18 @@ select.form-select:focus {
   margin-right: auto;
   width: 700px;
 }
+
+@media (max-width: 768px) {
+  .form-section,
+  #form-chantier {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-section,
+  #form-chantier {
+    padding: 0.5rem;
+  }
+}
