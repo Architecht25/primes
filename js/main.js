@@ -1,6 +1,5 @@
 import 'bootstrap';
 
-import { initialiserFleches }  from './ui/toggles.js';
 import { initialiserFormulaires } from './ui/forms.js';
 import { initialiserCartes } from './ui/cartes.js';
 
@@ -10,7 +9,6 @@ import { calculerTotalToutesCartes } from './logic/total-primes.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("main.js chargé");
-  initialiserFleches();
   initialiserFormulaires();
   initialiserCalculCategorie(); // ✅ lance le calcul avec le bouton
   initialiserCartes();

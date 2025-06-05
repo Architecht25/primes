@@ -23,10 +23,10 @@
 </head>
 <body class="p-4 text-center">
     <h1 class="mb-4">J'enregistre les données du bien et du chantier ici</h1>
-
     <div class="container-chantier">
+
       <div id="form-building" class="form-section mt-3">
-      <h5>Adresse</h5>
+      <h5>Adresse du chantier - informations pratiques</h5>
         <div class="mb-3">
           <label for="rue" class="form-label">Rue</label>
           <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
@@ -95,24 +95,24 @@
         </div>
       </div>
 
-      <div id="contenu-chantier">
-        <div id="section-chantier" class="form-section">
-          <input type="text" class="form-control mb-2" placeholder="Date de début prévue">
-          <input type="text" class="form-control mb-2" placeholder="Date de fin prévue">
-          <input type="text" class="form-control mb-2" placeholder="Nom de l'entrepreneur">
-          <input type="text" class="form-control mb-2" placeholder="Nom de l'architecte (si applicable)">
-          <input type="text" class="form-control mb-2" placeholder="Coût total estimé des travaux">
-        <div class="mb-3">
-          <label for="notes-chantier" class="form-label">Notes / remarques</label>
-          <textarea id="notes-chantier" class="form-control" rows="4" placeholder="Ajoutez ici vos remarques, observations, éléments importants…"></textarea>
-        </div>
-        <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-success text-center mt-3" id="btn-toggle-chantier">
-            Enregistrer les données du chantier
-          </button>
-        </div>
-        </div>
+      <div id="form-chantier" class="form-section">
+        <h5>Informations sur le chantier</h5>
+        <input type="text" class="form-control mb-2" placeholder="Date de début prévue">
+        <input type="text" class="form-control mb-2" placeholder="Date de fin prévue">
+        <input type="text" class="form-control mb-2" placeholder="Nom de l'entrepreneur">
+        <input type="text" class="form-control mb-2" placeholder="Nom de l'architecte (si applicable)">
+        <input type="text" class="form-control mb-2" placeholder="Coût total estimé des travaux">
+      <div class="mb-3">
+        <label for="notes-chantier" class="form-label">Notes / remarques</label>
+        <textarea id="notes-chantier" class="form-control" rows="4" placeholder="Ajoutez ici vos remarques, observations, éléments importants…"></textarea>
       </div>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success text-center mt-3" id="btn-toggle-chantier">
+          Enregistrer les données du chantier
+        </button>
+      </div>
+      </div>
+
     </div>
   <script type="module" src="js/main.js"></script>
 </body>
