@@ -3,8 +3,8 @@
   "id": "isolation_toiture",
   "slug": "isolation_toiture",
   "titre": "Isolation de la toiture",
-  "unite": "m²",
-  "typeDeValeur": "surface",
+  "unite": "€",
+  "typeDeValeur": "dynamique",
   "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "4": {
@@ -37,7 +37,12 @@
   "condition": "R ≥ 4.5 m²K/W",
   "conseil": "Utiliser un isolant certifié (laine minérale, PIR, etc.) et vérifier l'étanchéité.",
   "document": "Facture détaillée + attestation de conformité de l’entreprise",
-  "placeholder": "Surface en m²",
+  "placeholder": {
+    "1": "Surface en m²",
+    "2": "Surface en m²",
+    "3": "Montant total de la facture",
+    "4": "Montant total de la facture"
+  },
   "image": "images/isolation_toiture.jpg"
 },
 {
@@ -87,7 +92,7 @@
   "conseil": "Vérifiez les ponts thermiques, choisissez la méthode adaptée (spouwmuur, intérieur, extérieur).",
   "document": "Facture + attestation de l’entreprise avec méthode utilisée",
   "placeholder": "Surface en m²",
-  "image": "images/isolation_murs.jpg"
+  "image": "images/isolation_murs_ext.jpeg"
 },
 {
   "id": "isolation_sol",
@@ -128,7 +133,7 @@
   "conseil": "Privilégier les isolants à forte résistance thermique. Traiter également les ponts thermiques si possible.",
   "document": "Facture détaillée + preuve du type d’isolation installée",
   "placeholder": "Surface en m²",
-  "image": "images/isolation_sol.jpg"
+  "image": "images/isolation_sol.avif"
 },
 {
   "id": "chassis_portes",
@@ -169,7 +174,7 @@
   "conseil": "Veillez à intégrer un système de ventilation efficace lors du remplacement des menuiseries.",
   "document": "Facture + attestation de l’entreprise + preuve du respect des normes de ventilation",
   "placeholder": "Surface vitrée en m²",
-  "image": "images/chassis_portes.jpg"
+  "image": "images/remplacement_chassis.jpg"
 },
 {
   "id": "preparatifs_isolation",
@@ -177,7 +182,7 @@
   "titre": "Travaux préparatoires pour l’isolation",
   "unite": "€",
   "typeDeValeur": "facture",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "4": {
       "type": "pourcentage_et_plafond",
@@ -206,7 +211,7 @@
   "conseil": "Pensez à intégrer ces travaux dans le devis global mais à les distinguer clairement",
   "document": "Facture détaillée + preuve des travaux réalisés en amont d’une isolation",
   "placeholder": "Montant des travaux préparatoires",
-  "image": "images/preparatifs_isolation.jpg"
+  "image": "images/preparation_isolation.jpg"
 },
 {
   "id": "preparatifs_techniques",
@@ -214,7 +219,7 @@
   "titre": "Travaux préparatoires sanitaires et électricité",
   "unite": "€",
   "typeDeValeur": "facture",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "4": {
       "type": "pourcentage_et_plafond",
@@ -243,7 +248,7 @@
   "conseil": "Séparez ces interventions dans le devis pour les rendre éligibles",
   "document": "Facture + justificatif des travaux concernés",
   "placeholder": "Montant des travaux techniques",
-  "image": "images/preparatifs_techniques.jpg"
+  "image": "images/electricité.webp"
 },
 {
   "id": "pompe_a_chaleur",
@@ -302,7 +307,7 @@
   "conseil": "Vérifiez si le type de pompe est bien éligible et installé par un professionnel agréé",
   "document": "Facture détaillée + attestation de conformité de l’installateur",
   "placeholder": "Sélectionnez le type de pompe",
-  "image": "images/pompe_chaleur.jpg"
+  "image": "images/pac_géothermique.png"
 },
 {
   "id": "chauffe_eau_thermodynamique",
@@ -341,7 +346,7 @@
   "conseil": "L’installation doit être effectuée par un professionnel agréé et être bien dimensionnée selon les besoins du foyer.",
   "document": "Facture + attestation de conformité de l’installateur",
   "placeholder": "Montant total facturé",
-  "image": "images/chauffe_eau.jpg"
+  "image": "images/pac_hybride.webp"
 },
 {
   "id": "demolition_toiture",
@@ -349,7 +354,7 @@
   "titre": "Démolition de la structure de toiture",
   "unite": "m²",
   "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -368,6 +373,7 @@
   "titre": "Rénovation de la couverture de toiture",
   "unite": "m²",
   "typeDeValeur": "surface",
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -386,7 +392,7 @@
   "titre": "Gestion des eaux de pluie",
   "unite": "m²",
   "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -405,7 +411,7 @@
   "titre": "Accessoires de toiture",
   "unite": "m²",
   "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -424,7 +430,7 @@
   "titre": "Traitement de toiture à la chaux",
   "unite": "m²",
   "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -481,7 +487,7 @@
   "titre": "Démolition de murs",
   "unite": "m²",
   "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -500,7 +506,7 @@
   "titre": "Finition des murs intérieurs après isolation",
   "unite": "m²",
   "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,
@@ -519,7 +525,7 @@
   "titre": "Chape de sol isolante",
   "unite": "m²",
   "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "eligible_categories": ["3", "4"],
   "valeursParCategorie": {
     "1": 15,
     "2": 25,

@@ -44,12 +44,14 @@ function afficherCartes(primes) {
 
     let inputElement;
 
-    // 🔄 Champ dynamique selon le type
-    if (prime.typeDeValeur === "surface" || prime.typeDeValeur === "facture") {
+    // 🔄 Champ dynamique selon le type (déterminé par la règle active pour la catégorie)
+    if (regle?.type === "pourcentage_et_plafond" ||
+        regle?.type === "montant_m2_et_limite" ||
+        regle?.type === "montant_variable_m2_et_limite") {
       inputElement = document.createElement("input");
       inputElement.type = "number";
       inputElement.className = "form-control prime-input";
-      inputElement.placeholder = prime.placeholder;
+      // 🧪 Debug optionnel : console.log(`🧪 Placeholder pour ${prime.slug} : ${prime.placeholder}`);
     } else if (prime.typeDeValeur === "type_de_pompe") {
       inputElement = document.createElement("select");
       inputElement.className = "form-select prime-input";
@@ -61,16 +63,26 @@ function afficherCartes(primes) {
       });
     }
 
-    if (inputElement) {
-      inputElement.dataset.slug = prime.slug;
-      inputGroup.appendChild(inputElement);
-    }
-
     const span = document.createElement("span");
     span.className = "input-group-text bg-success text-white prime-result";
     span.dataset.slug = prime.slug;
     span.textContent = "0 €";
-    inputGroup.appendChild(span);
+
+    if (inputElement) {
+      inputElement.setAttribute("data-slug", prime.slug);
+      inputElement.setAttribute("name", prime.slug);
+
+      // ✅ Ajout du placeholder défini dans le JSON (ou valeur par défaut)
+      const placeholder = prime.placeholder?.[categorie] ?? "Montant à encoder";
+      console.log(`📌 Placeholder injecté pour ${prime.slug} : ${placeholder}`);
+      inputElement.setAttribute("placeholder", placeholder);
+      console.log(inputElement.outerHTML);
+
+
+      inputGroup.innerHTML = "";
+      inputGroup.appendChild(inputElement);
+      inputGroup.appendChild(span);
+    }
 
     container.appendChild(clone);
     cartesAffichees++;
@@ -112,7 +124,7 @@ function calculerMontantPourCarte(input) {
     case "montant_m2_et_limite":
       montant = valeur * regle.montant_m2;
       montant = Math.min(montant, regle.surface_max * regle.montant_m2);
-      montant = Math.min(montant, valeur * regle.montant_m2, valeur * (regle.plafond_pourcentage / 100));
+      montant = Math.min(montant, valeur * regle.montant_m2);
       break;
 
     case "montant_variable_m2_et_limite":

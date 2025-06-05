@@ -60,6 +60,11 @@ h4 {
       border: 1px solid #000;
     }
 
+::placeholder {
+  color: #6c757d !important; /* gris Bootstrap */
+  opacity: 1 !important;
+}
+
 @media (max-width: 768px) {
   .container-chantier {
     flex-direction: column; /* passe en colonne sur tablette et mobile */

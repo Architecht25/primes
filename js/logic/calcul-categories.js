@@ -1,4 +1,6 @@
 import { choixCategorie } from './choix-categorie.js';
+import { initialiserCartes } from '../ui/cartes.js';
+
 
 export function initialiserCalculCategorie() {
   console.log("🟢 initialiserCalculCategorie() lancé");
@@ -43,6 +45,11 @@ export function initialiserCalculCategorie() {
     else couleur = "dark";
 
     resultElt.className = `alert alert-${couleur} mt-4`;
+
+    // 🔄 Recharge dynamiquement les cartes après le calcul de catégorie
+    import('../logic/primes.js').then(module => {
+      module.initialiserPrimes();
+    });
   });
 }
 

@@ -11,6 +11,11 @@ export function initialiserCartes() {
     const container = document.getElementById("prime-cards-container");
     const template = document.getElementById("prime-card-template");
 
+    if (!template) {
+      console.error("❌ Template HTML manquant : #prime-card-template");
+      return;
+    }
+
     primes.forEach((prime) => {
       const clone = template.content.cloneNode(true);
       const slug = prime.slug;
