@@ -48,3 +48,15 @@ h4 {
   font-weight: 600;
   margin-bottom: 1.25rem;
 }
+
+.container-chantier {
+      display: flex;
+      gap: 20px; /* espace entre les divs */
+    }
+
+.box {
+      flex: 1; /* prend la moitié de l'espace */
+      padding: 20px;
+      background-color: lightblue;
+      border: 1px solid #000;
+    }
