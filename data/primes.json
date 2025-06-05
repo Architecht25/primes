@@ -91,7 +91,12 @@
   "condition": "R ≥ 3.5 m²K/W (selon méthode – spouwmuur, intérieur ou extérieur)",
   "conseil": "Vérifiez les ponts thermiques, choisissez la méthode adaptée (spouwmuur, intérieur, extérieur).",
   "document": "Facture + attestation de l’entreprise avec méthode utilisée",
-  "placeholder": "Surface en m²",
+  "placeholder": {
+    "1": "Surface en m²",
+    "2": "Surface en m²",
+    "3": "Montant total de la facture",
+    "4": "Montant total de la facture"
+  },
   "image": "images/isolation_murs_ext.jpeg"
 },
 {
@@ -132,7 +137,12 @@
   "condition": "Isolation thermique du plancher bas sur vide sanitaire ou terre-plein",
   "conseil": "Privilégier les isolants à forte résistance thermique. Traiter également les ponts thermiques si possible.",
   "document": "Facture détaillée + preuve du type d’isolation installée",
-  "placeholder": "Surface en m²",
+  "placeholder": {
+    "1": "Surface en m²",
+    "2": "Surface en m²",
+    "3": "Montant total de la facture",
+    "4": "Montant total de la facture"
+  },
   "image": "images/isolation_sol.avif"
 },
 {
@@ -173,7 +183,12 @@
   "condition": "Vitrage HR++ (U ≤ 1.1 W/m²K) + ventilation conforme (type invisivent ou VMC)",
   "conseil": "Veillez à intégrer un système de ventilation efficace lors du remplacement des menuiseries.",
   "document": "Facture + attestation de l’entreprise + preuve du respect des normes de ventilation",
-  "placeholder": "Surface vitrée en m²",
+  "placeholder": {
+    "1": "Surface en m²",
+    "2": "Surface en m²",
+    "3": "Montant total de la facture",
+    "4": "Montant total de la facture"
+  },
   "image": "images/remplacement_chassis.jpg"
 },
 {
@@ -210,7 +225,12 @@
   "condition": "Les travaux doivent précéder une isolation effective et être facturés séparément",
   "conseil": "Pensez à intégrer ces travaux dans le devis global mais à les distinguer clairement",
   "document": "Facture détaillée + preuve des travaux réalisés en amont d’une isolation",
-  "placeholder": "Montant des travaux préparatoires",
+  "placeholder": {
+    "1": "",
+    "2": "",
+    "3": "Montant total de la facture",
+    "4": "Montant total de la facture"
+  },
   "image": "images/preparation_isolation.jpg"
 },
 {
@@ -247,7 +267,12 @@
   "condition": "Doit concerner les réseaux intérieurs à remplacer avant travaux principaux (chauffage, électricité, sanitaire)",
   "conseil": "Séparez ces interventions dans le devis pour les rendre éligibles",
   "document": "Facture + justificatif des travaux concernés",
-  "placeholder": "Montant des travaux techniques",
+  "placeholder": {
+    "1": "",
+    "2": "",
+    "3": "Montant total de la facture",
+    "4": "Montant total de la facture"
+  },
   "image": "images/electricité.webp"
 },
 {
@@ -306,7 +331,12 @@
   "condition": "Uniquement pour bâtiments de plus de 5 ans avec permis d’environnement",
   "conseil": "Vérifiez si le type de pompe est bien éligible et installé par un professionnel agréé",
   "document": "Facture détaillée + attestation de conformité de l’installateur",
-  "placeholder": "Sélectionnez le type de pompe",
+  "placeholder": {
+    "1": "Choisissez le type de pompe",
+    "2": "Choisissez le type de pompe",
+    "3": "Choisissez le type de pompe",
+    "4": "Choisissez le type de pompe"
+  },
   "image": "images/pac_géothermique.png"
 },
 {
@@ -345,7 +375,12 @@
   "condition": "Système à pompe à chaleur pour eau chaude sanitaire – non combiné avec boiler électrique classique",
   "conseil": "L’installation doit être effectuée par un professionnel agréé et être bien dimensionnée selon les besoins du foyer.",
   "document": "Facture + attestation de conformité de l’installateur",
-  "placeholder": "Montant total facturé",
+  "placeholder": {
+    "1": "Montant total de la facture",
+    "2": "Montant total de la facture",
+    "3": "Montant total de la facture",
+    "4": "Montant total de la facture"
+  },
   "image": "images/pac_hybride.webp"
 },
 {
@@ -556,82 +591,6 @@
   "document": "Facture + descriptif du modèle posé + lien avec le remplacement des fenêtres si applicable",
   "placeholder": "Surface en m²",
   "image": "images/volets.jpg"
-},
-{
-  "id": "pac_geothermique",
-  "slug": "pac_geothermique",
-  "titre": "Pompe à chaleur géothermique (sol-eau / eau-eau)",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Installation d’une PAC géothermique certifiée, couplée à un système de chauffage central",
-  "conseil": "Très performante, mais nécessite un forage ou un réseau enterré. Faire réaliser une étude de sol préalable.",
-  "document": "Facture + attestation de l’installateur + fiche technique + preuve de certification PAC",
-  "placeholder": "Surface en m²",
-  "image": "images/pac_géothermique.png"
-},
-{
-  "id": "pac_air_eau",
-  "slug": "pac_air_eau",
-  "titre": "Pompe à chaleur air-eau",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Installation d’une PAC air-eau avec label de performance énergétique (COP ≥ 3,5)",
-  "conseil": "Solution répandue et efficace en rénovation, idéale avec chauffage par le sol ou radiateurs basse température.",
-  "document": "Facture + fiche technique + attestation de conformité PAC",
-  "placeholder": "Surface en m²",
-  "image": "images/pac_air_eau.webp"
-},
-{
-  "id": "pac_air_air",
-  "slug": "pac_air_air",
-  "titre": "Pompe à chaleur air-air",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Installation d’un système air-air avec fonction chauffage (PAC réversible, split ou multisplit)",
-  "conseil": "Système souvent utilisé en appoint ou dans les logements sans chauffage central. Peut aussi rafraîchir en été.",
-  "document": "Facture + fiche technique + certificat de performance saisonnière",
-  "placeholder": "Surface en m²",
-  "image": "images/pac_air_air.jpg"
-},
-{
-  "id": "pac_hybride",
-  "slug": "pac_hybride",
-  "titre": "Pompe à chaleur hybride avec boiler thermodynamique",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Système combiné intégrant une PAC et un boiler thermodynamique pour chauffage et ECS",
-  "conseil": "Idéal en rénovation pour combiner gain énergétique et confort sanitaire. Vérifier l’espace disponible pour le ballon.",
-  "document": "Facture + schéma d’installation + fiche produit certifiée",
-  "placeholder": "Surface en m²",
-  "image": "images/pac_hybride.webp"
 },
 {
   "id": "certificat_peb_apres",

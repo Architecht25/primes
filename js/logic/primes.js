@@ -52,16 +52,27 @@ function afficherCartes(primes) {
       inputElement.type = "number";
       inputElement.className = "form-control prime-input";
       // 🧪 Debug optionnel : console.log(`🧪 Placeholder pour ${prime.slug} : ${prime.placeholder}`);
-    } else if (prime.typeDeValeur === "type_de_pompe") {
-      inputElement = document.createElement("select");
-      inputElement.className = "form-select prime-input";
-      Object.keys(regle.forfaits).forEach(type => {
-        const option = document.createElement("option");
-        option.value = type;
-        option.textContent = type.replace(/_/g, ' ');
-        inputElement.appendChild(option);
-      });
-    }
+    } else if (regle?.forfaits && typeof regle.forfaits === "object") {
+        inputElement = document.createElement("select");
+        inputElement.className = "form-select prime-input";
+
+        // 🪄 Option par défaut agissant comme un placeholder
+        const defaultOption = document.createElement("option");
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+
+        const categorie = getCategorieId();
+        defaultOption.textContent = prime.placeholder?.[categorie] || "Sélectionnez un type";
+        inputElement.appendChild(defaultOption);
+
+        // 🧩 Ajouter les vraies options
+        Object.keys(regle.forfaits).forEach(type => {
+          const option = document.createElement("option");
+          option.value = type;
+          option.textContent = type.replace(/_/g, ' ');
+          inputElement.appendChild(option);
+        });
+      }
 
     const span = document.createElement("span");
     span.className = "input-group-text bg-success text-white prime-result";
