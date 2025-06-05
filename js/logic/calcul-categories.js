@@ -1,6 +1,7 @@
-import { determinerCategorie } from './determine-categorie.js';
+import { choixCategorie } from './choix-categorie.js';
 
 export function initialiserCalculCategorie() {
+  console.log("🟢 initialiserCalculCategorie() lancé");
   const btn = document.getElementById("btn-calcul-prime");
 
   btn.addEventListener("click", async () => {
@@ -26,7 +27,7 @@ export function initialiserCalculCategorie() {
       loueViaWoonmaatschappij: false
     };
 
-    const cat = await determinerCategorie(profil);
+    const cat = await choixCategorie(profil);
 
     const resultElt = document.getElementById("categorie-resultat");
     const texteElt = document.getElementById("categorie-prime");
