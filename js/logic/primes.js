@@ -45,9 +45,12 @@ function afficherCartes(primes) {
     let inputElement;
 
     // 🔄 Champ dynamique selon le type (déterminé par la règle active pour la catégorie)
-    if (regle?.type === "pourcentage_et_plafond" ||
-        regle?.type === "montant_m2_et_limite" ||
-        regle?.type === "montant_variable_m2_et_limite") {
+    if (
+      regle?.type === "pourcentage_et_plafond" ||
+      regle?.type === "montant_m2_et_limite" ||
+      regle?.type === "montant_variable_m2_et_limite" ||
+      regle?.type === "forfait_et_plafond_facture" && !regle.forfaits // ✅ Pour chauffe-eau
+    ) {
       inputElement = document.createElement("input");
       inputElement.type = "number";
       inputElement.className = "form-control prime-input";

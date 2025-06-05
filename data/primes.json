@@ -344,7 +344,7 @@
   "slug": "warmtepompboiler",
   "titre": "Chauffe-eau thermodynamique",
   "unite": "forfait",
-  "typeDeValeur": "forfait",
+  "typeDeValeur": "montant",
   "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
     "4": {
