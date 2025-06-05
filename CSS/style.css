@@ -62,12 +62,6 @@ h4 {
 
 @media (max-width: 768px) {
   .container-chantier {
-    flex-direction: column; /* passe en colonne sur mobile */
+    flex-direction: column; /* passe en colonne sur tablette et mobile */
   }
-}
-
-@media (max-width: 576px) {
-  .container-chantier {
-    flex-direction: column; /* passe en colonne sur mobile */
-  } 
 }
