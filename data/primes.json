@@ -384,213 +384,94 @@
   "image": "images/pac_hybride.webp"
 },
 {
-  "id": "demolition_toiture",
-  "slug": "demolition_structure_toiture",
-  "titre": "Démolition de la structure de toiture",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
+  "id": "renovation_toiture",
+  "slug": "renovation_toiture",
+  "titre": "Travaux de rénovation associés - Toiture",
+  "unite": "€",
+  "typeDeValeur": "dynamique",
+  "categorie_visible": ["3", "4"],
   "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 5750,
+      "condition": "Travaux de rénovation associés à l’isolation de toiture"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 4025,
+      "condition": "Travaux de rénovation associés à l’isolation de toiture"
+    }
   },
-  "condition": "Travaux de démolition justifiés par une reconstruction ou transformation de la toiture",
-  "conseil": "Inclut la démolition des structures de toit existantes et la construction d'éléments porteurs neufs",
-  "document": "Facture + preuve photographique avant/après + attestation de l’entrepreneur",
-  "placeholder": "Surface en m²",
-  "image": "images/démolition_toiture.jpg"
+  "condition": "Factures admissibles liées à la structure ou à l'étanchéité",
+  "conseil": "Peuvent inclure dépose de l'ancienne couverture, renforcement charpente, etc.",
+  "document": "Facture détaillée mentionnant les postes concernés",
+  "placeholder": {
+    "3": "Montant total des travaux toiture hors isolation",
+    "4": "Montant total des travaux toiture hors isolation"
+  },
+  "image": "images/renovation_toiture.jpeg"
 },
 {
-  "id": "couverture_toiture",
-  "slug": "couverture_toiture",
-  "titre": "Rénovation de la couverture de toiture",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
+  "id": "renovation_murs",
+  "slug": "renovation_murs",
+  "titre": "Travaux de rénovation associés - Murs",
+  "unite": "€",
+  "typeDeValeur": "dynamique",
+  "categorie_visible": ["3", "4"],
   "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 5750,
+      "condition": "Travaux de rénovation associés à l’isolation des murs"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 4025,
+      "condition": "Travaux de rénovation associés à l’isolation des murs"
+    }
   },
-  "condition": "Remplacement ou réparation complète de la couverture pour assurer l'étanchéité",
-  "conseil": "La prime couvre le renouvellement ou la réparation de l’abri et du revêtement imperméable. Pensez à vérifier l’état du support et de l’isolation.",
-  "document": "Facture détaillée + attestation de conformité aux normes d’étanchéité",
-  "placeholder": "Surface en m²",
-  "image": "images/couverture_toiture.webp"
+  "condition": "Travaux admissibles hors isolation, ex. bardage, crépi, traitement humidité",
+  "conseil": "Inclut travaux préparatoires ou de remise en état après isolation",
+  "document": "Facture détaillée avec ventilation des coûts",
+  "placeholder": {
+    "3": "Montant total des travaux murs hors isolation",
+    "4": "Montant total des travaux murs hors isolation"
+  },
+  "image": "images/renovation_murs.jpg"
 },
 {
-  "id": "gestion_eaux_pluie",
-  "slug": "eaux_de_pluie",
-  "titre": "Gestion des eaux de pluie",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
+  "id": "renovation_sol",
+  "slug": "renovation_sol",
+  "titre": "Travaux de rénovation associés - Sol",
+  "unite": "€",
+  "typeDeValeur": "dynamique",
+  "categorie_visible": ["3", "4"],
   "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 5750,
+      "condition": "Travaux de rénovation associés à l’isolation du sol"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 4025,
+      "condition": "Travaux de rénovation associés à l’isolation du sol"
+    }
   },
-  "condition": "Travaux visant à réparer ou renouveler les équipements d'évacuation des eaux pluviales (gouttières, descentes, raccords, etc.)",
-  "conseil": "Vérifier l’état des gouttières, chéneaux et descentes. Une bonne évacuation protège la façade et les fondations.",
-  "document": "Facture détaillée + photo avant/après ou attestation de l’entrepreneur",
-  "placeholder": "Surface en m²",
-  "image": "images/eaux_de_pluie.jpg"
-},
-{
-  "id": "accessoires_toiture",
-  "slug": "accessoires_de_toiture",
-  "titre": "Accessoires de toiture",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
+  "condition": "Travaux admissibles incluant chape, ragréage, reprise du revêtement, etc.",
+  "conseil": "Documentez bien les postes techniques hors isolant",
+  "document": "Facture séparant les postes d’isolation et de rénovation",
+  "placeholder": {
+    "3": "Montant total des travaux sols hors isolation",
+    "4": "Montant total des travaux sols hors isolation"
   },
-  "condition": "Installation ou remplacement d’accessoires de toiture tels que lucarnes, fenêtres de toit, sorties de ventilation ou éléments d’accès",
-  "conseil": "Inclut les ouvertures de toit (lucarnes, fenêtres plates ou inclinées) et autres éléments non porteurs. Vérifier l’étanchéité autour des ouvertures.",
-  "document": "Facture + attestation de pose + photo des accessoires installés",
-  "placeholder": "Surface en m²",
-  "image": "images/accessoires_de_toiture.jpg"
-},
-{
-  "id": "traitement_chaux_toiture",
-  "slug": "chaux_toiture",
-  "titre": "Traitement de toiture à la chaux",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Application d’un enduit à la chaux humide ou sèche sur toiture pour protection ou isolation complémentaire",
-  "conseil": "Veiller à l’homogénéité de l’application. L’enduit à la chaux régule l’humidité et améliore la durabilité des matériaux.",
-  "document": "Facture + description technique de l’enduit utilisé",
-  "placeholder": "Surface en m²",
-  "image": "images/toiture_chaux.jpeg"
-},
-{
-  "id": "isolation_murs_coulisse",
-  "slug": "isolation_murs_coulisse",
-  "titre": "Isolation des murs en coulisse",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "R ≥ 1.5 m²K/W (isolation dans la coulisse entre les murs)",
-  "conseil": "L’application d’un isolant dans la coulisse permet de préserver l’esthétique de la façade tout en améliorant la performance énergétique.",
-  "document": "Facture + attestation de l’entreprise + coupe ou schéma de la paroi isolée",
-  "placeholder": "Surface en m²",
-  "image": "images/isolation_murs_coulisse.png"
-},
-{
-  "id": "isolation_murs_interieur",
-  "slug": "isolation_murs_par_interieur",
-  "titre": "Isolation des murs par l'intérieur",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "R ≥ 2 m²K/W (isolation thermique par l’intérieur)",
-  "conseil": "L’isolation par l’intérieur est moins coûteuse que par l’extérieur, mais attention aux ponts thermiques et à la condensation. Privilégier les matériaux à faible conductivité.",
-  "document": "Facture + attestation de l’entreprise + localisation précise des parois isolées",
-  "placeholder": "Surface en m²",
-  "image": "images/isolation_mur_interieur.jpg"
-},
-{
-  "id": "demolition_murs",
-  "slug": "demolitions_murs",
-  "titre": "Démolition de murs",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W si reconstruction avec isolation",
-  "conseil": "La prime couvre la démolition de murs lorsqu’elle s’accompagne d’une reconstruction intégrant une isolation performante. Veiller à respecter les règles de stabilité et d’urbanisme.",
-  "document": "Facture + attestation de l’entrepreneur + justification des travaux + photos avant/après",
-  "placeholder": "Surface en m²",
-  "image": "images/démolition_murs.jpg"
-},
-{
-  "id": "finition_murs_interieur",
-  "slug": "finition_murs_interieur",
-  "titre": "Finition des murs intérieurs après isolation",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W (uniquement si liée à un chantier d’isolation)",
-  "conseil": "La finition comprend les enduits, bardages ou parements qui protègent l’isolant. Veillez à la compatibilité des matériaux avec l’isolant posé.",
-  "document": "Facture + preuve que la finition est liée à un chantier d’isolation (photos ou attestation)",
-  "placeholder": "Surface en m²",
-  "image": "images/finition_murs.jpg"
-},
-{
-  "id": "chape_sol",
-  "slug": "chape_de_sol",
-  "titre": "Chape de sol isolante",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Surface ≥ 20 m² et R ≥ 3 m²K/W (chape avec isolation thermique)",
-  "conseil": "Une chape isolante permet de traiter les pertes thermiques par le sol. Elle est souvent utilisée en complément d’un plancher chauffant ou d’une rénovation complète du sol.",
-  "document": "Facture + coupe technique de la chape + attestation de résistance thermique",
-  "placeholder": "Surface en m²",
-  "image": "images/chape_sol.jpg"
-},
-{
-  "id": "volets_fenetres",
-  "slug": "volets",
-  "titre": "Pose de volets de fenêtres",
-  "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 15,
-    "2": 25,
-    "3": 35,
-    "4": 45
-  },
-  "condition": "Volets intégrés ou ajoutés à des fenêtres à haute performance thermique",
-  "conseil": "Les volets contribuent à l’isolation thermique et à la sécurité. Ils sont souvent admis en complément d’un remplacement de châssis ou d’une rénovation complète de l’enveloppe.",
-  "document": "Facture + descriptif du modèle posé + lien avec le remplacement des fenêtres si applicable",
-  "placeholder": "Surface en m²",
-  "image": "images/volets.jpg"
+  "image": "images/renovation_sol.webp"
 },
 {
   "id": "certificat_peb_apres",
