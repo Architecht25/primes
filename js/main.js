@@ -5,6 +5,7 @@ import { initialiserCalculCategorie } from './logic/calcul-categories.js';
 import { initialiserPrimes } from './logic/primes.js';
 import { calculerTotalToutesCartes } from './logic/total-primes.js';
 
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("main.js chargé");
   console.log("📦 DOM chargé → initialiserPrimes()");

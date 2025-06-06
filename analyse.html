@@ -84,91 +84,92 @@
         <strong>Total estimé des primes :</strong> <span id="total-primes-affiche">0 €</span>
       </div>
     </div>
-  </div>
-
-    <!-- 5. TEMPLATE - CARTES PRIMES/PRODUITS -->
-    <!-- Template HTML pour une carte -->
-    <template id="prime-card-template">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="prime-card p-3 h-100 shadow-sm bg-white border rounded">
-        <img class="card-img-top" src="" alt="Image prime">
-        <h5 class="prime-title"></h5>
-        <p class="prime-condition"></p>
-        <p class="prime-advice"></p>
-        <p class="prime-document"></p>
-
-        <div class="input-group mb-3">
-          <input type="number"
-                class="form-control prime-input"
-                data-slug=""
-                name=""
-                placeholder="Surface en m²">
-          <span class="input-group-text bg-success text-white prime-result">0 €</span>
-        </div>
-      </div>
-    </div>
-    </template>
-
-
-    <div id="prime-cards-container" class="row gx-3 gy-4 mt-4">
     </div>
 
-    <h2>Test carte PEB manuelle</h2>
-<div class="row gx-3 gy-4 mt-4">
-  <div class="col-12 col-md-8 col-lg-6">
-    <div class="prime-card p-3 shadow-sm border border-success">
-      <img src="images/certificat.png" class="card-img-top" alt="Certificat PEB">
-      <h5 class="prime-title">Certificat PEB après travaux</h5>
-      <p class="prime-condition"><strong>Conditions :</strong> doit respecter les normes de ventilation et viser une classe inférieure</p>
-      <p class="prime-advice"><strong>Conseils :</strong> Renseigner le label visé, le type de logement, et la ventilation</p>
-      <p class="prime-document"><strong>Document :</strong> Certificat PEB final</p>
-
-      <div class="input-group mt-2">
-        <p><strong>Label initial :</strong> <span id="label-initial-global">Non renseigné</span></p>
-        <select class="form-select mb-2" name="type-logement">
-          <option value="">Type de logement</option>
-          <option value="maison">Maison</option>
-          <option value="appartement">Appartement</option>
-        </select>
-        <select class="form-select mb-2" name="ventilation">
-          <option value="">Ventilation conforme ?</option>
-          <option value="avec_ventilation">Oui</option>
-          <option value="sans_ventilation">Non</option>
-        </select>
-        <select class="form-select mb-2" name="label-final">
-          <option value="">Label final</option>
-          <option value="C">C</option>
-          <option value="B">B</option>
-          <option value="A">A</option>
-        </select>
-        <span class="prime-result input-group-text mt-2">0 €</span>
-      </div>
-
-      <div class="mb-3">
-        <label for="certificat-peb" class="form-label">Label initial (PEB avant travaux)</label>
-        <select id="certificat-peb" class="form-select">
-          <option value="">Choisissez un label</option>
-          <option value="F">F</option>
-          <option value="E">E</option>
-          <option value="D">D</option>
-          <option value="C">C</option>
-          <option value="B">B</option>
-          <option value="A">A</option>
-        </select>
-      </div>
-    </div>
-  </div>
-</div>
     <!-- 6. BOUTON POUR ENREGISTRER LES DONNES TECHNIQUES DES CARTES PRIMES -->
     <div class="d-flex justify-content-center">
       <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
         Enregistrer votre simulation
       </button>
     </div>
-
   </div>
 
+  <!-- TEMPLATES -->
+    <template id="prime-card-template">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="prime-card p-3 h-100 shadow-sm bg-white border rounded">
+          <img class="card-img-top" src="" alt="Image prime">
+          <h5 class="prime-title"></h5>
+          <p class="prime-condition"></p>
+          <p class="prime-advice"></p>
+          <p class="prime-document"></p>
 
+          <div class="input-group mb-3">
+            <input type="number"
+                  class="form-control prime-input"
+                  data-slug=""
+                  name=""
+                  placeholder="Surface en m²">
+            <span class="input-group-text bg-success text-white prime-result">0 €</span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- CONTENEUR D’AFFICHAGE -->
+    <div id="prime-cards-container" class="row gx-3 gy-4 mt-4">
+
+    </div>
+
+    <!-- 1. PRIME PEB  -->
+    <div class="row gx-3 gy-4 mt-5 pt-4 border-top border-secondary-subtle">
+    <div class="col-12 col-md-8 col-lg-5 col-xl-4">
+        <div class="prime-card prime-card-peb p-3 shadow-sm border border-success">
+          <img src="images/certificat.png" class="card-img-top" alt="Certificat PEB">
+          <h5 class="prime-title">Certificat PEB après travaux</h5>
+          <p class="prime-condition"><strong>Conditions :</strong> doit respecter les normes de ventilation et viser une classe inférieure</p>
+          <p class="prime-advice"><strong>Conseils :</strong> Renseigner le label visé, le type de logement, et la ventilation</p>
+          <p class="prime-document"><strong>Document :</strong> Certificat PEB final</p>
+
+          <div class="prime-fields d-flex flex-column gap-2 mt-3">
+            <label for="certificat-peb"><strong>Label initial :</strong></label>
+            <select id="certificat-peb" class="form-select">
+              <option value="">Choisissez un label</option>
+              <option value="F">F</option>
+              <option value="E">E</option>
+              <option value="D">D</option>
+              <option value="C">C</option>
+              <option value="B">B</option>
+              <option value="A">A</option>
+            </select>
+
+            <select class="form-select" name="type-logement">
+              <option value="">Type de logement</option>
+              <option value="maison">Maison</option>
+              <option value="appartement">Appartement</option>
+            </select>
+
+            <select class="form-select" name="ventilation">
+              <option value="">Ventilation conforme ?</option>
+              <option value="avec_ventilation">Oui</option>
+              <option value="sans_ventilation">Non</option>
+            </select>
+
+            <select class="form-select" name="label-final">
+              <option value="">Label final</option>
+              <option value="C">C</option>
+              <option value="B">B</option>
+              <option value="A">A</option>
+            </select>
+
+            <div class="resultat-prime mt-2">
+              <strong>Prime estimée :</strong>
+              <span class="prime-result d-inline-block ms-2">0 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
