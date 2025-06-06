@@ -26,7 +26,7 @@
   <div class="container">
     <h2 class="mb-4 text-center w-100">Déterminez votre catérgorie de prime (1, 2, 3 ou 4)!</h2>
 
-    <!-- 2. FORMULAIRES (tous les formulaires) -->
+    <!-- 1.0 FORMULAIRES -->
     <div id="section-formulaires" class="mb-5">
       <!-- Section Propriétaire privé -->
       <div id="form-prive" class="form-section">
@@ -69,16 +69,17 @@
       </div>
       </div>
 
-    <!-- 4.1 RESULTATS - catégorie de prime -->
+    <!-- 1.1 RESULTATS - catégorie de prime -->
     <div id="section-resultats-primes" class="mb-4">
       <div id="categorie-resultat" class="alert alert-primary mt-4">
         <strong>Catégorie de prime :</strong> <span id="categorie-prime">Veuillez encoder vos données personnelles.</span>
       </div>
     </div>
 
+
     <h2 class="mb-4 text-center w-100">Calculez la valeur de vos primes régionales et PEB!</h2>
 
-    <!-- 4.2 RESULTATS - calcul des primes -->
+    <!-- 2.2 RESULTATS - calcul des primes -->
     <div id="section-resultats-primes" class="mb-4">
       <div id="prime-total-result" class="alert alert-primary mt-4">
         <strong>Total estimé des primes :</strong> <span id="total-primes-affiche">0 €</span>
@@ -86,7 +87,7 @@
     </div>
     </div>
 
-    <!-- 6. BOUTON POUR ENREGISTRER LES DONNES TECHNIQUES DES CARTES PRIMES -->
+    <!-- 2.3. BOUTON POUR ENREGISTRER LES DONNES TECHNIQUES DES CARTES PRIMES -->
     <div class="d-flex justify-content-center">
       <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
         Enregistrer votre simulation
@@ -94,7 +95,7 @@
     </div>
   </div>
 
-  <!-- TEMPLATES -->
+    <!-- 2. TEMPLATES STANDARStS-->
     <template id="prime-card-template">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="prime-card p-3 h-100 shadow-sm bg-white border rounded">
@@ -118,12 +119,12 @@
 
     <!-- CONTENEUR D’AFFICHAGE -->
     <div id="prime-cards-container" class="row gx-3 gy-4 mt-4">
-
     </div>
 
-    <!-- 1. PRIME PEB  -->
+    <!-- Faire un container pour stocker 3 cartes: PEB, communale et monuments et sites car ce sont des cartes spéciales-->
+    <!-- 1. PRIME PEB (hard code) -->
     <div class="row gx-3 gy-4 mt-5 pt-4 border-top border-secondary-subtle">
-    <div class="col-12 col-md-8 col-lg-5 col-xl-4">
+      <div class="col-12 col-md-8 col-lg-5 col-xl-4">
         <div class="prime-card prime-card-peb p-3 shadow-sm border border-success">
           <img src="images/certificat.png" class="card-img-top" alt="Certificat PEB">
           <h5 class="prime-title">Certificat PEB après travaux</h5>
@@ -171,8 +172,13 @@
       </div>
     </div>
 
-    <!-- 3. COMMUNALES -->
-    <h2 class="mb-4 text-center w-100">Calculez la valeur de vos communales!</h2>
+    <!-- 3. COMMUNALES (Template standards)-->
+    <h2 class="mb-4 text-center w-100">Ajouter le montant de vos primes communales</h2>
+    <h3>Intégrer ici une carte prime communale pour afficher les options et sélection le montant à intégrer à la somme totale</h3>
+
+    <!-- 3. Monuments & SITES (hard code)-->
+    <h2 class="mb-4 text-center w-100">Explorons le côté Monuments et sites de votre bien</h2>
+    <h3>Intégrer ici une carte prime monuments et sites pour afficher les options et sélection le montant à intégrer à la somme totale</h3>
 
   <script type="module" src="js/main.js"></script>
 </body>
