@@ -10,6 +10,19 @@
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease;
+
+  /* ✅ Ajout utile */
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  overflow: hidden;
+}
+
+.prime-card-scrollable {
+  overflow-y: auto;
+  padding-right: 1rem; /* espace pour scrollbar */
+  flex-grow: 1;
 }
 
 .prime-card img {

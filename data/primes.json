@@ -472,24 +472,5 @@
     "4": "Montant total des travaux sols hors isolation"
   },
   "image": "images/renovation_sol.webp"
-},
-{
-  "id": "certificat_peb_apres",
-  "slug": "certificat_peb_apres_travaux",
-  "titre": "Certificat PEB après travaux",
-  "unite": "classe PEB",
-  "typeDeValeur": "binaire",
-  "eligible_categories": ["1", "2", "3", "4"],
-  "valeursParCategorie": {
-    "1": 0,
-    "2": 0,
-    "3": 0,
-    "4": 0
-    },
-  "condition": "doit respecter les normes de ventilation 'invisivent ou double flux' et avoir une classe PEB au moins 2 classes inférieure à celle du certificat de départ",
-  "conseil": "Le certificat PEB final doit être réalisé par un certificateur agréé. Il doit attester de la conformité aux normes de ventilation et de l’amélioration de la performance énergétique.",
-  "document": "Certificat PEB final délivré par un certificateur agréé",
-  "placeholder": "Ex : C",
-  "image": "images/certificat.png"
 }
 ]
