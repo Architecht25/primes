@@ -8,7 +8,7 @@
   "template": "peb",
   "eligible_categories": ["1", "2", "3", "4"],
   "valeursParCategorie": {
-    "1": {
+    "4": {
       "maison": {
         "A": { "sans_ventilation": 6000, "avec_ventilation": 7000 },
         "B": { "sans_ventilation": 4500, "avec_ventilation": 5250 },
@@ -19,7 +19,7 @@
         "B": { "sans_ventilation": 3000, "avec_ventilation": 3500 }
       }
     },
-    "2": {
+    "3": {
       "maison": {
         "A": { "sans_ventilation": 5000, "avec_ventilation": 6000 },
         "B": { "sans_ventilation": 3750, "avec_ventilation": 4500 },
@@ -30,7 +30,7 @@
         "B": { "sans_ventilation": 2500, "avec_ventilation": 3000 }
       }
     },
-    "3": {
+    "2": {
       "maison": {
         "A": { "sans_ventilation": 4000, "avec_ventilation": 5000 },
         "B": { "sans_ventilation": 3000, "avec_ventilation": 3750 },
@@ -41,15 +41,15 @@
         "B": { "sans_ventilation": 2000, "avec_ventilation": 2500 }
       }
     },
-    "4": {
+    "1": {
       "maison": {
-        "A": 0,
-        "B": 0,
-        "C": 0
+       "A": { "sans_ventilation": 3000, "avec_ventilation": 4000 },
+        "B": { "sans_ventilation": 2000, "avec_ventilation": 3000 },
+        "C": { "sans_ventilation": 1000, "avec_ventilation": 2000 }
       },
       "appartement": {
-        "A": 0,
-        "B": 0
+         "A": { "sans_ventilation": 2250, "avec_ventilation": 3000 },
+        "B": { "sans_ventilation": 1500, "avec_ventilation": 2000 }
       }
     }
   },
