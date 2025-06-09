@@ -1,7 +1,6 @@
 import { getCategorieId } from '../logic/calcul-categories.js';
 import { calculerPrimePEB } from '../logic/primes.js';
 import { calculerTotalToutesCartes } from '../logic/total-primes.js';
-import { chargerPrimesCommunales } from './communes.js';
 
 
 export function initialiserCartes() {
@@ -20,6 +19,8 @@ export function initialiserCartes() {
     .then(primes => {
       primes.forEach(prime => {
         console.log("🎯 Carte testée :", prime.slug, "→ Catégorie:", categorie, "→ Autorisées:", prime.categorieLimite);
+        if (prime.slug === "certificat_peb_apres_travaux") return; // ⛔️ NE PAS AJOUTER LA CARTE PEB
+
         if (prime.categorieLimite && !prime.categorieLimite.includes(categorie)) return;
 
         const clone = genererCarteStandard(prime, template);
@@ -40,7 +41,7 @@ export function initialiserCartes() {
       if (!prime.eligible_categories.includes(categorie)) return;
 
       const clone = genererCarteStandard(prime, template);
-      container.appendChild(clone);
+      // container.appendChild(clone);
 
       if (prime.slug === "certificat_peb_apres_travaux") {
         initialiserCartePEB(prime, categorie);
@@ -167,19 +168,5 @@ export function initialiserCartePEB(prime, categorie) {
   // 🔑 ATTENTION : Écoute en temps réel
   [selectLabelInitial, selectLogement, selectVentilation, selectLabelFinal].forEach(input => {
     input.addEventListener('change', calculerEtAfficherPrimePEB);
-  });
-}
-
-async function initCommunales(categorie) {
-  const communes = await chargerPrimesCommunales();
-  const select = document.getElementById("select-commune");
-  communes.forEach(c => {
-    const opt = new Option(c.commune, c.commune);
-    select.add(opt);
-  });
-
-  select.addEventListener("change", () => {
-    const commune = communes.find(c => c.commune === select.value);
-    afficherPrimesCommunales(commune.primes, categorie);
   });
 }
