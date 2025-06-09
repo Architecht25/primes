@@ -3,6 +3,37 @@ import { calculerTotalToutesCartes } from './total-primes.js';
 
 let primes = [];
 
+const groupesPlafond = {
+  toiture: ["isolation_toiture", "renovation_toiture"],
+  murs: ["isolation_murs_cat34", "renovation_murs"],
+  sol: ["isolation_sol", "renovation_sol"]
+};
+
+function appliquerPlafondGroupe(slug, montantPropose) {
+  const categorie = getCategorieId();
+  const plafondsParCategorie = { "4": 5750, "3": 4025 };
+  const groupeTrouve = Object.entries(groupesPlafond).find(([_, slugs]) => slugs.includes(slug));
+  if (!groupeTrouve) return { montant: montantPropose, resteDisponible: Infinity };
+
+  const slugsDuGroupe = groupeTrouve[1];
+  const plafond = plafondsParCategorie[categorie];
+  if (!plafond) return { montant: montantPropose, resteDisponible: Infinity };
+
+  const montantGroupe = slugsDuGroupe.reduce((somme, s) => {
+    const span = document.querySelector(`.prime-result[data-slug="${s}"]`);
+    if (!span) return somme;
+    const montantCarte = parseFloat(span.textContent.replace("€", "").replace(",", ".") || 0);
+    return somme + montantCarte;
+  }, 0);
+
+  const spanCourant = document.querySelector(`.prime-result[data-slug="${slug}"]`);
+  const montantActuel = parseFloat(spanCourant?.textContent.replace("€", "").replace(",", ".") || 0);
+  const resteDisponible = plafond - (montantGroupe - montantActuel);
+  const montantFinal = Math.min(montantPropose, resteDisponible);
+
+  return { montant: montantFinal, resteDisponible };
+}
+
 export function initialiserPrimes() {
   console.log("📦 initialiserPrimes() appelée");
   fetch('data/primes.json')
@@ -168,6 +199,7 @@ function calculerMontantPourCarte(input) {
 
   let montant = 0;
 
+  // 🔁 Cas spécial : surface + type
   if (prime.typeDeValeur === "surface_et_type") {
     const inputGroup = input.closest(".input-group");
     const select = inputGroup?.querySelector("select");
@@ -188,10 +220,21 @@ function calculerMontantPourCarte(input) {
     }
 
     const span = inputGroup.querySelector(".prime-result");
-    if (span) span.textContent = `${montant.toFixed(2)} €`;
-    return;
+    if (span) {
+      const { montant: montantPlafonne, resteDisponible } = appliquerPlafondGroupe(slug, montant);
+      span.textContent = `${montantPlafonne.toFixed(2)} €`;
+
+      if (montantPlafonne === resteDisponible) {
+        span.title = "Plafond global atteint pour ce groupe (ex. toiture)";
+      } else {
+        span.title = "";
+      }
+    }
+
+    return; // cas spécial terminé ici
   }
 
+  // 🔁 Cas classiques : pourcentage, m², forfait, etc.
   let valeur = input.tagName === "SELECT" ? input.value : parseFloat(input.value || 0);
 
   switch (regle.type) {
@@ -221,5 +264,14 @@ function calculerMontantPourCarte(input) {
   }
 
   const span = input.closest(".input-group")?.querySelector(".prime-result");
-  if (span) span.textContent = `${montant.toFixed(2)} €`;
+  if (span) {
+    const { montant: montantPlafonne, resteDisponible } = appliquerPlafondGroupe(slug, montant);
+    span.textContent = `${montantPlafonne.toFixed(2)} €`;
+
+    if (montantPlafonne === resteDisponible) {
+      span.title = "Plafond global atteint pour ce groupe (ex. toiture)";
+    } else {
+      span.title = "";
+    }
+  }
 }
