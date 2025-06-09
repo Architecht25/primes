@@ -174,7 +174,17 @@
 
     <!-- 3. COMMUNALES (Template standards)-->
     <h2 class="mb-4 text-center w-100">Ajouter le montant de vos primes communales</h2>
-    <h3>Intégrer ici une carte prime communale pour afficher les options et sélection le montant à intégrer à la somme totale</h3>
+    <template id="prime-commune-template">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="prime-card prime-card-commune p-3 h-100 shadow-sm border border-primary">
+          <img src="images/commune.png" class="card-img-top" alt="Prime communale">
+          <h5 class="prime-title">Titre de la prime</h5>
+          <p class="prime-condition"><strong>Conditions :</strong> À définir</p>
+          <p class="prime-advice"><strong>Montant :</strong> À définir</p>
+          <p class="prime-document"><strong>Type :</strong> À définir</p>
+        </div>
+      </div>
+    </template>
 
     <!-- 3. Monuments & SITES (hard code)-->
     <h2 class="mb-4 text-center w-100">Explorons le côté Monuments et sites de votre bien</h2>

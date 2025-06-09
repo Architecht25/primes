@@ -1,6 +1,7 @@
 import { getCategorieId } from '../logic/calcul-categories.js';
 import { calculerPrimePEB } from '../logic/primes.js';
 import { calculerTotalToutesCartes } from '../logic/total-primes.js';
+import { chargerPrimesCommunales } from './communes.js';
 
 
 export function initialiserCartes() {
@@ -166,5 +167,19 @@ export function initialiserCartePEB(prime, categorie) {
   // 🔑 ATTENTION : Écoute en temps réel
   [selectLabelInitial, selectLogement, selectVentilation, selectLabelFinal].forEach(input => {
     input.addEventListener('change', calculerEtAfficherPrimePEB);
+  });
+}
+
+async function initCommunales(categorie) {
+  const communes = await chargerPrimesCommunales();
+  const select = document.getElementById("select-commune");
+  communes.forEach(c => {
+    const opt = new Option(c.commune, c.commune);
+    select.add(opt);
+  });
+
+  select.addEventListener("change", () => {
+    const commune = communes.find(c => c.commune === select.value);
+    afficherPrimesCommunales(commune.primes, categorie);
   });
 }
