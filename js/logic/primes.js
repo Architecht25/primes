@@ -275,3 +275,45 @@ function calculerMontantPourCarte(input) {
     }
   }
 }
+
+export function calculerPrimePEB(prime, categorie, labelInitial, logement, labelFinal, ventilation) {
+  const labels = ["A", "B", "C", "D", "E", "F", "G"];
+
+  if (!labelInitial || !labelFinal || !logement || !ventilation) return 0;
+
+  const catStr = String(categorie);
+  const categorieData = prime.valeursParCategorie?.[catStr];
+  if (!categorieData) return 0;
+
+  const logementData = categorieData[logement];
+  if (!logementData) return 0;
+
+  const labelData = logementData[labelFinal];
+  if (!labelData) return 0;
+
+  const montant = labelData[ventilation];
+  if (!montant) return 0;
+
+  const indexInitial = labels.indexOf(labelInitial);
+  const indexFinal = labels.indexOf(labelFinal);
+  const saut = indexInitial - indexFinal; // cette fois c'est bon
+
+  const isEligible =
+    (logement === "maison" && indexInitial >= labels.indexOf("E") && saut >= 2) ||
+    (logement === "appartement" && indexInitial >= labels.indexOf("D") && saut >= 2);
+
+  console.log("[DEBUG PEB]", {
+    categorie,
+    labelInitial,
+    labelFinal,
+    logement,
+    ventilation,
+    indexInitial,
+    indexFinal,
+    saut,
+    montant,
+    isEligible
+  });
+
+  return isEligible ? montant : 0;
+}
