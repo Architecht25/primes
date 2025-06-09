@@ -1,73 +1,83 @@
-// 🔁 Importe la fonction qui détermine la catégorie en fonction du profil
+// 🔁 Importe la fonction de logique métier pour déterminer la catégorie
 import { choixCategorie } from './choix-categorie.js';
-
-// 🔁 Importe la fonction pour afficher les cartes spécifiques à cette catégorie (si besoin)
 import { initialiserCartes } from '../ui/cartes.js';
 
-// 🔹 Fonction qui initialise le calcul de catégorie lorsque l’utilisateur clique sur le bouton
+// 🔹 Initialise le calcul de catégorie lorsque l’utilisateur clique sur le bouton
 export function initialiserCalculCategorie() {
   console.log("🟢 initialiserCalculCategorie() lancé");
 
-  const btn = document.getElementById("btn-calcul-prime"); // Bouton déclencheur
+  const btn = document.getElementById("btn-calcul-prime");
+  if (!btn) {
+    console.warn("⚠️ Bouton #btn-calcul-prime introuvable dans le DOM.");
+    return;
+  }
 
   btn.addEventListener("click", async () => {
-    // 🔍 Récupération des champs du formulaire
-    const situation = document.getElementById("situation").value;
-    const revenu1 = parseFloat(document.getElementById("revenu-demandeur").value || 0);
-    const revenu2 = parseFloat(document.getElementById("revenu-conjoint").value || 0);
-    const enfants = parseInt(document.getElementById("enfants").value || 0);
+    // 1. 📥 Lecture des valeurs saisies dans le formulaire
+    const situation = document.getElementById("situation")?.value || "";
+    const revenu1 = parseFloat(document.getElementById("revenu-demandeur")?.value || 0);
+    const revenu2 = parseFloat(document.getElementById("revenu-conjoint")?.value || 0);
+    const enfants = parseInt(document.getElementById("enfants")?.value || 0);
     const revenuTotal = revenu1 + revenu2;
 
-    // 🧠 Détermination du statut (clé de correspondance dans les conditions de catégorie)
-    let statut;
+    // 2. 🧠 Traduction du statut pour correspondre aux règles JSON
+    let statut = "";
     if (situation === "isole") {
       statut = "seul";
-    } else if (situation === "isole_avec_enfant" || situation === "couple") {
+    } else if (["isole_avec_enfant", "couple"].includes(situation)) {
       statut = "seul_avec_charge_ou_couple_sans_charge";
     }
 
-    // 📦 Création du profil complet à envoyer pour calcul de catégorie
+    // 3. 📦 Construction du profil pour la logique métier
     const profil = {
       revenuAnnuel: revenuTotal,
       statut,
       personnesACharge: enfants,
-      autreBienEnPleinePropriete: false, // Peut évoluer plus tard
-      loueViaWoonmaatschappij: false     // Peut évoluer plus tard
+      autreBienEnPleinePropriete: false,
+      loueViaWoonmaatschappij: false
     };
 
-    // 🧮 Calcul de la catégorie via la logique métier
+    // 4. 📊 Calcul de la catégorie
     const cat = await choixCategorie(profil);
+    const catNum = cat.id.slice(-1); // ex: "categorie_2" → "2"
+    sessionStorage.setItem("categorie", catNum);
 
-    // 🎯 Mise à jour de l'affichage de la catégorie
+    // 5. 🖍️ Affichage du résultat à l’écran
     const resultElt = document.getElementById("categorie-resultat");
     const texteElt = document.getElementById("categorie-prime");
 
-    texteElt.textContent = `Catégorie ${cat.id.toUpperCase()} – ${cat.description}` +
-      (cat.eligible_pour_verbouwlening ? " ✅ éligible à Mijn VerbouwLening." : " ❌ non éligible à Mijn VerbouwLening.");
+    if (texteElt && resultElt) {
+      texteElt.textContent = `Catégorie ${cat.id.toUpperCase()} – ${cat.description}` +
+        (cat.eligible_pour_verbouwlening ? " ✅ éligible à Mijn VerbouwLening." : " ❌ non éligible à Mijn VerbouwLening.");
 
-    // 🎨 Changement dynamique de la couleur du bloc selon la catégorie
-    let couleur = "secondary";
-    if (cat.id === "categorie_4") couleur = "success";
-    else if (cat.id === "categorie_3") couleur = "info";
-    else if (cat.id === "categorie_2") couleur = "warning";
-    else if (cat.id === "categorie_1") couleur = "danger";
-    else couleur = "dark";
+      let couleur = "secondary";
+      if (cat.id === "categorie_4") couleur = "success";
+      else if (cat.id === "categorie_3") couleur = "info";
+      else if (cat.id === "categorie_2") couleur = "warning";
+      else if (cat.id === "categorie_1") couleur = "danger";
 
-    resultElt.className = `alert alert-${couleur} mt-4`;
+      resultElt.className = `alert alert-${couleur} mt-4`;
+    }
 
-    // 🔁 Recharge des cartes après calcul de la catégorie, pour n’afficher que celles pertinentes
-    import('../logic/primes.js').then(module => {
-      module.initialiserPrimes();
+    // 6. 🔁 Recharge les cartes selon la nouvelle catégorie
+    import('../ui/cartes.js').then(module => {
+      module.initialiserCartes();
+      // Optionnel : recharge aussi les cartes dynamiques
+      import('../logic/primes.js').then(primesModule => {
+        primesModule.initialiserPrimes?.();
+      });
     });
+    initialiserCartes();
   });
 }
 
-// 🔧 Fonction utilitaire qui extrait l’identifiant numérique de la catégorie affichée
+// 🔎 Fonction utilitaire : retourne "1", "2", "3", "4"
 export function getCategorieId() {
-  const span = document.getElementById("categorie-prime");
-  if (!span) return "3"; // Valeur par défaut
+  const stored = sessionStorage.getItem("categorie");
+  if (stored) return stored;
 
-  const texte = span.textContent.trim();
-  const match = texte.match(/\d+/); // Cherche un nombre dans le texte
-  return match ? match[0] : "3"; // Retourne "1", "2", "3", etc. ou "3" si rien trouvé
+  const span = document.getElementById("categorie-prime");
+  const texte = span?.textContent.trim() ?? "";
+  const match = texte.match(/\d+/);
+  return match ? match[0] : "3"; // défaut : catégorie moyenne
 }

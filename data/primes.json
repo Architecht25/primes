@@ -46,29 +46,18 @@
   "image": "images/isolation_toiture.jpg"
 },
 {
-  "id": "isolation_murs",
-  "slug": "isolation_murs_ext",
-  "titre": "Isolation des murs extérieurs",
+  "id": "isolation_murs_cat12",
+  "slug": "isolation_murs_cat12",
+  "titre": "Isolation des murs extérieurs (cat. 1-2)",
   "unite": "m²",
-  "typeDeValeur": "surface",
-  "eligible_categories": ["1", "2", "3", "4"],
+  "typeDeValeur": "surface_et_type",
+  "categorieLimite": ["1", "2"],
+  "eligible_categories": ["1", "2"],
   "valeursParCategorie": {
-    "4": {
-      "type": "pourcentage_et_plafond",
-      "pourcentage": 50,
-      "plafond": 5000,
-      "condition": "isolation et rénovation"
-    },
-    "3": {
-      "type": "pourcentage_et_plafond",
-      "pourcentage": 35,
-      "plafond": 3500,
-      "condition": "isolation et rénovation"
-    },
     "2": {
       "type": "montant_variable_m2_et_limite",
       "montants_m2": {
-        "spouwmuur": 7.5,
+        "mur_creux": 7.5,
         "interieur": 15,
         "exterieur": 22.5
       },
@@ -79,7 +68,7 @@
     "1": {
       "type": "montant_variable_m2_et_limite",
       "montants_m2": {
-        "spouwmuur": 5,
+        "mur_creux": 5,
         "interieur": 10,
         "exterieur": 15
       },
@@ -93,7 +82,36 @@
   "document": "Facture + attestation de l’entreprise avec méthode utilisée",
   "placeholder": {
     "1": "Surface en m²",
-    "2": "Surface en m²",
+    "2": "Surface en m²"
+  },
+  "image": "images/isolation_murs_ext.jpeg"
+},
+{
+  "id": "isolation_murs_cat34",
+  "slug": "isolation_murs_cat34",
+  "titre": "Isolation des murs extérieurs (cat. 3-4)",
+  "unite": "€",
+  "typeDeValeur": "montant_facture",
+  "categorieLimite": ["3", "4"],
+  "eligible_categories": ["3", "4"],
+  "valeursParCategorie": {
+    "4": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 50,
+      "plafond": 5000,
+      "condition": "isolation et rénovation"
+    },
+    "3": {
+      "type": "pourcentage_et_plafond",
+      "pourcentage": 35,
+      "plafond": 3500,
+      "condition": "isolation et rénovation"
+    }
+  },
+  "condition": "R ≥ 3.5 m²K/W (selon méthode – spouwmuur, intérieur ou extérieur)",
+  "conseil": "Vérifiez les ponts thermiques, choisissez la méthode adaptée (spouwmuur, intérieur, extérieur).",
+  "document": "Facture + attestation de l’entreprise avec méthode utilisée",
+  "placeholder": {
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
@@ -389,6 +407,7 @@
   "titre": "Travaux de rénovation associés - Toiture",
   "unite": "€",
   "typeDeValeur": "dynamique",
+  "eligible_categories": ["3", "4"],
   "categorie_visible": ["3", "4"],
   "valeursParCategorie": {
     "4": {
@@ -419,6 +438,7 @@
   "titre": "Travaux de rénovation associés - Murs",
   "unite": "€",
   "typeDeValeur": "dynamique",
+  "eligible_categories": ["3", "4"],
   "categorie_visible": ["3", "4"],
   "valeursParCategorie": {
     "4": {
@@ -449,6 +469,7 @@
   "titre": "Travaux de rénovation associés - Sol",
   "unite": "€",
   "typeDeValeur": "dynamique",
+  "eligible_categories": ["3", "4"],
   "categorie_visible": ["3", "4"],
   "valeursParCategorie": {
     "4": {

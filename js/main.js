@@ -1,27 +1,24 @@
-// Charge les composants JavaScript de Bootstrap (ex: modales, tooltips, dropdowns, etc.)
 import 'bootstrap';
 
-// Importe la fonction qui calcule la catégorie de revenus du demandeur (catégorie 1 à 4)
+// ⚙️ Initialise le calcul de la catégorie (via formulaire revenus + statut)
 import { initialiserCalculCategorie } from './logic/calcul-categories.js';
 
-// Importe la fonction qui charge et affiche dynamiquement les cartes de primes depuis le fichier JSON
-import { initialiserPrimes } from './logic/primes.js';
-
-// Importe la fonction qui calcule le total général de toutes les primes affichées sur la page
+// 🧮 Recalcule le total général de toutes les cartes affichées
 import { calculerTotalToutesCartes } from './logic/total-primes.js';
 
+// 🧱 Charge toutes les cartes de primes (standards + cas spéciaux)
+import { initialiserCartes } from './ui/cartes.js';
 
-// Écouteur d'événement qui attend que le DOM soit complètement chargé avant d’exécuter les fonctions
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("main.js chargé"); // Message de confirmation dans la console
-  console.log("📦 DOM chargé → initialiserPrimes()"); // Indication du démarrage du processus de création des cartes
+  console.log("main.js chargé");
+  console.log("📦 DOM chargé → initialiserCartes()");
 
-  // Calcule automatiquement la catégorie du demandeur en fonction des revenus et charges déclarés
+  // 1. Calcule la catégorie de revenus à partir du formulaire (et stocke la valeur)
   initialiserCalculCategorie();
 
-  // Charge les données des primes depuis le JSON, crée les cartes correspondantes, et affiche les bons champs
-  initialiserPrimes();
+  // 2. Charge les cartes (standard et spéciales) dynamiquement
+  initialiserCartes();
 
-  // Calcule et affiche le total des primes estimées, en additionnant les résultats de chaque carte
+  // 3. Calcule le total estimé (après chargement des cartes)
   calculerTotalToutesCartes();
 });
