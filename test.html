@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Feuille de style CSS -->
   <link rel="stylesheet" href="CSS/style.css">
-  <link rel="stylesheet" href="CSS/components/card.css">
+  <link rel="stylesheet" href="CSS/components/test.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,31 +23,95 @@
 </script>
 </head>
 <body class="p-4 text-center">
-    <h1 class="mb-4">Je teste mon éligibilité aux primes ici</h1>
+    <h1>Test d’éligibilité aux primes Rénovation</h1>
 
+  <form id="eligibilityForm">
 
-  <!-- Formulaire d'éligibilité -->
-  <!--si vous êtes une entreprise, alors pas de primes depuis le 1er juillet 2025-->
-  <!--quelle est l'année de construction de votre logement ?-->
-  <!--avant le 1 janvier 2006 ou après le 1 janvier 2006-->
-  <!--si avant 1 janvier 2006 et que le réseau de distribution électrique connecté à cette date , quelle est la fonction du bâtiment pour lequel vous demandez une prime-->
-  <!--si après, pas de primes-->
-  <!--soit pour y habiter, soit pour ne pas y habiter-->
-  <!--si c'est pour ne pas y habiter, catégorie 1-->
-  <!--si vous êtes une ASBL, ok mais catégorie 1, pareil pour une coppérative-->
-  <!--si c'est pour y habiter, êtes-vous propriétaire du bien-->
-  <!--si non, uniquement PAC et boiler thermodynamique-->
-  <!--si oui, possédez-vous un autre bien/appartement/terrain à bâtir en pleine propriété-->
-  <!--si oui, catégorie 1, si réponse non, s'agit-il d'une rénovation d'un bien ou d'un appartement-->
-  <!--si c'est un appartement, alors, en ce qui concerne les parties communes, il faut aller voir la COPRO/syndic pour demande prime de base-->
-  <!--alors ensuite la demande pour la partie privée pourra se faire-->
-  <!--si c'est un bien, alors, est-ce que le bien possède un label PEB E ou F avant rénovation-->
-  <!--si réponse = oui, alors êtes-vous domicilié ici-->
-  <!--si réponse = oui, éligible en fonction de la catégorie de revenus + carte PEB-->
-  <!--si réponse = non, alors catégorie 1 + carte PEB-->
-  <!--si pas de certificat PEB E ou F avant rénovation, calcul de catégorie de revenus mais pas carte PEB-->
-  <!--disclaimer a propos des bâtiments mis par terre mais en gardant un mur pour avoir du 6% au lieu de 21% -- pas éligible-->
+    <!-- 1. Demandeur -->
+    <div class="step active" data-step="1">
+      <p><strong>1. Qui est à l’origine de la demande ?</strong></p>
+      <label><input type="radio" name="demandeur" value="particulier"> Particulier</label><br>
+      <label><input type="radio" name="demandeur" value="asbl"> ASBL / Coopérative</label><br>
+      <label><input type="radio" name="demandeur" value="entreprise"> Entreprise</label><br>
+      <button type="button" class="btn" data-step="1">Suivant</button>
+    </div>
 
-  <script type="module" src="js/main.js"></script>
+    <!-- 2. Usage -->
+    <div class="step" data-step="2">
+      <p><strong>2. Le bien est-il destiné à être habité ?</strong></p>
+      <label><input type="radio" name="usage" value="habite"> Oui</label><br>
+      <label><input type="radio" name="usage" value="non_habite"> Non</label><br>
+      <button type="button" class="btn" data-step="2">Suivant</button>
+    </div>
+
+    <!-- 3. Propriétaire -->
+    <div class="step" data-step="3">
+      <p><strong>3. Êtes-vous propriétaire du bien ?</strong></p>
+      <label><input type="radio" name="proprietaire" value="oui"> Oui</label><br>
+      <label><input type="radio" name="proprietaire" value="non"> Non</label><br>
+      <button type="button" class="btn" data-step="3">Suivant</button>
+    </div>
+
+    <!-- 4. Autre bien en pleine propriété -->
+    <div class="step" data-step="4">
+      <p><strong>4. Possédez-vous un autre bien/appartement/terrain en pleine propriété ?</strong></p>
+      <label><input type="radio" name="autre_bien" value="oui"> Oui</label><br>
+      <label><input type="radio" name="autre_bien" value="non"> Non</label><br>
+      <button type="button" class="btn" data-step="4">Suivant</button>
+    </div>
+
+    <!-- 5. Année de construction -->
+    <div class="step" data-step="5">
+      <p><strong>5. Le logement a-t-il été construit avant le 1er janvier 2006 ?</strong></p>
+      <label><input type="radio" name="annee" value="avant"> Oui</label><br>
+      <label><input type="radio" name="annee" value="apres"> Non</label><br>
+      <button type="button" class="btn" data-step="5">Suivant</button>
+    </div>
+
+    <!-- 6. Type de bien -->
+    <div class="step" data-step="6">
+      <p><strong>6. Quel est le type de bien ?</strong></p>
+      <label><input type="radio" name="type" value="maison"> Maison</label><br>
+      <label><input type="radio" name="type" value="appartement"> Appartement</label><br>
+      <button type="button" class="btn" data-step="6">Suivant</button>
+    </div>
+
+    <!-- 7. Copropriété -->
+    <div class="step" data-step="7">
+      <p><strong>7. Pour un appartement, souhaitez-vous faire la demande pour :</strong></p>
+      <label><input type="radio" name="copro" value="commune"> Parties communes (via syndic)</label><br>
+      <label><input type="radio" name="copro" value="privee"> Partie privative</label><br>
+      <button type="button" class="btn" data-step="7">Suivant</button>
+    </div>
+
+    <!-- 8. PEB -->
+    <div class="step" data-step="8">
+      <p><strong>8. Le certificat PEB indique-t-il un label E ou F avant rénovation ?</strong></p>
+      <label><input type="radio" name="peb" value="ef"> Oui</label><br>
+      <label><input type="radio" name="peb" value="autre"> Non</label><br>
+      <button type="button" class="btn" data-step="8">Suivant</button>
+    </div>
+
+    <!-- 9. Domicile -->
+    <div class="step" data-step="9">
+      <p><strong>9. Êtes-vous domicilié dans ce logement ?</strong></p>
+      <label><input type="radio" name="domicile" value="oui"> Oui</label><br>
+      <label><input type="radio" name="domicile" value="non"> Non</label><br>
+      <button type="button" class="btn" data-step="9">Suivant</button>
+    </div>
+
+    <!-- 10. Bâtiment démoli TVA 6% -->
+    <div class="step" data-step="10">
+      <p><strong>10. Le logement est-il un ancien bâtiment démoli (TVA 6%) avec un seul mur conservé ?</strong></p>
+      <label><input type="radio" name="demolition" value="oui"> Oui</label><br>
+      <label><input type="radio" name="demolition" value="non"> Non</label><br>
+      <button type="button" class="btn" data-step="10">Suivant</button>
+    </div>
+
+  </form>
+
+  <div class="result" id="result" style="display: none;"></div>
+
+  <script type="module" src="js/main-test.js"></script>
 </body>
 </html>
