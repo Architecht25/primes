@@ -23,7 +23,14 @@
 </script>
 </head>
 <body class="p-4 text-center">
-    <h1>Test d’éligibilité aux primes Rénovation</h1>
+  <h1>Test d’éligibilité aux primes Rénovation</h1>
+
+  <div id="progress-container" style="max-width: 640px; margin: 0 auto 1em;">
+    <div id="progress-label" style="text-align: center; font-weight: 600;">Étape 1 sur 10</div>
+    <div style="height: 8px; background: #ddd; border-radius: 4px; overflow: hidden;">
+      <div id="progress-bar" style="height: 100%; width: 10%; background: #0077cc; transition: width 0.3s ease;"></div>
+    </div>
+  </div>
 
   <form id="eligibilityForm">
 

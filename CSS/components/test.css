@@ -76,3 +76,17 @@ h1 {
 input[type="radio"] {
   margin-right: 0.5em;
 }
+
+#progress-container {
+  margin-bottom: 2em;
+}
+
+#progress-label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+#progress-bar {
+  background: linear-gradient(to right, #0077cc, #00b4d8);
+}
