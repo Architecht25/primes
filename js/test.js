@@ -7,8 +7,8 @@ export function setupEligibilityTest() {
   }
 
   function nextStep(currentStep) {
-    const current = document.querySelector(`.step[data-step="${currentStep}"]`);
-    const next = document.querySelector(`.step[data-step="${currentStep + 1}"]`);
+    const current = document.querySelector(`.form-card[data-step="${currentStep}"]`);
+    const next = document.querySelector(`.form-card[data-step="${currentStep + 1}"]`);
 
     // ✅ Vérifie qu'une réponse est cochée
     const inputs = current.querySelectorAll('input[type="radio"]');
@@ -42,7 +42,7 @@ export function setupEligibilityTest() {
     if (currentStep === 6 && form.type.value !== 'appartement') {
       current.classList.remove('active');
       const skipToStep = currentStep + 2;
-      const target = document.querySelector(`.step[data-step="${skipToStep}"]`);
+      const target = document.querySelector(`.form-card[data-step="${skipToStep}"]`);
       if (target) {
         target.classList.add('active');
         updateProgress(skipToStep);
@@ -62,12 +62,32 @@ export function setupEligibilityTest() {
 
   function calculateResult() {
     let message = "✅ Vous êtes potentiellement éligible aux primes.";
+    let categorie = null;
 
-    if (form.demandeur.value === 'asbl') message += " (Catégorie 1 automatique pour ASBL/coopérative)";
-    if (form.usage.value === 'non_habite') message += " (Usage non résidentiel : Catégorie 1)";
-    if (form.proprietaire.value === 'non') message += " (Uniquement PAC ou boiler)";
-    if (form.autre_bien.value === 'oui') message += " (Catégorie 1 car vous possédez un autre bien)";
+    if (form.demandeur.value === 'asbl') {
+      message += " (ASBL/coopérative → Catégorie 1)";
+      categorie = 1;
+    }
+    if (form.usage.value === 'non_habite') {
+      message += " (Usage non résidentiel → Catégorie 1)";
+      categorie = 1;
+    }
+    if (form.proprietaire.value === 'non') {
+      message += " (Pas propriétaire → uniquement PAC/boiler)";
+      categorie = 1;
+    }
+    if (form.autre_bien.value === 'oui') {
+      message += " (Propriétaire d’un autre bien → Catégorie 1)";
+      categorie = 1;
+    }
 
+    // Si aucune des conditions ci-dessus ne s’applique
+    if (!categorie) {
+      categorie = 2; // Valeur par défaut (peut être affinée avec les revenus)
+      message += " (Votre catégorie est estimée à 2, à confirmer selon vos revenus)";
+    }
+
+    // Traitement PEB
     if (form.peb.value === 'ef') {
       if (form.domicile.value === 'oui') {
         message += " (Accès à la carte PEB)";
@@ -82,23 +102,43 @@ export function setupEligibilityTest() {
       message += " (Parties communes = demande via syndic)";
     }
 
+    // 👉 Enregistre catégorie dans le localStorage aussi
+    const testData = {
+      demandeur: form.demandeur.value,
+      usage: form.usage.value,
+      proprietaire: form.proprietaire.value,
+      autre_bien: form.autre_bien.value,
+      annee: form.annee.value,
+      type: form.type.value,
+      copro: form.copro?.value || null,
+      peb: form.peb.value,
+      domicile: form.domicile.value,
+      demolition: form.demolition.value,
+      categorie: categorie
+    };
+    localStorage.setItem("eligibiliteRenovate", JSON.stringify(testData));
+
+    // 🔍 Résumé final
+    message += `<br><br><strong>Catégorie estimée :</strong> ${categorie}`;
+
     showResult(message);
   }
 
+
   function showResult(msg, isEligible = true) {
-  document.getElementById('eligibilityForm').style.display = 'none';
-  const result = document.getElementById('result');
+    document.getElementById('eligibilityForm').style.display = 'none';
+    const result = document.getElementById('result');
 
   result.innerHTML = `
     <p>${msg}</p>
-    <div class="mt-4">
-      <button class="btn btn-secondary me-2" onclick="location.reload()">🔁 Recommencer le test</button>
-      ${isEligible ? `<a href="analyse.html" class="btn btn-primary">➡️ Aller au simulateur</a>` : ''}
+    <div class="btn-group">
+      <button type="button" class="btn-custom custom-secondary" onclick="location.reload()">Recommencer</button>
+      ${isEligible ? `<a href="analyse.html" class="btn-custom custom-primary">Simulateur</a>` : ''}
     </div>
   `;
 
-  result.style.display = 'block';
-}
+    result.style.display = 'block';
+  }
 
 
   // Activation des boutons "Suivant"

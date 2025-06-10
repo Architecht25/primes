@@ -25,97 +25,86 @@
 <body class="p-4 text-center">
   <h1>Test d’éligibilité aux primes Rénovation</h1>
 
-  <div id="progress-container" style="max-width: 640px; margin: 0 auto 1em;">
-    <div id="progress-label" style="text-align: center; font-weight: 600;">Étape 1 sur 10</div>
-    <div style="height: 8px; background: #ddd; border-radius: 4px; overflow: hidden;">
-      <div id="progress-bar" style="height: 100%; width: 10%; background: #0077cc; transition: width 0.3s ease;"></div>
-    </div>
+<div id="progress-container" style="max-width: 640px; margin: 0 auto 1em;">
+  <div id="progress-label" style="text-align: center; font-weight: 600;">Étape 1 sur 10</div>
+  <div style="height: 8px; background: #ddd; border-radius: 4px; overflow: hidden;">
+    <div id="progress-bar" style="height: 100%; width: 10%; background: #0077cc; transition: width 0.3s ease;"></div>
+  </div>
+</div>
+
+<form id="eligibilityForm">
+  <!-- Étapes -->
+  <div class="form-card active" data-step="1">
+    <h2>1. Qui est à l’origine de la demande ?</h2>
+    <label><input type="radio" name="demandeur" value="particulier"> Particulier</label>
+    <label><input type="radio" name="demandeur" value="asbl"> ASBL / Coopérative</label>
+    <label><input type="radio" name="demandeur" value="entreprise"> Entreprise</label>
+    <button type="button" class="btn btn-primary" data-step="1">Suivant</button>
   </div>
 
-  <form id="eligibilityForm">
+  <div class="form-card" data-step="2">
+    <h2>2. Le bien est-il destiné à être habité ?</h2>
+    <label><input type="radio" name="usage" value="habite"> Oui</label>
+    <label><input type="radio" name="usage" value="non_habite"> Non</label>
+    <button type="button" class="btn btn-primary" data-step="2">Suivant</button>
+  </div>
 
-    <!-- 1. Demandeur -->
-    <div class="step active" data-step="1">
-      <p><strong>1. Qui est à l’origine de la demande ?</strong></p>
-      <label><input type="radio" name="demandeur" value="particulier"> Particulier</label><br>
-      <label><input type="radio" name="demandeur" value="asbl"> ASBL / Coopérative</label><br>
-      <label><input type="radio" name="demandeur" value="entreprise"> Entreprise</label><br>
-      <button type="button" class="btn" data-step="1">Suivant</button>
-    </div>
+  <div class="form-card" data-step="3">
+    <h2>3. Êtes-vous propriétaire du bien ?</h2>
+    <label><input type="radio" name="proprietaire" value="oui"> Oui</label>
+    <label><input type="radio" name="proprietaire" value="non"> Non</label>
+    <button type="button" class="btn btn-primary" data-step="3">Suivant</button>
+  </div>
 
-    <!-- 2. Usage -->
-    <div class="step" data-step="2">
-      <p><strong>2. Le bien est-il destiné à être habité ?</strong></p>
-      <label><input type="radio" name="usage" value="habite"> Oui</label><br>
-      <label><input type="radio" name="usage" value="non_habite"> Non</label><br>
-      <button type="button" class="btn" data-step="2">Suivant</button>
-    </div>
+  <div class="form-card" data-step="4">
+    <h2>4. Possédez-vous un autre bien/appartement/terrain en pleine propriété ?</h2>
+    <label><input type="radio" name="autre_bien" value="oui"> Oui</label>
+    <label><input type="radio" name="autre_bien" value="non"> Non</label>
+    <button type="button" class="btn btn-primary" data-step="4">Suivant</button>
+  </div>
 
-    <!-- 3. Propriétaire -->
-    <div class="step" data-step="3">
-      <p><strong>3. Êtes-vous propriétaire du bien ?</strong></p>
-      <label><input type="radio" name="proprietaire" value="oui"> Oui</label><br>
-      <label><input type="radio" name="proprietaire" value="non"> Non</label><br>
-      <button type="button" class="btn" data-step="3">Suivant</button>
-    </div>
+  <div class="form-card" data-step="5">
+    <h2>5. Le logement a-t-il été construit avant le 1er janvier 2006 ?</h2>
+    <label><input type="radio" name="annee" value="avant"> Oui</label>
+    <label><input type="radio" name="annee" value="apres"> Non</label>
+    <button type="button" class="btn btn-primary" data-step="5">Suivant</button>
+  </div>
 
-    <!-- 4. Autre bien en pleine propriété -->
-    <div class="step" data-step="4">
-      <p><strong>4. Possédez-vous un autre bien/appartement/terrain en pleine propriété ?</strong></p>
-      <label><input type="radio" name="autre_bien" value="oui"> Oui</label><br>
-      <label><input type="radio" name="autre_bien" value="non"> Non</label><br>
-      <button type="button" class="btn" data-step="4">Suivant</button>
-    </div>
+  <div class="form-card" data-step="6">
+    <h2>6. Quel est le type de bien ?</h2>
+    <label><input type="radio" name="type" value="maison"> Maison</label>
+    <label><input type="radio" name="type" value="appartement"> Appartement</label>
+    <button type="button" class="btn btn-primary" data-step="6">Suivant</button>
+  </div>
 
-    <!-- 5. Année de construction -->
-    <div class="step" data-step="5">
-      <p><strong>5. Le logement a-t-il été construit avant le 1er janvier 2006 ?</strong></p>
-      <label><input type="radio" name="annee" value="avant"> Oui</label><br>
-      <label><input type="radio" name="annee" value="apres"> Non</label><br>
-      <button type="button" class="btn" data-step="5">Suivant</button>
-    </div>
+  <div class="form-card" data-step="7">
+    <h2>7. Pour un appartement, souhaitez-vous faire la demande pour :</h2>
+    <label><input type="radio" name="copro" value="commune"> Parties communes (via syndic)</label>
+    <label><input type="radio" name="copro" value="privee"> Partie privative</label>
+    <button type="button" class="btn btn-primary" data-step="7">Suivant</button>
+  </div>
 
-    <!-- 6. Type de bien -->
-    <div class="step" data-step="6">
-      <p><strong>6. Quel est le type de bien ?</strong></p>
-      <label><input type="radio" name="type" value="maison"> Maison</label><br>
-      <label><input type="radio" name="type" value="appartement"> Appartement</label><br>
-      <button type="button" class="btn" data-step="6">Suivant</button>
-    </div>
+  <div class="form-card" data-step="8">
+    <h2>8. Le certificat PEB indique-t-il un label E ou F avant rénovation ?</h2>
+    <label><input type="radio" name="peb" value="ef"> Oui</label>
+    <label><input type="radio" name="peb" value="autre"> Non</label>
+    <button type="button" class="btn btn-primary" data-step="8">Suivant</button>
+  </div>
 
-    <!-- 7. Copropriété -->
-    <div class="step" data-step="7">
-      <p><strong>7. Pour un appartement, souhaitez-vous faire la demande pour :</strong></p>
-      <label><input type="radio" name="copro" value="commune"> Parties communes (via syndic)</label><br>
-      <label><input type="radio" name="copro" value="privee"> Partie privative</label><br>
-      <button type="button" class="btn" data-step="7">Suivant</button>
-    </div>
+  <div class="form-card" data-step="9">
+    <h2>9. Êtes-vous domicilié dans ce logement ?</h2>
+    <label><input type="radio" name="domicile" value="oui"> Oui</label>
+    <label><input type="radio" name="domicile" value="non"> Non</label>
+    <button type="button" class="btn btn-primary" data-step="9">Suivant</button>
+  </div>
 
-    <!-- 8. PEB -->
-    <div class="step" data-step="8">
-      <p><strong>8. Le certificat PEB indique-t-il un label E ou F avant rénovation ?</strong></p>
-      <label><input type="radio" name="peb" value="ef"> Oui</label><br>
-      <label><input type="radio" name="peb" value="autre"> Non</label><br>
-      <button type="button" class="btn" data-step="8">Suivant</button>
-    </div>
-
-    <!-- 9. Domicile -->
-    <div class="step" data-step="9">
-      <p><strong>9. Êtes-vous domicilié dans ce logement ?</strong></p>
-      <label><input type="radio" name="domicile" value="oui"> Oui</label><br>
-      <label><input type="radio" name="domicile" value="non"> Non</label><br>
-      <button type="button" class="btn" data-step="9">Suivant</button>
-    </div>
-
-    <!-- 10. Bâtiment démoli TVA 6% -->
-    <div class="step" data-step="10">
-      <p><strong>10. Le logement est-il un ancien bâtiment démoli (TVA 6%) avec un seul mur conservé ?</strong></p>
-      <label><input type="radio" name="demolition" value="oui"> Oui</label><br>
-      <label><input type="radio" name="demolition" value="non"> Non</label><br>
-      <button type="button" class="btn" data-step="10">Suivant</button>
-    </div>
-
-  </form>
+  <div class="form-card" data-step="10">
+    <h2>10. Le logement est-il un ancien bâtiment démoli (TVA 6%) avec un seul mur conservé ?</h2>
+    <label><input type="radio" name="demolition" value="oui"> Oui</label>
+    <label><input type="radio" name="demolition" value="non"> Non</label>
+    <button type="button" class="btn btn-primary" data-step="10">Voir le résultat</button>
+  </div>
+</form>
 
   <div class="result" id="result" style="display: none;"></div>
 
