@@ -34,9 +34,9 @@
       "condition": "isolation seule"
     }
   },
-  "condition": "R ≥ 4.5 m²K/W",
+  "condition": "R ≥ 4.5 m²K/W pour toiture inclinée, plate et grenier",
   "conseil": "Utiliser un isolant certifié (laine minérale, PIR, etc.) et vérifier l'étanchéité.",
-  "document": "Facture détaillée + attestation de conformité de l’entreprise",
+  "document": "Facture détaillée + devis ou métré + attestation de l’entrepreneur",
   "placeholder": {
     "1": "Surface en m²",
     "2": "Surface en m²",
@@ -77,9 +77,9 @@
       "condition": "isolation seule"
     }
   },
-  "condition": "R ≥ 3.5 m²K/W (selon méthode – spouwmuur, intérieur ou extérieur)",
+  "condition": "R ≥ 3.0 m²K/W (selon méthode – mur creux: 5 cm de creux et R≥ 2, intérieur:2.0 ou extérieur:3.0)",
   "conseil": "Vérifiez les ponts thermiques, choisissez la méthode adaptée (spouwmuur, intérieur, extérieur).",
-  "document": "Facture + attestation de l’entreprise avec méthode utilisée",
+  "document": "Facture + devis ou métré + attestation de l’entrepreneur. si isolation en coulisse, alors numéro STS de l'entrepreneur. si isolation par l'intérieur, alors attestation de l'entrepreneur, il faut un architecte ou un entrepreneur avec numéro BIM.",
   "placeholder": {
     "1": "Surface en m²",
     "2": "Surface en m²"
@@ -108,9 +108,9 @@
       "condition": "isolation et rénovation"
     }
   },
-  "condition": "R ≥ 3.5 m²K/W (selon méthode – spouwmuur, intérieur ou extérieur)",
+  "condition": "R ≥ 3.0 m²K/W (selon méthode – mur creux: 5 cm de creux et R≥ 2, intérieur:2.0 ou extérieur:3.0)",
   "conseil": "Vérifiez les ponts thermiques, choisissez la méthode adaptée (spouwmuur, intérieur, extérieur).",
-  "document": "Facture + attestation de l’entreprise avec méthode utilisée",
+  "document": "Facture + devis ou métré + attestation de l’entrepreneur. si isolation en coulisse, alors numéro STS de l'entrepreneur. si isolation par l'intérieur, alors attestation de l'entrepreneur, il faut un architecte ou un entrepreneur avec numéro BIM.",
   "placeholder": {
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
@@ -120,7 +120,7 @@
 {
   "id": "isolation_sol",
   "slug": "isolation_sol",
-  "titre": "Isolation du sol / plancher bas",
+  "titre": "Isolation du sol / plancher bas et sol cave",
   "unite": "m²",
   "typeDeValeur": "surface",
   "eligible_categories": ["1", "2", "3", "4"],
@@ -152,9 +152,9 @@
       "condition": "isolation seule"
     }
   },
-  "condition": "Isolation thermique du plancher bas sur vide sanitaire ou terre-plein",
+  "condition": "R ≥ 2.0 m²K/W + Isolation thermique du plancher bas sur vide sanitaire ou terre-plein",
   "conseil": "Privilégier les isolants à forte résistance thermique. Traiter également les ponts thermiques si possible.",
-  "document": "Facture détaillée + preuve du type d’isolation installée",
+  "document": "Facture détaillée + devis ou métré + attestation de l’entrepreneur",
   "placeholder": {
     "1": "Surface en m²",
     "2": "Surface en m²",
@@ -198,9 +198,9 @@
       "condition": "remplacement du vitrage uniquement – ventilation obligatoire"
     }
   },
-  "condition": "Vitrage HR++ (U ≤ 1.1 W/m²K) + ventilation conforme (type invisivent ou VMC)",
+  "condition": "Vitrage HR++ (U ≤ 1.0 W/m²K) + ventilation conforme (type invisivent dans toutes les pièces sèches ou VMC double flux (système D))",
   "conseil": "Veillez à intégrer un système de ventilation efficace lors du remplacement des menuiseries.",
-  "document": "Facture + attestation de l’entreprise + preuve du respect des normes de ventilation",
+  "document": "Facture + bordereau de commande + attestation de l'entrepreneur + preuve du respect des normes de ventilation",
   "placeholder": {
     "1": "Surface en m²",
     "2": "Surface en m²",
@@ -242,7 +242,7 @@
   },
   "condition": "Les travaux doivent précéder une isolation effective et être facturés séparément",
   "conseil": "Pensez à intégrer ces travaux dans le devis global mais à les distinguer clairement",
-  "document": "Facture détaillée + preuve des travaux réalisés en amont d’une isolation",
+  "document": "Facture détaillée + devis ou métré + preuve (photos!) des travaux réalisés en amont d’une isolation",
   "placeholder": {
     "1": "",
     "2": "",
@@ -262,29 +262,17 @@
     "4": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 50,
-      "plafond": 3000,
-      "condition": "Travaux liés au renouvellement des réseaux en vue d'une rénovation – prime uniquement si la prime principale est demandée"
+      "plafond": 3000
     },
     "3": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 35,
-      "plafond": 2100,
-      "condition": "Travaux liés au renouvellement des réseaux en vue d'une rénovation – prime uniquement si la prime principale est demandée"
-    },
-    "2": {
-      "type": "prime_conditionnelle",
-      "valeur": 0,
-      "condition": "Prime complémentaire uniquement si une prime principale (type isolation ou équipement) est demandée"
-    },
-    "1": {
-      "type": "prime_conditionnelle",
-      "valeur": 0,
-      "condition": "Prime complémentaire uniquement si une prime principale (type isolation ou équipement) est demandée"
+      "plafond": 2100
     }
   },
   "condition": "Doit concerner les réseaux intérieurs à remplacer avant travaux principaux (chauffage, électricité, sanitaire)",
-  "conseil": "Séparez ces interventions dans le devis pour les rendre éligibles",
-  "document": "Facture + justificatif des travaux concernés",
+  "conseil": "Séparez ces interventions dans le devis pour les rendre éligibles. Attention nous parlons bien des typaux par exemple et non les appareils eux-mêmes.",
+  "document": "Facture + devis ou métré + justificatif des travaux concernés (photos!) et l'attestation de conformité si applicable",
   "placeholder": {
     "1": "",
     "2": "",
@@ -309,8 +297,7 @@
         "air_air": 600,
         "hybride": 4000
       },
-      "plafond_pourcentage": 50,
-      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+      "plafond_pourcentage": 50
     },
     "3": {
       "type": "forfait_et_plafond_facture",
@@ -320,8 +307,7 @@
         "air_air": 450,
         "hybride": 3000
       },
-      "plafond_pourcentage": 35,
-      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+      "plafond_pourcentage": 35
     },
     "2": {
       "type": "forfait_et_plafond_facture",
@@ -331,8 +317,7 @@
         "air_air": 300,
         "hybride": 1500
       },
-      "plafond_pourcentage": 25,
-      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+      "plafond_pourcentage": 25
     },
     "1": {
       "type": "forfait_et_plafond_facture",
@@ -342,13 +327,12 @@
         "air_air": 300,
         "hybride": 1500
       },
-      "plafond_pourcentage": 20,
-      "condition": "L'installation doit être conforme aux normes EPB, bâtiment de +5 ans"
+      "plafond_pourcentage": 20
     }
   },
   "condition": "Uniquement pour bâtiments de plus de 5 ans avec permis d’environnement",
-  "conseil": "Vérifiez si le type de pompe est bien éligible et installé par un professionnel agréé",
-  "document": "Facture détaillée + attestation de conformité de l’installateur",
+  "conseil": "Vérifiez si le type de pompe est bien éligible et installé par un professionnel agréé + l'installation doit être conforme aux normes PEB, bâtiment de +5 ans.",
+  "document": "Facture détaillée + devis ou métré + attestation de conformité de l’installateur - numéro RESERT obligatoire pour toutes les pompes à chaleur + label européen. si Air/eau, fonction réversible soit non active.",
   "placeholder": {
     "1": "Choisissez le type de pompe",
     "2": "Choisissez le type de pompe",
@@ -368,31 +352,27 @@
     "4": {
       "type": "forfait_et_plafond_facture",
       "forfait": 1200,
-      "plafond_pourcentage": 50,
-      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+      "plafond_pourcentage": 50
     },
     "3": {
       "type": "forfait_et_plafond_facture",
       "forfait": 1050,
-      "plafond_pourcentage": 35,
-      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+      "plafond_pourcentage": 35
     },
     "2": {
       "type": "forfait_et_plafond_facture",
       "forfait": 900,
-      "plafond_pourcentage": 25,
-      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+      "plafond_pourcentage": 25
     },
     "1": {
       "type": "forfait_et_plafond_facture",
       "forfait": 900,
-      "plafond_pourcentage": 20,
-      "condition": "L'installation doit concerner un bâtiment de plus de 5 ans et respecter les normes EPB"
+      "plafond_pourcentage": 20
     }
   },
   "condition": "Système à pompe à chaleur pour eau chaude sanitaire – non combiné avec boiler électrique classique",
-  "conseil": "L’installation doit être effectuée par un professionnel agréé et être bien dimensionnée selon les besoins du foyer.",
-  "document": "Facture + attestation de conformité de l’installateur",
+  "conseil": "L’installation doit être effectuée par un professionnel agréé et être bien dimensionnée selon les besoins du foyer + bâtiment de plus de 5 ans et respect des normes PEB.",
+  "document": "Facture + devis ou métré + label euorpéen + attestation de conformité de l'entrepreneur",
   "placeholder": {
     "1": "Montant total de la facture",
     "2": "Montant total de la facture",
@@ -413,19 +393,17 @@
     "4": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 50,
-      "plafond": 5750,
-      "condition": "Travaux de rénovation associés à l’isolation de toiture"
+      "plafond": 5750
     },
     "3": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 35,
-      "plafond": 4025,
-      "condition": "Travaux de rénovation associés à l’isolation de toiture"
+      "plafond": 4025
     }
   },
-  "condition": "Factures admissibles liées à la structure ou à l'étanchéité",
+  "condition": "Travaux de rénovation associés à l’isolation de toiture + Factures admissibles liées à la structure, couverture, accessoires toiture, étanchéité, corniche, descente d'eau pluviale.",
   "conseil": "Peuvent inclure dépose de l'ancienne couverture, renforcement charpente, etc.",
-  "document": "Facture détaillée mentionnant les postes concernés",
+  "document": "Facture détaillée mentionnant les postes concernés + devis ou métré.",
   "placeholder": {
     "3": "Montant total des travaux toiture hors isolation",
     "4": "Montant total des travaux toiture hors isolation"
@@ -444,19 +422,17 @@
     "4": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 50,
-      "plafond": 5750,
-      "condition": "Travaux de rénovation associés à l’isolation des murs"
+      "plafond": 5750
     },
     "3": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 35,
-      "plafond": 4025,
-      "condition": "Travaux de rénovation associés à l’isolation des murs"
+      "plafond": 4025
     }
   },
-  "condition": "Travaux admissibles hors isolation, ex. bardage, crépi, traitement humidité",
+  "condition": "Travaux de rénovation associés à l’isolation des murs + Travaux admissibles hors isolation, ex. bardage, crépi, traitement humidité",
   "conseil": "Inclut travaux préparatoires ou de remise en état après isolation",
-  "document": "Facture détaillée avec ventilation des coûts",
+  "document": "Facture détaillée avec ventilation des coûts + devis ou métré.",
   "placeholder": {
     "3": "Montant total des travaux murs hors isolation",
     "4": "Montant total des travaux murs hors isolation"
@@ -475,19 +451,17 @@
     "4": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 50,
-      "plafond": 5750,
-      "condition": "Travaux de rénovation associés à l’isolation du sol"
+      "plafond": 5750
     },
     "3": {
       "type": "pourcentage_et_plafond",
       "pourcentage": 35,
-      "plafond": 4025,
-      "condition": "Travaux de rénovation associés à l’isolation du sol"
+      "plafond": 4025
     }
   },
-  "condition": "Travaux admissibles incluant chape, ragréage, reprise du revêtement, etc.",
+  "condition": "Travaux de rénovation associés à l’isolation du sol + Travaux admissibles incluant chape, ragréage, reprise du revêtement, étanchéite.",
   "conseil": "Documentez bien les postes techniques hors isolant",
-  "document": "Facture séparant les postes d’isolation et de rénovation",
+  "document": "Facture séparant les postes d’isolation et de rénovation + devis ou métré.",
   "placeholder": {
     "3": "Montant total des travaux sols hors isolation",
     "4": "Montant total des travaux sols hors isolation"
