@@ -92,12 +92,22 @@
       </div>
 
       <div id="form-chantier" class="form-section">
-        <h5>Informations sur le chantier</h5>
+        <h5 class="mt-4">Informations sur le chantier</h5>
+
         <input type="text" class="form-control mb-2" placeholder="Date de début prévue">
         <input type="text" class="form-control mb-2" placeholder="Date de fin prévue">
-        <input type="text" class="form-control mb-2" placeholder="Nom de l'entrepreneur">
+
+        <div id="entrepreneurs-container">
+          <input type="text" class="form-control mb-2" name="entrepreneur[]" placeholder="Nom de l'entrepreneur">
+        </div>
+
+        <button type="button" class="btn btn-outline-secondary btn-sm mb-3" id="add-entrepreneur-btn">
+          + Ajouter un entrepreneur
+        </button>
+
         <input type="text" class="form-control mb-2" placeholder="Nom de l'architecte (si applicable)">
         <input type="text" class="form-control mb-2" placeholder="Coût total estimé des travaux">
+
       <div class="mb-3">
         <label for="notes-chantier" class="form-label">Notes / remarques</label>
         <textarea id="notes-chantier" class="form-control" rows="4" placeholder="Ajoutez ici vos remarques, observations, éléments importants…"></textarea>
@@ -106,6 +116,10 @@
         <button type="button" class="btn btn-success text-center mt-3" id="btn-toggle-chantier">
           Enregistrer les données du chantier
         </button>
+
+        <a href="collecte.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
+          Collecter des documents et photos
+        </a>
       </div>
       </div>
 

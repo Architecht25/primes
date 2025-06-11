@@ -9,6 +9,9 @@ import { calculerTotalToutesCartes } from './logic/total-primes.js';
 // 🧱 Charge toutes les cartes de primes (standards + cas spéciaux)
 import { initialiserCartes } from './ui/cartes.js';
 
+// 👷‍♂️ Initialise l'ajout d'entrepreneurs (formulaire + stockage)
+import { initialiserAjoutEntrepreneurs } from './ui/entrepreneurs.js';
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("main.js chargé");
   console.log("📦 DOM chargé → initialiserCartes()");
@@ -21,4 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Calcule le total estimé (après chargement des cartes)
   calculerTotalToutesCartes();
+
+  // 4. Initialise l'ajout d'entrepreneurs
+  initialiserAjoutEntrepreneurs();
 });
