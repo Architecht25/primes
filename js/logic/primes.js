@@ -55,6 +55,9 @@ export function afficherCartes(primes) {
   let cartesAffichees = 0;
 
   primes.forEach(prime => {
+
+    console.log("▶️ Prime à afficher", prime.slug, prime.condition, prime.conseil, prime.document);
+
     if (!prime.eligible_categories?.includes(categorie)) return;
 
     const regle = prime.valeursParCategorie?.[categorie];
@@ -63,9 +66,16 @@ export function afficherCartes(primes) {
     const clone = template.content.cloneNode(true);
     clone.querySelector(".card-img-top").src = prime.image;
     clone.querySelector(".prime-title").textContent = prime.titre;
-    clone.querySelector(".prime-condition").textContent = `💡 ${prime.condition}`;
-    clone.querySelector(".prime-advice").textContent = `🛠 ${prime.conseil}`;
-    clone.querySelector(".prime-document").textContent = `📎 ${prime.document}`;
+    console.log("▶️ Prime à afficher", prime.slug, prime.condition, prime.conseil, prime.document);
+    console.log("▶️ Prime à afficher", prime.slug, {
+      condition: prime.condition,
+      conseil: prime.conseil,
+      document: prime.document
+    });
+
+    clone.querySelector(".prime-condition").innerHTML = `💡 <strong>Conditions :</strong> ${prime.condition || "Non renseigné"}`;
+    clone.querySelector(".prime-advice").innerHTML = `🛠 <strong>Conseils :</strong> ${prime.conseil || "Non renseigné"}`;
+    clone.querySelector(".prime-document").innerHTML = `📎 <strong>Document :</strong> ${prime.document || "Non renseigné"}`;
 
     const inputGroup = clone.querySelector(".input-group");
     inputGroup.innerHTML = '';

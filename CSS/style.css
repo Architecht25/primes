@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   background-color: #f4f6f9;
   color: #416992;
   line-height: 1.6;
@@ -24,7 +24,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  image-rendering: auto;          /* Laisse le navigateur gérer le rendu */
+  image-rendering: auto;
 }
 
 .container {
@@ -81,4 +81,3 @@ h4 {
   flex: 1 1 auto;
   min-width: 0;
 }
-

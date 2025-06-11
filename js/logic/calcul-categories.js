@@ -13,14 +13,12 @@ export function initialiserCalculCategorie() {
   }
 
   btn.addEventListener("click", async () => {
-    // 1. 📥 Lecture des valeurs saisies dans le formulaire
     const situation = document.getElementById("situation")?.value || "";
     const revenu1 = parseFloat(document.getElementById("revenu-demandeur")?.value || 0);
     const revenu2 = parseFloat(document.getElementById("revenu-conjoint")?.value || 0);
     const enfants = parseInt(document.getElementById("enfants")?.value || 0);
     const revenuTotal = revenu1 + revenu2;
 
-    // 2. 🧠 Traduction du statut pour correspondre aux règles JSON
     let statut = "";
     if (situation === "isole") {
       statut = "seul";
@@ -28,7 +26,6 @@ export function initialiserCalculCategorie() {
       statut = "seul_avec_charge_ou_couple_sans_charge";
     }
 
-    // 3. 📦 Construction du profil pour la logique métier
     const profil = {
       revenuAnnuel: revenuTotal,
       statut,
@@ -37,12 +34,10 @@ export function initialiserCalculCategorie() {
       loueViaWoonmaatschappij: false
     };
 
-    // 4. 📊 Calcul de la catégorie
     const cat = await choixCategorie(profil);
     const catNum = cat.id.slice(-1); // ex: "categorie_2" → "2"
-    sessionStorage.setItem("categorie", catNum);
+    sessionStorage.setItem("categorie", catNum); // ✅ Stockage pour usage global
 
-    // 5. 🖍️ Affichage du résultat à l’écran
     const resultElt = document.getElementById("categorie-resultat");
     const texteElt = document.getElementById("categorie-prime");
 
@@ -59,25 +54,31 @@ export function initialiserCalculCategorie() {
       resultElt.className = `alert alert-${couleur} mt-4`;
     }
 
-    // 6. 🔁 Recharge les cartes selon la nouvelle catégorie
+    // ✅ Recharge les cartes avec la bonne catégorie
     import('../ui/cartes.js').then(module => {
-      module.initialiserCartes();
-      // Optionnel : recharge aussi les cartes dynamiques
-      import('../logic/primes.js').then(primesModule => {
-        primesModule.initialiserPrimes?.();
-      });
+      module.initialiserCartes(catNum); // 💡 Passe la catégorie
     });
-    initialiserCartes();
+
+    import('../logic/primes.js').then(primesModule => {
+      primesModule.initialiserPrimes?.(catNum); // si cette fonction l’accepte
+    });
   });
 }
+
 
 // 🔎 Fonction utilitaire : retourne "1", "2", "3", "4"
 export function getCategorieId() {
   const stored = sessionStorage.getItem("categorie");
-  if (stored) return stored;
+  if (stored) {
+    console.log("🔄 Catégorie depuis sessionStorage :", stored);
+    return stored;
+  }
 
   const span = document.getElementById("categorie-prime");
   const texte = span?.textContent.trim() ?? "";
   const match = texte.match(/\d+/);
-  return match ? match[0] : "3"; // défaut : catégorie moyenne
+
+  const fallback = match ? match[0] : "4";
+  console.log("🔎 Catégorie détectée depuis texte ou défaut :", fallback);
+  return fallback;
 }

@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initialiserCalculCategorie();
 
   // 2. Charge les cartes (standard et spéciales) dynamiquement
-  initialiserCartes();
+  // 💡 Utiliser sessionStorage ou catégorie par défaut "3"
+  const categorieInitiale = sessionStorage.getItem("categorie") || "4"; // Catégorie par défaut si non définie
+  initialiserCartes(categorieInitiale);
 
   // 3. Calcule le total estimé (après chargement des cartes)
   calculerTotalToutesCartes();

@@ -55,23 +55,34 @@ export function initialiserCartes() {
 function genererCarteStandard(prime, template) {
   const clone = template.content.cloneNode(true);
   const slug = prime.slug;
-
-  // Données génériques
-  clone.querySelector(".card-img-top").src = prime.image;
-  clone.querySelector(".prime-title").textContent = prime.titre;
-  clone.querySelector(".prime-condition").textContent = prime.condition;
-  clone.querySelector(".prime-advice").textContent = prime.conseil;
-  clone.querySelector(".prime-document").textContent = prime.document;
-
-  const inputGroup = clone.querySelector(".input-group");
   const cat = getCategorieId();
 
-  // Nettoyage de l'inputGroup pour tout remplacer dynamiquement
-  inputGroup.innerHTML = "";
+  // 🎨 Image
+  const img = clone.querySelector(".card-img-top");
+  if (img) img.src = prime.image;
 
-  // Traitement spécial pour "surface_et_type"
+  // 🏷️ Titre
+  const title = clone.querySelector(".prime-title");
+  if (title) title.textContent = prime.titre;
+
+  // 💡 Conditions
+  const cond = clone.querySelector(".prime-condition");
+  if (cond) cond.innerHTML = `💡 <strong>Conditions :</strong> ${prime.condition}`;
+
+  // 📌 Conseils
+  const conseil = clone.querySelector(".prime-advice");
+  if (conseil) conseil.innerHTML = `📌 <strong>Conseils :</strong> ${prime.conseil}`;
+
+  // 📎 Document
+  const doc = clone.querySelector(".prime-document");
+  if (doc) doc.innerHTML = `📎 <strong>Document :</strong> ${prime.document}`;
+
+  // 🎯 Groupe input dynamique
+  const inputGroup = clone.querySelector(".input-group");
+  inputGroup.innerHTML = ""; // Reset pour injection propre
+
   if (prime.typeDeValeur === "surface_et_type") {
-    // 🔽 Sélecteur de type de mur
+    // Sélecteur de type
     const select = document.createElement("select");
     select.className = "form-select prime-input me-1";
     select.setAttribute("data-slug", slug);
@@ -93,7 +104,7 @@ function genererCarteStandard(prime, template) {
       });
     }
 
-    // 🔢 Input surface
+    // Input surface
     const inputSurface = document.createElement("input");
     inputSurface.type = "number";
     inputSurface.className = "form-control prime-input";
@@ -101,19 +112,18 @@ function genererCarteStandard(prime, template) {
     inputSurface.setAttribute("data-slug", slug);
     inputSurface.placeholder = prime.placeholder?.[cat] || "Surface en m²";
 
-    // 💶 Résultat
+    // Résultat
     const resultSpan = document.createElement("span");
     resultSpan.className = "input-group-text bg-success text-white prime-result";
     resultSpan.id = `result-${slug}`;
     resultSpan.textContent = "0 €";
 
-    // ➕ Ajout des éléments
     inputGroup.appendChild(select);
     inputGroup.appendChild(inputSurface);
     inputGroup.appendChild(resultSpan);
 
   } else {
-    // 🧱 Traitement standard
+    // 🧱 Cas standard
     const input = document.createElement("input");
     input.type = "number";
     input.className = "form-control prime-input";
@@ -135,6 +145,7 @@ function genererCarteStandard(prime, template) {
   console.log(`🧩 Carte générée : ${slug}, catégorie ${cat}`);
   return clone;
 }
+
 
 export function initialiserCartePEB(prime, categorie) {
   const container = document.querySelector('.prime-card-peb');
