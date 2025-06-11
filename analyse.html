@@ -184,18 +184,41 @@
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
           <div class="prime-card prime-card-commune p-3 shadow-sm border border-primary">
             <img src="images/commune.jpg" class="card-img-top" alt="Prime communale">
+
             <h5 class="prime-title">Prime communale</h5>
 
-            <p class="prime-condition"><strong>Commune :</strong> <span class="commune-nom">-</span></p>
-            <p class="prime-status text-muted"><strong>Status :</strong> <span class="commune-status">Non disponible</span></p>
+            <p class="prime-condition">
+              <strong>Commune :</strong> Overijse
+            </p>
 
-            <ul class="prime-list small mt-2"></ul>
+            <p class="prime-status text-muted">
+              <strong>Status :</strong> Primes disponibles
+            </p>
 
-            <div class="input-zone mt-2"></div>
+            <ul class="prime-list small mt-2">
+              <li><strong>Isolation – Toiture :</strong> 6 €/m²</li>
+              <li><strong>Chauffage – Pompe à chaleur :</strong> 400 €</li>
+              <li><strong>Electricité – Mise en conformité :</strong> 500 € forfait</li>
+            </ul>
 
-            <p class="prime-total mt-2 mb-0"><strong>Montant estimé :</strong> <span class="commune-total">0 €</span></p>
+            <div class="input-zone mt-2">
+              <label for="surface-isolation" class="form-label small">Surface isolée (en m²) :</label>
+              <div class="input-group mb-3 flex-nowrap">
+                <input type="number"
+                      id="surface-isolation"
+                      class="form-control w-100"
+                      placeholder="Surface en m²"
+                      value="50">
+                <span class="input-group-text bg-success text-white">300 €</span>
+              </div>
+            </div>
+
+            <p class="prime-total mt-2 mb-0">
+              <strong>Montant estimé :</strong> <span class="commune-total">1200 €</span>
+            </p>
           </div>
         </div>
+
 
         <!--Template: carte prime monuments et sites-->
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -208,5 +231,6 @@
     </div>
 
     <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/main-communes.js"></script>
 </body>
 </html>
