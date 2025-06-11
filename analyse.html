@@ -99,7 +99,7 @@
     <!-- 2. TEMPLATES STANDARStS-->
     <template id="prime-card-template">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="prime-card p-3 h-100 shadow-sm bg-white border rounded">
+        <div class="prime-card p-3 h-100 shadow-sm border border-success">
           <img class="card-img-top" src="" alt="Image prime">
           <h5 class="prime-title"></h5>
           <p class="prime-condition"></p>
@@ -122,75 +122,89 @@
     <div id="prime-cards-container" class="row gx-3 gy-4 mt-4">
     </div>
 
+
+
+
     <!-- Faire un container pour stocker 3 cartes: PEB, communale et monuments et sites car ce sont des cartes spéciales-->
-    <!-- 1. PRIME PEB (hard code) -->
-    <div class="row gx-3 gy-4 mt-5 pt-4 border-top border-secondary-subtle">
-      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="prime-card prime-card-peb p-3 shadow-sm border border-success">
-          <img src="images/certificat.png" class="card-img-top" alt="Certificat PEB">
-          <h5 class="prime-title">Certificat PEB après travaux</h5>
-          <p class="prime-condition"><strong>Conditions :</strong> doit respecter les normes de ventilation et viser une classe inférieure</p>
-          <p class="prime-advice"><strong>Conseils :</strong> Renseigner le label visé, le type de logement, et la ventilation</p>
-          <p class="prime-document"><strong>Document :</strong> Certificat PEB final</p>
+    <div id="prime-second-cards-container" class="row justify-content-center gx-3 gy-4 mt-5 pt-4 border-top border-secondary-subtle">
+      <div class="row gx-3 gy-4 mt-5 pt-4 border-top border-secondary-subtle">
+        <!-- PRIME PEB (hard code) -->
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="prime-card prime-card-peb p-3 shadow-sm border border-primary">
+            <img src="images/certificat.png" class="card-img-top" alt="Certificat PEB">
+            <h5 class="prime-title">Certificat PEB après travaux</h5>
+            <p class="prime-condition"><strong>Conditions :</strong> doit respecter les normes de ventilation et viser une classe inférieure</p>
+            <p class="prime-advice"><strong>Conseils :</strong> Renseigner le label visé, le type de logement, et la ventilation</p>
+            <p class="prime-document"><strong>Document :</strong> Certificat PEB final</p>
 
-          <div class="prime-fields d-flex flex-column gap-2 mt-3">
-            <label for="certificat-peb"><strong>Label initial :</strong></label>
-            <select id="certificat-peb" class="form-select">
-              <option value="">Choisissez un label</option>
-              <option value="F">F</option>
-              <option value="E">E</option>
-              <option value="D">D</option>
-              <option value="C">C</option>
-              <option value="B">B</option>
-              <option value="A">A</option>
-            </select>
+            <div class="prime-fields d-flex flex-column gap-2 mt-3">
+              <label for="certificat-peb"><strong>Label initial :</strong></label>
+              <select id="certificat-peb" class="form-select">
+                <option value="">Choisissez un label</option>
+                <option value="F">F</option>
+                <option value="E">E</option>
+                <option value="D">D</option>
+                <option value="C">C</option>
+                <option value="B">B</option>
+                <option value="A">A</option>
+              </select>
 
-            <select class="form-select" name="type-logement">
-              <option value="">Type de logement</option>
-              <option value="maison">Maison</option>
-              <option value="appartement">Appartement</option>
-            </select>
+              <select class="form-select" name="type-logement">
+                <option value="">Type de logement</option>
+                <option value="maison">Maison</option>
+                <option value="appartement">Appartement</option>
+              </select>
 
-            <select class="form-select" name="ventilation">
-              <option value="">Ventilation conforme ?</option>
-              <option value="avec_ventilation">Oui</option>
-              <option value="sans_ventilation">Non</option>
-            </select>
+              <select class="form-select" name="ventilation">
+                <option value="">Ventilation conforme ?</option>
+                <option value="avec_ventilation">Oui</option>
+                <option value="sans_ventilation">Non</option>
+              </select>
 
-            <select class="form-select" name="label-final">
-              <option value="">Label final</option>
-              <option value="C">C</option>
-              <option value="B">B</option>
-              <option value="A">A</option>
-            </select>
+              <select class="form-select" name="label-final">
+                <option value="">Label final</option>
+                <option value="C">C</option>
+                <option value="B">B</option>
+                <option value="A">A</option>
+              </select>
 
-            <div class="resultat-prime mt-2">
-              <strong>Prime estimée :</strong>
-              <span class="prime-result d-inline-block ms-2">0 €</span>
+              <div class="resultat-prime mt-2">
+                <strong>Prime estimée :</strong>
+                <span class="prime-result d-inline-block ms-2">0 €</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- 3. COMMUNALES (Template standards)-->
-    <h2 class="mb-4 text-center w-100">Ajouter le montant de vos primes communales</h2>
-    <!-- <template id="prime-commune-template">
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="prime-card prime-card-commune p-3 h-100 shadow-sm border border-primary">
-          <img src="images/commune.png" class="card-img-top" alt="Prime communale">
-          <h5 class="prime-title">Titre de la prime</h5>
-          <p class="prime-condition"><strong>Conditions :</strong> À définir</p>
-          <p class="prime-advice"><strong>Montant :</strong> À définir</p>
-          <p class="prime-document"><strong>Type :</strong> À définir</p>
+        <!-- Template : Carte Prime Communale -->
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="prime-card prime-card-commune p-3 shadow-sm border border-primary">
+            <img src="images/commune.jpg" class="card-img-top" alt="Prime communale">
+            <h5 class="prime-title">Prime communale</h5>
+
+            <p class="prime-condition"><strong>Commune :</strong> <span class="commune-nom">-</span></p>
+            <p class="prime-status text-muted"><strong>Status :</strong> <span class="commune-status">Non disponible</span></p>
+
+            <ul class="prime-list small mt-2"></ul>
+
+            <div class="input-zone mt-2"></div>
+
+            <p class="prime-total mt-2 mb-0"><strong>Montant estimé :</strong> <span class="commune-total">0 €</span></p>
+          </div>
+        </div>
+
+        <!--Template: carte prime monuments et sites-->
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="prime-card prime-card-monuments p-3 shadow-sm border border-primary">
+            <img src="images/monument.jpg" class="card-img-top" alt="Prime monument">
+            <h5 class="prime-title">Prime Monuments et sites</h5>
+          </div>
         </div>
       </div>
-    </template> -->
 
-    <!-- 3. Monuments & SITES (hard code)-->
-    <h2 class="mb-4 text-center w-100">Explorons le côté Monuments et sites de votre bien</h2>
-    <h3>Intégrer ici une carte prime monuments et sites pour afficher les options et sélection le montant à intégrer à la somme totale</h3>
 
-  <script type="module" src="js/main.js" defer></script>
+    </div>
+
+    <script type="module" src="js/main.js" defer></script>
 </body>
 </html>
