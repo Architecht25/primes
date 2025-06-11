@@ -71,3 +71,14 @@ h4 {
     flex-direction: column; /* passe en colonne sur tablette et mobile */
   }
 }
+
+.input-group.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-group.flex-wrap .form-control {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
