@@ -143,3 +143,32 @@ h4 {
 #ren0vate-intro a:hover {
   text-decoration: underline;
 }
+
+.ren0vate-pricing {
+  background-color: #e8f5e9; /* vert très clair */
+  border: 2px solid #a5d6a7; /* vert pastel */
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'Inter', sans-serif;
+  color: #2e7d32;
+  max-width: 320px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease;
+}
+
+.ren0vate-pricing:hover {
+  transform: translateY(-4px);
+}
+
+.ren0vate-pricing p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ren0vate-pricing p:last-child {
+  font-size: 1rem;
+  color: #4caf50;
+}
