@@ -1,0 +1,42 @@
+/* css/components/actions.css */
+
+.actions-container {
+  background-color: #f2fdeb; /* fond vert pâle */
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.actions-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a4f3c;
+  margin-bottom: 2rem;
+}
+
+.actions-buttons {
+  display: grid;
+  gap: 1rem;
+}
+
+.actions-buttons a.btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  max-width: 360px;           /* ✅ limite la largeur */
+  margin: 0 auto;             /* ✅ centre le bouton */
+  width: 100%;                /* ✅ conserve responsive */
+}
+
+
+.actions-buttons a.btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}

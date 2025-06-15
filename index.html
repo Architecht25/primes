@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Feuille de style CSS -->
   <link rel="stylesheet" href="CSS/style.css">
-  <link rel="stylesheet" href="CSS/components/card.css">
+  <!-- <link rel="stylesheet" href="CSS/components/card.css"> -->
+  <link rel="stylesheet" href="css/components/actions.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,18 +24,52 @@
   }
 </script>
 </head>
-<body class="p-4 text-center">
-    <h3 class="mt-4">Sélectionnez une action :</h3>
-    <div class="mt-5">
-      <a href="starting.html" class="btn btn-success m-2">💶 La puissance de Ren0vate</a>
-      <a href="test.html" class="btn btn-danger m-2">💶 Testez votre éligibilité aux primes</a>
-      <a href="analyse.html" class="btn btn-success m-2">💶 Simulez vos primes</a>
-      <a href="admin.html" class="btn btn-primary m-2">💶 Enregistrez vos données personnelles</a>
-      <a href="chantier.html" class="btn btn-primary m-2">💶 Enregistrez vos données de chantier</a>
-      <a href="collecte.html" class="btn btn-warning m-2">📂 Collectez vos documents</a>
-      <a href="introduction.html" class="btn btn-danger m-2">📋 Introduisez votre demande de primes</a>
-      <a href="suivi.html" class="btn btn-info m-2">📊 Suivez votre demande</a>
+<body>
+  <div class="container py-5">
+    <div class="actions-container">
+
+      <h2 class="mb-4 text-center text-success">🎯 Choisissez une action</h2>
+
+      <div class="d-grid gap-3">
+
+        <a href="starting.html" class="btn btn-outline-success py-3 rounded-pill">
+          💶 La puissance de Ren0vate
+        </a>
+
+        <a href="test.html" class="btn btn-outline-danger py-3 rounded-pill">
+          💶 Testez votre éligibilité aux primes
+        </a>
+
+        <a href="analyse.html" class="btn btn-outline-success py-3 rounded-pill">
+          💶 Simulez vos primes
+        </a>
+
+        <a href="admin.html" class="btn btn-outline-primary py-3 rounded-pill">
+          👤 Enregistrez vos données personnelles
+        </a>
+
+        <a href="chantier.html" class="btn btn-outline-primary py-3 rounded-pill">
+          🏗️ Enregistrez vos données de chantier
+        </a>
+
+        <a href="collecte.html" class="btn btn-outline-warning py-3 rounded-pill">
+          📂 Collectez vos documents
+        </a>
+
+        <a href="introduction.html" class="btn btn-outline-danger py-3 rounded-pill">
+          📋 Introduisez votre demande de primes
+        </a>
+
+        <a href="suivi.html" class="btn btn-outline-info py-3 rounded-pill">
+          📊 Suivez votre demande
+        </a>
+
+      </div>
+
     </div>
+  </div>
+
   <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

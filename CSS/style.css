@@ -5,6 +5,7 @@
 @import url("components/cartes-documents.css");
 @import url("components/formulaire-mirroir.css");
 @import url("components/suivi.css");
+@import url("components/actions.css");
 
 /* ======================= GÉNÉRAL ======================= */
 :root {
