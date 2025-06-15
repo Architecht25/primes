@@ -3,6 +3,8 @@
 @import url("components/sections.css");
 @import url("components/test.css");
 @import url("components/cartes-documents.css");
+@import url("components/formulaire-mirroir.css");
+@import url("components/suivi.css");
 
 /* ======================= GÉNÉRAL ======================= */
 :root {

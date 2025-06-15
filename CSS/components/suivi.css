@@ -1,0 +1,55 @@
+#suivi-primes {
+  background-color: #f2fdeb; /* même fond vert pâle que les autres formulaires */
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 900px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.04);
+}
+
+#suivi-primes h3 {
+  font-size: 1.6rem;
+  color: #1a4f3c;
+  margin-bottom: 1.5rem;
+}
+
+.suivi-card {
+  background-color: #ffffff;
+  border-left: 6px solid #68b266; /* vert doux */
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+.suivi-card:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.suivi-card h5 {
+  font-size: 1.2rem;
+  color: #194a7c;
+  margin-bottom: 1rem;
+}
+
+.suivi-card p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.suivi-card p strong {
+  color: #2e3a59;
+}
+
+.suivi-card em {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
