@@ -249,7 +249,7 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/preparation_isolation.jpg"
+  "image": "images/preparation_isolation.webp"
 },
 {
   "id": "preparatifs_techniques",
@@ -339,7 +339,7 @@
     "3": "Choisissez le type de pompe",
     "4": "Choisissez le type de pompe"
   },
-  "image": "images/pac_géothermique.png"
+  "image": "images/pac_géothermique.webp"
 },
 {
   "id": "chauffe_eau_thermodynamique",
@@ -408,7 +408,7 @@
     "3": "Montant total des travaux toiture hors isolation",
     "4": "Montant total des travaux toiture hors isolation"
   },
-  "image": "images/renovation_toiture.jpeg"
+  "image": "images/renovation_toiture.webp"
 },
 {
   "id": "renovation_murs",
