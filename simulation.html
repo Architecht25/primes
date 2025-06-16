@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ren0vate/Primes RF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Feuille de style CSS -->
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/components/card.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "sweetalert2": "https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/+esm",
+      "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    }
+  }
+</script>
+</head>
+<body class="p-4">
+  <div class="container">
+    <h1 class="mb-4 text-center w-100">Déterminez votre catérgorie de prime (1, 2, 3 ou 4)!</h1>
+
+    <!-- 1.0 FORMULAIRES -->
+    <div id="section-formulaires" class="mb-5">
+      <!-- Section Propriétaire privé -->
+      <div id="form-prive" class="form-section">
+
+      <h5>Situation familiale</h5>
+        <select id="situation" name="situation" class="form-select">
+          <option selected disabled>-- Sélectionnez votre situation --</option>
+          <option value="couple">Couple</option>
+          <option value="isole">Isolé</option>
+          <option value="isole_avec_enfant">Isolé avec enfant à charge</option>
+        </select>
+
+      <h5>Vos "Revenus Imposables Globalement" personnels (référence 2023-2024)</h5>
+        <input  type="number" class="form-control"
+                id="revenu-demandeur" name="revenu-demandeur"
+                placeholder="ex. 45000"
+                min="0" step="100"
+                required>
+
+      <h5>Les "Revenus Imposables Globalement" de votre conjoint (référence 2023-2024)</h5>
+        <input  type="number" class="form-control"
+                  id="revenu-conjoint" name="revenu-conjoint"
+                  placeholder="ex. 45000"
+                  required>
+
+      <h5>Nombre de personnes fiscalement à charge (enfants et personnes agées)</h5>
+        <input  type="number" class="form-control"
+                  id="enfants" name="enfants"
+                  placeholder="3"
+                  required>
+
+      <h5>Présence dans le ménage d'une personne "client protégé"</h5>
+        <input  type="number" class="form-control"
+                  id="handicap" name="handicap"
+                  placeholder="1"
+                  required>
+
+      <div class="d-flex justify-content-center">
+        <button id="btn-calcul-prime" class="btn btn-success">Calculer votre catégorie de prime</button>
+      </div>
+      </div>
+
+    <!-- 1.1 RESULTATS - catégorie de prime -->
+    <div id="section-resultats-primes" class="mb-4">
+      <div id="categorie-resultat" class="alert alert-primary mt-4">
+        <strong>Catégorie de prime :</strong> <span id="categorie-prime">Veuillez encoder vos données personnelles.</span>
+      </div>
+    </div>
+
+
+    <h2 class="mb-4 text-center w-100">Calculez la valeur de vos primes régionales et PEB!</h2>
+
+    <!-- 2.2 RESULTATS - calcul des primes -->
+    <div id="section-resultats-primes" class="mb-4">
+      <div id="prime-total-result" class="alert alert-primary mt-4">
+        <strong>Total estimé des primes :</strong> <span id="total-primes-affiche">0 €</span>
+      </div>
+    </div>
+    </div>
+
+    <!-- 2.3. BOUTON POUR ENREGISTRER LES DONNES TECHNIQUES DES CARTES PRIMES -->
+    <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-primes">
+        Enregistrer votre simulation
+      </button>
+
+      <a href="admin.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
+        Enregistez vos données administratives >>
+      </a>
+      <a href="index.html" class="btn btn-success text-center mt-3 ms-3" id="btn-next-admin">
+        Retour au menu principal
+      </a>
+    </div>
+  </div>
+
+    <!-- 2. TEMPLATES STANDARStS-->
+    <template id="prime-card-template">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="prime-card p-3 h-100 shadow-sm border border-success">
+          <img class="card-img-top" src="" alt="Image prime">
+          <h5 class="prime-title"></h5>
+          <p class="prime-condition"></p>
+          <p class="prime-advice"></p>
+          <p class="prime-document"></p>
+
+          <div class="input-group flex-wrap mb-3 ">
+            <input type="number"
+                  class="form-control prime-input w-100"
+                  data-slug=""
+                  name=""
+                  placeholder="Surface en m²">
+
+            <span class="input-group-text bg-success text-white prime-result">
+                0 €
+            </span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- CONTENEUR D’AFFICHAGE -->
+    <div id="prime-cards-container" class="row gx-3 gy-4 mt-4">
+    </div>
+
+
+
+
+    <!-- Container de stockage des cartes PEB + communes + monuments et sites-->
+    <div id="prime-second-cards-container" class="row justify-content-center gx-3 gy-4 mt-5 pt-4 border-top border-secondary-subtle">
+      <div class="row gx-3 gy-4 mt-5 pt-4 border-top border-secondary-subtle">
+        <!-- PRIME PEB (hard code) -->
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="prime-card prime-card-peb p-3 shadow-sm border border-primary">
+            <img src="images/certificat.png" class="card-img-top" alt="Certificat PEB">
+            <h5 class="prime-title">Certificat PEB après travaux</h5>
+            <p class="prime-condition"><strong>Conditions :</strong> doit respecter les normes de ventilation et viser une classe inférieure</p>
+            <p class="prime-advice"><strong>Conseils :</strong> Renseigner le label visé, le type de logement, et la ventilation</p>
+            <p class="prime-document"><strong>Document :</strong> Certificat PEB final</p>
+
+            <div class="prime-fields d-flex flex-column gap-2 mt-3">
+              <label for="certificat-peb"><strong>Label initial :</strong></label>
+              <select id="certificat-peb" class="form-select">
+                <option value="">Choisissez un label</option>
+                <option value="F">F</option>
+                <option value="E">E</option>
+                <option value="D">D</option>
+                <option value="C">C</option>
+                <option value="B">B</option>
+                <option value="A">A</option>
+              </select>
+
+              <select class="form-select" name="type-logement">
+                <option value="">Type de logement</option>
+                <option value="maison">Maison</option>
+                <option value="appartement">Appartement</option>
+              </select>
+
+              <select class="form-select" name="ventilation">
+                <option value="">Ventilation conforme ?</option>
+                <option value="avec_ventilation">Oui</option>
+                <option value="sans_ventilation">Non</option>
+              </select>
+
+              <select class="form-select" name="label-final">
+                <option value="">Label final</option>
+                <option value="C">C</option>
+                <option value="B">B</option>
+                <option value="A">A</option>
+              </select>
+
+              <div class="resultat-prime mt-2">
+                <strong>Prime estimée :</strong>
+                <span class="prime-result d-inline-block ms-2">0 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Template : Carte Prime Communale -->
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="prime-card prime-card-commune p-3 shadow-sm border border-primary">
+            <img src="images/commune.jpg" class="card-img-top" alt="Prime communale">
+
+            <h5 class="prime-title">Prime communale</h5>
+
+            <p class="prime-condition">
+              <strong>Commune :</strong> Overijse
+            </p>
+
+            <p class="prime-status text-muted">
+              <strong>Status :</strong> Primes disponibles
+            </p>
+
+            <ul class="prime-list small mt-2">
+              <li><strong>Isolation – Toiture :</strong> 6 €/m²</li>
+              <li><strong>Chauffage – Pompe à chaleur :</strong> 400 €</li>
+              <li><strong>Electricité – Mise en conformité :</strong> 500 € forfait</li>
+            </ul>
+
+            <div class="input-zone mt-2">
+              <label for="surface-isolation" class="form-label small">Surface isolée (en m²) :</label>
+              <div class="input-group mb-3 flex-nowrap">
+                <input type="number"
+                      id="surface-isolation"
+                      class="form-control w-100"
+                      placeholder="Surface en m²"
+                      value="50">
+                <span class="input-group-text bg-success text-white">300 €</span>
+              </div>
+            </div>
+
+            <p class="prime-total mt-2 mb-0">
+              <strong>Montant estimé :</strong> <span class="commune-total">1200 €</span>
+            </p>
+          </div>
+        </div>
+
+
+        <!--Template: carte prime monuments et sites-->
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="prime-card prime-card-monuments p-3 shadow-sm border border-primary">
+            <img src="images/monument.jpg" class="card-img-top" alt="Prime monument">
+            <h5 class="prime-title">Prime Monuments et sites</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/main-communes.js"></script>
+</body>
+</html>

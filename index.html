@@ -25,50 +25,92 @@
 </script>
 </head>
 <body>
-  <div class="container py-5">
-    <div class="actions-container">
+  <!-- 🟢 Bannière Ren0vate -->
+  <div class="ren0vate-banner text-white text-center p-3">
+    <h1 class="h1 text-success">Ren0vate</h1>
+    <h1 class="h4 text-success">Votre parcours de rénovation, simplifié.</h1>
+  </div>
 
-      <h1 class="mb-4 text-center text-success">🎯 Choisissez une action</h1>
+  <!-- 🟩 Cartes modules -->
+  <section class="container pb-5">
+    <h2 class="text-center text-success mb-5">🧭 Accédez à un module</h2>
 
-      <div class="d-grid gap-3">
+    <div class="row g-4 justify-content-center">
 
-        <a href="starting.html" class="btn btn-outline-success py-3 rounded-pill">
-          💶 La puissance de Ren0vate
-        </a>
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/ren0vate.jpg" class="img-fluid rounded mb-3" alt="ren0vate pour moi">
+          <h5>Ren0vate</h5>
+          <p class="text-muted small">Le monde des Ren0vateurs.</p>
+          <a href="ren0vate.html" class="btn btn-outline-success btn-sm mt-2">Découvrir</a>
+        </div>
+      </div>
 
-        <a href="test.html" class="btn btn-outline-danger py-3 rounded-pill">
-          💶 Testez votre éligibilité aux primes
-        </a>
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/module-test.jpg" class="img-fluid rounded mb-3" alt="Test éligibilité">
+          <h5>Test d’éligibilité</h5>
+          <p class="text-muted small">Vérifiez si vous avez droit aux primes régionales.</p>
+          <a href="test.html" class="btn btn-outline-success btn-sm mt-2">Tester</a>
+        </div>
+      </div>
 
-        <a href="analyse.html" class="btn btn-outline-success py-3 rounded-pill">
-          💶 Simulez vos primes
-        </a>
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/module-simulation.jpg" class="img-fluid rounded mb-3" alt="Simulation primes">
+          <h5>Simulation des primes</h5>
+          <p class="text-muted small">Estimez les montants auxquels vous avez droit.</p>
+          <a href="simulation.html" class="btn btn-outline-success btn-sm mt-2">Simuler</a>
+        </div>
+      </div>
 
-        <a href="admin.html" class="btn btn-outline-primary py-3 rounded-pill">
-          👤 Enregistrez vos données personnelles
-        </a>
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/module-profil.jpg" class="img-fluid rounded mb-3" alt="Données personnelles">
+          <h5>Données personnelles</h5>
+          <p class="text-muted small">Encodez les infos du demandeur de prime.</p>
+          <a href="profile.html" class="btn btn-outline-primary btn-sm mt-2">Compléter</a>
+        </div>
+      </div>
 
-        <a href="chantier.html" class="btn btn-outline-primary py-3 rounded-pill">
-          🏗️ Enregistrez vos données de chantier
-        </a>
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/module-chantier.jpg" class="img-fluid rounded mb-3" alt="Données chantier">
+          <h5>Données du chantier</h5>
+          <p class="text-muted small">Décrivez les caractéristiques du logement.</p>
+          <a href="chantier.html" class="btn btn-outline-primary btn-sm mt-2">Déclarer</a>
+        </div>
+      </div>
 
-        <a href="collecte.html" class="btn btn-outline-warning py-3 rounded-pill">
-          📂 Collectez vos documents
-        </a>
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/module-documents.jpg" class="img-fluid rounded mb-3" alt="Documents">
+          <h5>Collecte de documents</h5>
+          <p class="text-muted small">Ajoutez photos, factures et attestations.</p>
+          <a href="collecte.html" class="btn btn-outline-warning btn-sm mt-2">Ajouter</a>
+        </div>
+      </div>
 
-        <a href="introduction.html" class="btn btn-outline-danger py-3 rounded-pill">
-          📋 Introduisez votre demande de primes
-        </a>
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/module-intro.jpg" class="img-fluid rounded mb-3" alt="Introduction">
+          <h5>Introduction de la demande</h5>
+          <p class="text-muted small">Générez et envoyez votre dossier officiel.</p>
+          <a href="introduction.html" class="btn btn-outline-danger btn-sm mt-2">Soumettre</a>
+        </div>
+      </div>
 
-        <a href="suivi.html" class="btn btn-outline-info py-3 rounded-pill">
-          📊 Suivez votre demande
-        </a>
-
+      <div class="col-sm-6 col-lg-4">
+        <div class="module-card text-center p-3 rounded-4 shadow-sm h-100 bg-white">
+          <img src="images/module-suivi.jpg" class="img-fluid rounded mb-3" alt="Suivi dossier">
+          <h5>Suivi de votre demande</h5>
+          <p class="text-muted small">Suivez l’état d’avancement de votre dossier.</p>
+          <a href="suivi.html" class="btn btn-outline-info btn-sm mt-2">Suivre</a>
+        </div>
       </div>
 
     </div>
-  </div>
-
+  </section>
   <script type="module" src="js/main.js"></script>
 </body>
 
