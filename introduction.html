@@ -93,53 +93,252 @@
   <!-- Étape 3 : Travaux à déclarer -->
   <section id="travaux-section" class="formulaire-prime mt-5">
     <h3>3. Travaux à déclarer</h3>
-
     <p>Veuillez cocher les types de travaux envisagés et compléter les champs demandés pour chaque type sélectionné.</p>
 
-    <!-- Isolation de la toiture -->
+    <!-- Isolation toiture -->
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="travaux-toiture" name="travaux[]" value="toiture">
       <label class="form-check-label" for="travaux-toiture">Isolation de la toiture</label>
     </div>
     <div id="details-toiture" class="travaux-details d-none">
-      <label for="surface-toiture">Surface à isoler (m²)</label>
+      <label for="surface-toiture">Surface (m²)</label>
       <input type="number" id="surface-toiture" name="surface_toiture" min="0" step="1">
-
-      <label for="type-toiture">Type d'isolation</label>
+      <label for="type-toiture">Méthode</label>
       <select id="type-toiture" name="type_toiture">
-        <option disabled selected value="">-- Sélectionnez --</option>
-        <option value="interieur">Par l'intérieur</option>
-        <option value="exterieur">Par l'extérieur</option>
+        <option value="">-- Sélectionnez --</option>
+        <option value="interieur">Par l’intérieur</option>
+        <option value="exterieur">Par l’extérieur</option>
       </select>
     </div>
 
-    <!-- Isolation des murs -->
+    <!-- Isolation murs extérieurs -->
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="travaux-murs" name="travaux[]" value="murs">
       <label class="form-check-label" for="travaux-murs">Isolation des murs extérieurs</label>
     </div>
     <div id="details-murs" class="travaux-details d-none">
-      <label for="surface-murs">Surface à isoler (m²)</label>
+      <label for="surface-murs">Surface (m²)</label>
       <input type="number" id="surface-murs" name="surface_murs" min="0" step="1">
-
-      <label for="type-murs">Type d'isolation</label>
+      <label for="type-murs">Méthode</label>
       <select id="type-murs" name="type_murs">
-        <option disabled selected value="">-- Sélectionnez --</option>
+        <option value="">-- Sélectionnez --</option>
         <option value="creux">Murs creux</option>
-        <option value="interieur">Par l'intérieur</option>
-        <option value="exterieur">Par l'extérieur</option>
+        <option value="interieur">Par l’intérieur</option>
+        <option value="exterieur">Par l’extérieur</option>
       </select>
     </div>
 
-    <!-- Remplacement du vitrage -->
+    <!-- Vitrage -->
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="travaux-vitrage" name="travaux[]" value="vitrage">
       <label class="form-check-label" for="travaux-vitrage">Remplacement du vitrage</label>
     </div>
     <div id="details-vitrage" class="travaux-details d-none">
-      <label for="surface-vitrage">Surface totale des fenêtres (m²)</label>
+      <label for="surface-vitrage">Surface (m²)</label>
       <input type="number" id="surface-vitrage" name="surface_vitrage" min="0" step="1">
     </div>
+
+    <!-- Isolation du sol -->
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="travaux-sol" name="travaux[]" value="sol">
+      <label class="form-check-label" for="travaux-sol">Isolation du sol ou des caves</label>
+    </div>
+    <div id="details-sol" class="travaux-details d-none">
+      <label for="surface-sol">Surface (m²)</label>
+      <input type="number" id="surface-sol" name="surface_sol" min="0" step="1">
+    </div>
+
+    <!-- Chauffage (chaudière ou PAC) -->
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="travaux-chauffage" name="travaux[]" value="chauffage">
+      <label class="form-check-label" for="travaux-chauffage">Remplacement de l’installation de chauffage</label>
+    </div>
+    <div id="details-chauffage" class="travaux-details d-none">
+      <label for="type-chauffage">Type de système</label>
+      <select id="type-chauffage" name="type_chauffage">
+        <option value="">-- Sélectionnez --</option>
+        <option value="condensation">Chaudière à condensation gaz</option>
+        <option value="pac-air-eau">Pompe à chaleur air/eau</option>
+        <option value="pac-geothermique">Pompe à chaleur géothermique</option>
+        <option value="hybride">Système hybride</option>
+      </select>
+    </div>
+
+    <!-- Ventilation -->
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="travaux-ventilation" name="travaux[]" value="ventilation">
+      <label class="form-check-label" for="travaux-ventilation">Installation d’un système de ventilation</label>
+    </div>
+    <div id="details-ventilation" class="travaux-details d-none">
+      <label for="type-ventilation">Type</label>
+      <select id="type-ventilation" name="type_ventilation">
+        <option value="">-- Sélectionnez --</option>
+        <option value="type-c">Type C</option>
+        <option value="type-d">Type D (avec récupération de chaleur)</option>
+      </select>
+    </div>
+
+    <!-- Chauffe-eau -->
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="travaux-chauffe-eau" name="travaux[]" value="chauffe-eau">
+      <label class="form-check-label" for="travaux-chauffe-eau">Remplacement du chauffe-eau</label>
+    </div>
+    <div id="details-chauffe-eau" class="travaux-details d-none">
+      <label for="type-chauffe-eau">Type</label>
+      <select id="type-chauffe-eau" name="type_chauffe_eau">
+        <option value="">-- Sélectionnez --</option>
+        <option value="thermodynamique">Chauffe-eau thermodynamique</option>
+        <option value="solaire">Chauffe-eau solaire</option>
+        <option value="pac">Chauffe-eau couplé à PAC</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Étape 3.1 – Travaux complémentaires et non subventionnés -->
+  <section id="travaux-complementaires" class="formulaire-prime mt-5">
+    <h4 class="mb-4">🔧 Travaux complémentaires (préparatoires ou non subventionnés)</h4>
+
+    <!-- Travaux préparatoires -->
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="travaux-preparatoires" name="travaux[]" value="preparatoires">
+      <label class="form-check-label fw-bold" for="travaux-preparatoires">
+        Travaux préparatoires à l’isolation
+      </label>
+    </div>
+    <div id="details-preparatoires" class="travaux-details d-none ms-3">
+      <label for="type-preparatoires">Type de préparatifs</label>
+      <input type="text" id="type-preparatoires" name="type_preparatoires" placeholder="Ex : retrait du plafonnage" class="form-control mb-2">
+      <label for="montant-preparatoires">Montant total facturé (€)</label>
+      <input type="number" id="montant-preparatoires" name="montant_preparatoires" min="0" step="10" class="form-control">
+    </div>
+
+    <!-- Travaux d’électricité -->
+    <div class="form-check mt-4">
+      <input class="form-check-input" type="checkbox" id="travaux-electricite" name="travaux[]" value="electricite">
+      <label class="form-check-label fw-bold" for="travaux-electricite">
+        Travaux d’électricité (non subventionnés)
+      </label>
+    </div>
+    <div id="details-electricite" class="travaux-details d-none ms-3">
+      <label for="type-electricite">Nature des travaux</label>
+      <input type="text" id="type-electricite" name="type_electricite" placeholder="Ex : Mise en conformité RGIE, tableau électrique…" class="form-control mb-2">
+      <label for="montant-electricite">Montant estimé ou facturé (€)</label>
+      <input type="number" id="montant-electricite" name="montant_electricite" min="0" step="10" class="form-control">
+    </div>
+
+    <!-- Travaux sanitaires -->
+    <div class="form-check mt-4">
+      <input class="form-check-input" type="checkbox" id="travaux-sanitaires" name="travaux[]" value="sanitaires">
+      <label class="form-check-label fw-bold" for="travaux-sanitaires">
+        Travaux sanitaires / plomberie (non subventionnés)
+      </label>
+    </div>
+    <div id="details-sanitaires" class="travaux-details d-none ms-3">
+      <label for="type-sanitaires">Nature des travaux</label>
+      <input type="text" id="type-sanitaires" name="type_sanitaires" placeholder="Ex : remplacement WC, douche, tuyauterie…" class="form-control mb-2">
+      <label for="montant-sanitaires">Montant estimé ou facturé (€)</label>
+      <input type="number" id="montant-sanitaires" name="montant_sanitaires" min="0" step="10" class="form-control">
+    </div>
+  </section>
+
+  <!-- Étape 4 : Revenus et catégorie de prime -->
+  <section id="section-revenus" class="formulaire-prime mt-5">
+  <h3>4. Revenus et composition du ménage</h3>
+
+  <!-- Revenus imposables du ménage -->
+  <label for="revenus-annuels">Revenus annuels imposables (ménage complet) *</label>
+  <input type="number" id="revenus-annuels" name="revenus_annuels" min="0" step="100" placeholder="Ex : 42 000" required>
+
+  <!-- Année de l'AER -->
+  <label for="annee-aer">Année de l’avertissement extrait de rôle utilisé *</label>
+  <select id="annee-aer" name="annee_aer" required>
+    <option disabled selected value="">-- Sélectionnez une année --</option>
+    <option value="2023">2023 (revenus 2022)</option>
+    <option value="2022">2022 (revenus 2021)</option>
+    <option value="2021">2021 (revenus 2020)</option>
+  </select>
+
+  <!-- Composition du ménage -->
+  <label for="nombre-personnes-charge">Nombre de personnes à charge *</label>
+  <input type="number" id="nombre-personnes-charge" name="personnes_charge" min="0" max="10" value="0" required>
+
+  <label for="composition-menage">Composition complète du ménage (optionnel)</label>
+  <textarea id="composition-menage" name="composition_menage" rows="3" placeholder="Ex : 2 adultes, 2 enfants de moins de 18 ans…"></textarea>
+
+  <!-- Calcul de catégorie -->
+  <div class="mt-4">
+    <button type="button" class="btn-custom custom-secondary" onclick="calculerCategorie()">Calculer la catégorie de prime</button>
+  </div>
+
+  <!-- Résultat dynamique -->
+  <div id="resultat-categorie" class="mt-3 text-success fw-bold"></div>
+  </section>
+
+  <!-- Étape 5 : Documents à fournir -->
+  <section id="section-documents" class="formulaire-prime mt-5">
+  <h3>5. Documents justificatifs</h3>
+
+  <p class="mb-3">Joignez les documents nécessaires à l’analyse de votre demande. Les formats acceptés sont PDF, JPG ou PNG.</p>
+
+  <!-- Upload AER -->
+  <label for="upload-aer">🧾 Avertissement Extrait de Rôle (AER) *</label>
+  <input type="file" id="upload-aer" name="document_aer" accept=".pdf,.jpg,.jpeg,.png" required>
+
+  <!-- Composition de ménage -->
+  <label for="upload-composition">👨‍👩‍👧 Composition de ménage *</label>
+  <input type="file" id="upload-composition" name="document_composition" accept=".pdf,.jpg,.jpeg,.png" required>
+
+  <!-- Factures ou devis -->
+  <label for="upload-factures">📎 Factures ou devis des travaux *</label>
+  <input type="file" id="upload-factures" name="document_factures" accept=".pdf,.jpg,.jpeg,.png" multiple required>
+
+  <!-- Attestations entrepreneur -->
+  <label for="upload-attestations">🧑‍🔧 Attestations des entrepreneurs</label>
+  <input type="file" id="upload-attestations" name="document_attestations" accept=".pdf,.jpg,.jpeg,.png" multiple>
+
+  <!-- PEB -->
+  <label for="upload-peb">📊 Certificat PEB (si disponible)</label>
+  <input type="file" id="upload-peb" name="document_peb" accept=".pdf,.jpg,.jpeg,.png">
+
+  <!-- Autres documents -->
+  <label for="upload-autres">📂 Autres documents utiles</label>
+  <input type="file" id="upload-autres" name="document_autres" accept=".pdf,.jpg,.jpeg,.png" multiple>
+
+  </section>
+
+  <!-- Étape 6 : Soumission du formulaire -->
+  <section id="section-soumission" class="formulaire-prime mt-5">
+  <h3>6. Soumission de la demande</h3>
+
+  <!-- Récapitulatif -->
+  <p class="mb-3">
+    Vous êtes sur le point de soumettre votre demande de primes. Veuillez vérifier que toutes les informations sont correctes et que les documents justificatifs ont bien été joints.
+  </p>
+
+  <!-- Confirmation utilisateur -->
+  <div class="form-check my-3">
+    <input class="form-check-input" type="checkbox" id="confirmation-veracite" name="confirmation_veracite" required>
+    <label class="form-check-label fw-bold" for="confirmation-veracite">
+      Je confirme que les informations fournies sont exactes et complètes à ma connaissance.
+    </label>
+  </div>
+
+  <!-- Email de contact -->
+  <label for="email-contact">📧 Adresse email pour le suivi de la demande *</label>
+  <input type="email" id="email-contact" name="email_contact" placeholder="Ex : nom@email.com" required>
+
+  <!-- Envoi -->
+  <div class="mt-4 d-flex flex-column flex-md-row gap-3">
+    <button type="submit" class="btn-custom custom-primary">
+      📩 Soumettre la demande
+    </button>
+    <button type="button" class="btn-custom custom-secondary" onclick="telechargerResume()">
+      💾 Télécharger le résumé PDF
+    </button>
+  </div>
+
+  <!-- Message de validation -->
+  <div id="message-soumission" class="mt-4 fw-bold text-success"></div>
   </section>
 
   <a href="suivi.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
