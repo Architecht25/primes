@@ -54,10 +54,9 @@
           <label for="type" class="form-label">Type de bien</label>
           <select id="type" name="type" class="form-select">
             <option selected disabled>-- Sélectionnez un type de bien --</option>
-            <option value="maison">Maison</option>
+            <option value="maison">Maison unifamiliale</option>
             <option value="appartement">Appartement</option>
-            <option value="immeuble de rapport">Immeuble de rapport</option>
-            <option value="unité non résidentielle">Unité non résidentielle</option>
+            <option value="immeuble de rapport">Immeuble avec plusieurs unités</option>
           </select>
         </div>
         <div class="mb-3 mt-3">
@@ -65,8 +64,8 @@
           <select id="occupation" name="occupation" class="form-select">
             <option selected disabled>-- Sélectionnez un type d'occupation --</option>
             <option value="résidence principale">Résidence principale</option>
-            <option value="résidence secondaire">Résidence secondaire</option>
-            <option value="location">Location</option>
+            <option value="location">Bien en location</option>
+            <option value="autre">Autre</option>
           </select>
         </div>
         <label for="construction" class="form-label">Date de construction</label>
@@ -79,7 +78,7 @@
                   id="raccordement-reseau-electrique" name="raccordement-reseau-electrique"
                   placeholder="Attention: date avant 1er janvier 2006!!!"
                   required>
-        <label for="cadastre" class="form-label">Numéro de parcelle cadastrale</label>
+        <label for="cadastre" class="form-label">Numéro de parcelle cadastrale (optionnel)</label>
         <input  type="text" class="form-control"
                   id="cadastre" name="cadastre"
                   placeholder="136E"

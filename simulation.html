@@ -40,18 +40,33 @@
           <option value="isole_avec_enfant">Isolé avec enfant à charge</option>
         </select>
 
-      <h5>Vos "Revenus Imposables Globalement" personnels (référence 2023-2024)</h5>
+      <h5>Vos "Revenus Imposables Globalement" personnels</h5>
         <input  type="number" class="form-control"
                 id="revenu-demandeur" name="revenu-demandeur"
-                placeholder="ex. 45000"
+                placeholder="ex. 21374"
                 min="0" step="100"
                 required>
+      <h5>Année de l’avertissement extrait de rôle utilisé *</h5>
+        <select id="années_de_revenus" name="année_revenus" class="form-select">
+          <option selected disabled>-- Sélectionnez une année --</option>
+          <option value="2023">2023 (revenus 2022)</option>
+          <option value="2022">2022 (revenus 2021)</option>
+          <option value="2021">2021 (revenus 2020)</option>
+        </select>
 
-      <h5>Les "Revenus Imposables Globalement" de votre conjoint (référence 2023-2024)</h5>
+      <h5>Les "Revenus Imposables Globalement" de votre conjoint</h5>
         <input  type="number" class="form-control"
                   id="revenu-conjoint" name="revenu-conjoint"
-                  placeholder="ex. 45000"
+                  placeholder="ex. 19671"
                   required>
+
+      <h5>Année de l’avertissement extrait de rôle utilisé *</h5>
+        <select id="années_de_revenus" name="année_revenus" class="form-select">
+          <option selected disabled>-- Sélectionnez une année --</option>
+          <option value="2023">2023 (revenus 2022)</option>
+          <option value="2022">2022 (revenus 2021)</option>
+          <option value="2021">2021 (revenus 2020)</option>
+        </select>
 
       <h5>Nombre de personnes fiscalement à charge (enfants et personnes agées)</h5>
         <input  type="number" class="form-control"
@@ -59,11 +74,11 @@
                   placeholder="3"
                   required>
 
-      <h5>Présence dans le ménage d'une personne "client protégé"</h5>
+      <!-- <h5>Présence dans le ménage d'une personne "client protégé"</h5>
         <input  type="number" class="form-control"
                   id="handicap" name="handicap"
                   placeholder="1"
-                  required>
+                  required> -->
 
       <div class="d-flex justify-content-center">
         <button id="btn-calcul-prime" class="btn btn-success">Calculer votre catégorie de prime</button>
