@@ -43,7 +43,7 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/isolation_toiture.jpg"
+  "image": "images/isolation_toiture.webp"
 },
 {
   "id": "isolation_murs_cat12",
@@ -84,7 +84,7 @@
     "1": "Surface en m²",
     "2": "Surface en m²"
   },
-  "image": "images/isolation_murs_ext.jpeg"
+  "image": "images/isolation_murs_ext.webp"
 },
 {
   "id": "isolation_murs_cat34",
@@ -115,7 +115,7 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/isolation_murs_ext.jpeg"
+  "image": "images/isolation_murs_ext.webp"
 },
 {
   "id": "isolation_sol",
@@ -161,7 +161,7 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/isolation_sol.avif"
+  "image": "images/isolation_sol.webp"
 },
 {
   "id": "chassis_portes",
@@ -207,7 +207,7 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/remplacement_chassis.jpg"
+  "image": "images/remplacement_chassis.webp"
 },
 {
   "id": "preparatifs_isolation",
@@ -437,7 +437,7 @@
     "3": "Montant total des travaux murs hors isolation",
     "4": "Montant total des travaux murs hors isolation"
   },
-  "image": "images/renovation_murs.jpg"
+  "image": "images/renovation_murs.webp"
 },
 {
   "id": "renovation_sol",
