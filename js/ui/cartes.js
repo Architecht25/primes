@@ -146,7 +146,6 @@ function genererCarteStandard(prime, template) {
   return clone;
 }
 
-
 export function initialiserCartePEB(prime, categorie) {
   const container = document.querySelector('.prime-card-peb');
 
