@@ -27,31 +27,31 @@
     <div class="container-chantier">
 
       <div id="form-building" class="form-section mt-3">
-      <h5>Adresse du chantier - informations pratiques</h5>
+      <h5>Informations sur le bien à rénover</h5>
         <div class="mb-3">
-          <label for="rue" class="form-label">Rue</label>
+          <label for="rue" class="form-label">Rue*</label>
           <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
         </div>
         <div class="row g-2">
           <div class="col-md-4">
-            <label for="numero" class="form-label">Numéro</label>
+            <label for="numero" class="form-label">Numéro*</label>
             <input type="text" class="form-control" id="numero" name="numero" placeholder="ex. 24">
           </div>
           <div class="col-md-4">
-            <label for="code-postal" class="form-label">Code postal</label>
+            <label for="code-postal" class="form-label">Code postal*</label>
             <input type="text" class="form-control" id="code-postal" name="code_postal" placeholder="ex. 1190">
           </div>
           <div class="col-md-4">
-            <label for="commune" class="form-label">Commune</label>
+            <label for="commune" class="form-label">Commune*</label>
             <input type="text" class="form-control" id="commune" name="commune" placeholder="ex. Forest">
           </div>
           <div class="col-md-4">
-            <label for="région" class="form-label">Région</label>
+            <label for="région" class="form-label">Région*</label>
             <input type="text" class="form-control" id="région" name="région" placeholder="Flandre">
           </div>
         </div>
         <div class="mb-3 mt-3">
-          <label for="type" class="form-label">Type de bien</label>
+          <label for="type" class="form-label">Type de bien*</label>
           <select id="type" name="type" class="form-select">
             <option selected disabled>-- Sélectionnez un type de bien --</option>
             <option value="maison">Maison unifamiliale</option>
@@ -59,8 +59,9 @@
             <option value="immeuble de rapport">Immeuble avec plusieurs unités</option>
           </select>
         </div>
+
         <div class="mb-3 mt-3">
-          <label for="occupation" class="form-label">Occupation</label>
+          <label for="occupation" class="form-label">Occupation*</label>
           <select id="occupation" name="occupation" class="form-select">
             <option selected disabled>-- Sélectionnez un type d'occupation --</option>
             <option value="résidence principale">Résidence principale</option>
@@ -68,16 +69,23 @@
             <option value="autre">Autre</option>
           </select>
         </div>
-        <label for="construction" class="form-label">Date de construction</label>
+        <label for="construction" class="form-label">Année de construction*</label>
         <input  type="number" class="form-control"
                   id="construction" name="construction"
                   placeholder="1930"
                   required>
-        <label for="raccordement-reseau-electrique" class="form-label">Date de raccordement au réseau électrique (RF)</label>
+        <label for="raccordement-reseau-electrique" class="form-label">Date de raccordement au réseau électrique (RF)*</label>
         <input  type="number" class="form-control"
                   id="raccordement-reseau-electrique" name="raccordement-reseau-electrique"
                   placeholder="Attention: date avant 1er janvier 2006!!!"
                   required>
+
+        <label for="EAN" class="form-label">Numéro EAN*</label>
+        <input  type="text" class="form-control"
+                  id="EAN" name="EAN"
+                  placeholder="5412345678901"
+                  required>
+
         <label for="cadastre" class="form-label">Numéro de parcelle cadastrale (optionnel)</label>
         <input  type="text" class="form-control"
                   id="cadastre" name="cadastre"
