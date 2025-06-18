@@ -37,7 +37,7 @@ export function setupEligibilityTest() {
       showResult("❌ Les bâtiments démolis avec TVA à 6% ne sont pas éligibles aux primes.", false);
       return;
     }
-
+   
     // ➕ Cas particulier : Maison → on saute la question sur la copropriété
     if (currentStep === 6 && form.type.value !== 'appartement') {
       current.classList.remove('active');
@@ -61,7 +61,7 @@ export function setupEligibilityTest() {
   }
 
   function calculateResult() {
-    let message = "✅ Vous êtes potentiellement éligible aux primes.";
+    let message = "✅ Vous êtes éligible aux primes.";
     let categorie = null;
 
     if (form.demandeur.value === 'asbl') {
@@ -83,8 +83,8 @@ export function setupEligibilityTest() {
 
     // Si aucune des conditions ci-dessus ne s’applique
     if (!categorie) {
-      categorie = 2; // Valeur par défaut (peut être affinée avec les revenus)
-      message += " (Votre catégorie est estimée à 2, à confirmer selon vos revenus)";
+      categorie = 3; // Valeur par défaut (peut être affinée avec les revenus)
+      message += " (Votre catégorie est comprise entre 1 et 4, à confirmer selon vos revenus)";
     }
 
     // Traitement PEB
@@ -119,7 +119,7 @@ export function setupEligibilityTest() {
     localStorage.setItem("eligibiliteRenovate", JSON.stringify(testData));
 
     // 🔍 Résumé final
-    message += `<br><br><strong>Catégorie estimée :</strong> ${categorie}`;
+    message += `<br><br><strong>Catégorie par défaut:</strong> ${categorie}`;
 
     showResult(message);
   }
