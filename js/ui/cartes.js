@@ -5,6 +5,8 @@ import { calculerTotalToutesCartes } from '../logic/total-primes.js';
 
 export function initialiserCartes() {
   const container = document.getElementById("prime-cards-container");
+  container.innerHTML = ""; // 🔁 Vide les anciennes cartes avant de recharger
+
   const template = document.getElementById("prime-card-template");
   const categorie = String(getCategorieId());
 
@@ -76,6 +78,18 @@ function genererCarteStandard(prime, template) {
   // 📎 Document
   const doc = clone.querySelector(".prime-document");
   if (doc) doc.innerHTML = `📎 <strong>Document :</strong> ${prime.document}`;
+
+  // specifique
+  console.log("💬 Prime en cours :", prime);
+
+  const specifique = clone.querySelector(".prime-specifique");
+  if (specifique) {
+    if (prime.specifique && prime.specifique.trim() !== "") {
+      specifique.innerHTML = `🎫 <strong>Spécifique :</strong> ${prime.specifique}`;
+    } else {
+      specifique.style.display = "none"; // 👈 Cache si vide
+    }
+  }
 
   // 🎯 Groupe input dynamique
   const inputGroup = clone.querySelector(".input-group");

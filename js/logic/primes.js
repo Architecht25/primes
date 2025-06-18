@@ -76,6 +76,7 @@ export function afficherCartes(primes) {
     clone.querySelector(".prime-condition").innerHTML = `💡 <strong>Conditions :</strong> ${prime.condition || "Non renseigné"}`;
     clone.querySelector(".prime-advice").innerHTML = `🛠 <strong>Conseils :</strong> ${prime.conseil || "Non renseigné"}`;
     clone.querySelector(".prime-document").innerHTML = `📎 <strong>Document :</strong> ${prime.document || "Non renseigné"}`;
+    clone.querySelector(".prime-specifique").innerHTML = `🎫 <strong>Spécifique :</strong> ${prime.specifique || "Non renseigné"}`;
 
     const inputGroup = clone.querySelector(".input-group");
     inputGroup.innerHTML = '';

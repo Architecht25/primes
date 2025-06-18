@@ -1,4 +1,17 @@
 // test.js
+function showStep(stepNumber) {
+  // Masque toutes les cartes
+  document.querySelectorAll('.form-card').forEach(card => {
+    card.classList.remove('active');
+  });
+
+  // Active uniquement celle qu'on veut
+  const target = document.querySelector(`.form-card[data-step="${stepNumber}"]`);
+  if (target) {
+    target.classList.add('active');
+  }
+}
+
 export function setupEligibilityTest() {
   const form = document.forms['eligibilityForm'];
   if (!form) {
@@ -37,7 +50,12 @@ export function setupEligibilityTest() {
       showResult("❌ Les bâtiments démolis avec TVA à 6% ne sont pas éligibles aux primes.", false);
       return;
     }
-   
+    if (currentStep === 11 && form.travaux.value === 'non') {
+      showResult("❌ Vous devez planifier des travaux d'isolation, ou de châssis ou de chaudière pour bénéficier des primes à la rénovation.", false);
+      return;
+    }
+
+
     // ➕ Cas particulier : Maison → on saute la question sur la copropriété
     if (currentStep === 6 && form.type.value !== 'appartement') {
       current.classList.remove('active');
@@ -80,10 +98,14 @@ export function setupEligibilityTest() {
       message += " (Propriétaire d’un autre bien → Catégorie 1)";
       categorie = 1;
     }
+    if (form.copro.value === 'privee') {
+      message += " (Vous devez d'abord passer par la procédure pour les parties communes → Via le syndic)";
+      categorie = 1;
+    }
 
     // Si aucune des conditions ci-dessus ne s’applique
     if (!categorie) {
-      categorie = 3; // Valeur par défaut (peut être affinée avec les revenus)
+      categorie = 4; // Valeur par défaut (peut être affinée avec les revenus)
       message += " (Votre catégorie est comprise entre 1 et 4, à confirmer selon vos revenus)";
     }
 
@@ -119,7 +141,7 @@ export function setupEligibilityTest() {
     localStorage.setItem("eligibiliteRenovate", JSON.stringify(testData));
 
     // 🔍 Résumé final
-    message += `<br><br><strong>Catégorie par défaut:</strong> ${categorie}`;
+    message += `<br><br><strong>Catégorie:</strong> ${categorie}`;
 
     showResult(message);
   }
@@ -132,7 +154,7 @@ export function setupEligibilityTest() {
   result.innerHTML = `
     <p>${msg}</p>
     <div class="btn-group">
-      <button type="button" class="btn-custom custom-secondary" onclick="location.reload()">Recommencer</button>
+      <button type="button" class="btn-custom custom-primary" onclick="location.reload()">Recommencer</button>
       ${isEligible ? `<a href="analyse.html" class="btn-custom custom-primary">Simulateur</a>` : ''}
     </div>
   `;
@@ -144,8 +166,17 @@ export function setupEligibilityTest() {
   // Activation des boutons "Suivant"
   document.querySelectorAll('button[data-step]').forEach(button => {
     button.addEventListener('click', () => {
-      const step = parseInt(button.dataset.step, 10);
+      const step = Number(button.dataset.step);
       nextStep(step);
+    });
+  });
+
+  // Activation des boutons "Précédent"
+  document.querySelectorAll('button[data-prev]').forEach(button => {
+    button.addEventListener('click', () => {
+      const prevStep = Number(button.dataset.prev);
+      showStep(prevStep);
+      updateProgress(prevStep);
     });
   });
 
@@ -153,7 +184,7 @@ export function setupEligibilityTest() {
   function updateProgress(stepNumber) {
     const progressBar = document.getElementById('progress-bar');
     const progressLabel = document.getElementById('progress-label');
-    const totalSteps = 10;
+    const totalSteps = 11;
     const percentage = Math.min((stepNumber / totalSteps) * 100, 100);
     if (progressBar) progressBar.style.width = percentage + '%';
     if (progressLabel) progressLabel.textContent = `Étape ${stepNumber} sur ${totalSteps}`;
