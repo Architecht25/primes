@@ -1,3 +1,4 @@
+/* ======================= cartes primes utilisées dans le cadre de la simulation ======================= */
 .prime-card {
   background-color: #f9f9f6; /* blanc cassé */
   border: 1px solid var(--border-color);
@@ -44,4 +45,119 @@
     margin-bottom: 0.5rem;
     text-align: center;
   }
+}
+
+/* ======================= cartes documents utilisées pour la collecte des documents en vue de l'introduction des demandes ======================= */
+
+.cartes-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* fallback mobile/tablette */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 4 cartes fixes dès 1024px (laptop) */
+@media (min-width: 1024px) {
+  .cartes-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* === Carte document générique === */
+.doc-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Image illustrative */
+.doc-card img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+
+/* Badge de statut en haut à droite */
+.status-indicator {
+  font-size: 0.85rem;
+  padding: 0.4em 0.7em;
+  border-radius: 12px;
+}
+
+/* États de badge */
+.status-indicator.bg-success {
+  background-color: #d1e7dd !important;
+  color: #0f5132;
+}
+.status-indicator.bg-warning {
+  background-color: #fff3cd !important;
+  color: #664d03;
+}
+.status-indicator.bg-danger {
+  background-color: #f8d7da !important;
+  color: #842029;
+}
+
+/* Alertes */
+.alert-warning {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* Titres dans les cartes */
+.doc-card h5 {
+  font-weight: 600;
+  color: #19488a;
+}
+
+/* Liste info */
+.doc-card ul {
+  padding-left: 0;
+}
+.doc-card li {
+  margin-bottom: 0.4rem;
+}
+
+/* Boutons dans les cartes */
+.doc-card .btn {
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+}
+
+/* Responsive gap entre les boutons */
+@media (max-width: 576px) {
+  .doc-card .btn {
+    width: 100%;
+  }
+}
+
+/* ======================= cartes de présentation des différents modules allant de ren0vate en pasant pour données chantier et allant à suivi des primres ======================= */
+
+.module-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  border: 1px solid #e0e0e0;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.module-card img {
+  max-height: 140px;
+  object-fit: cover;
+  width: 100%;
 }

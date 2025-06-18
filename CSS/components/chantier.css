@@ -1,0 +1,10 @@
+.container-chantier { /* container relatif au tableau chantier */
+      display: flex;
+      gap: 20px; /* espace entre les divs */
+    }
+
+@media (max-width: 768px) {
+  .container-chantier {
+    flex-direction: column; /* passe en colonne sur tablette et mobile */
+  }
+}

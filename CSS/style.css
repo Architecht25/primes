@@ -1,12 +1,11 @@
 @import url("components/card.css");
+@import url("components/chantier.css");
 @import url("components/form.css");
+@import url("components/ren0vate_intro.css");
 @import url("components/sections.css");
-@import url("components/test.css");
-@import url("components/cartes-documents.css");
-@import url("components/formulaire-mirroir.css");
 @import url("components/suivi.css");
-@import url("components/actions.css");
-@import url("components/button.css");
+@import url("components/test.css");
+
 
 /* ======================= GÉNÉRAL ======================= */
 :root {
@@ -32,12 +31,6 @@ body {
   image-rendering: auto;
 }
 
-.container {
-  max-width: 1600px;
-  margin: auto;
-  padding: 0 1rem;
-}
-
 body h1, body h2, body h3, body h4 {
   color: rgb(37, 41, 156);
   font-weight: 600;
@@ -54,126 +47,34 @@ h4 {
   margin-bottom: 1.25rem;
 }
 
-.container-chantier {
-      display: flex;
-      gap: 20px; /* espace entre les divs */
-    }
-
-.box {
-      flex: 1; /* prend la moitié de l'espace */
-      padding: 20px;
-      background-color: lightblue;
-      border: 1px solid #000;
-    }
-
 ::placeholder {
   color: #6c757d !important; /* gris Bootstrap */
   opacity: 1 !important;
 }
 
-@media (max-width: 768px) {
-  .container-chantier {
-    flex-direction: column; /* passe en colonne sur tablette et mobile */
-  }
+/* ======================= .container pour la simulation des primes ======================= */
+.container {
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 1rem;
 }
 
-.input-group.flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.input-group.flex-wrap .form-control {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-#ren0vate-intro {
-  background-color: var(--primary-light);
-  padding: 2rem;
-  border-radius: 1rem;
-  margin: 2rem auto;
+/* ======================= bannier principale =======================   */
+.ren0vate-banner {
+  background-color: #f2fdeb;
+  border-bottom: 1px solid #d9e8cf;
   width: 100%;
-  max-width: 900px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
+  padding: 2rem 1rem;
 }
 
-#ren0vate-intro h2 {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#ren0vate-intro p {
-  color: var(--text-dark);
-  font-size: 1.125rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-#ren0vate-intro ul {
-  list-style: none !important; /* Forcer la suppression des puces */
-  padding-left: 0;
-  margin-left: 0;
-  text-align: center;
-}
-
-#ren0vate-intro ul li {
-  position: relative;
-  list-style: none !important; /* Double sécurité */
-  margin-bottom: 0.75rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  padding-left: 1.5rem; /* Réserve pour ::before */
-}
-
-#ren0vate-intro ul li::before {
-  content: ""; /* vide = pas d’icône */
-  position: absolute;
-  left: 0;
-  top: 0.4rem;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-}
-
-#ren0vate-intro a {
-  color: whitesmoke;
-  font-weight: 500;
-  text-decoration: none;
-  transition: text-decoration 0.2s ease;
-}
-
-#ren0vate-intro a:hover {
-  text-decoration: underline;
-}
-
-.ren0vate-pricing {
-  background-color: #e8f5e9; /* vert très clair */
-  border: 2px solid #a5d6a7; /* vert pastel */
-  border-radius: 16px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  font-family: 'Inter', sans-serif;
-  color: #2e7d32;
-  max-width: 320px;
-  margin: 2rem auto;
-  transition: transform 0.3s ease;
-}
-
-.ren0vate-pricing:hover {
-  transform: translateY(-4px);
-}
-
-.ren0vate-pricing p {
-  font-size: 1.8rem;
-  font-weight: 700;
+.ren0vate-banner h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
-}
-
-.ren0vate-pricing p:last-child {
-  font-size: 1rem;
-  color: #4caf50;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }

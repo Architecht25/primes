@@ -1,0 +1,90 @@
+#ren0vate-intro {
+  background-color: var(--primary-light);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+#ren0vate-intro h2 {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#ren0vate-intro p {
+  color: var(--text-dark);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+#ren0vate-intro ul {
+  list-style: none !important; /* Forcer la suppression des puces */
+  padding-left: 0;
+  margin-left: 0;
+  text-align: center;
+}
+
+#ren0vate-intro ul li {
+  position: relative;
+  list-style: none !important; /* Double sécurité */
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding-left: 1.5rem; /* Réserve pour ::before */
+}
+
+#ren0vate-intro ul li::before {
+  content: ""; /* vide = pas d’icône */
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+#ren0vate-intro a {
+  color: whitesmoke;
+  font-weight: 500;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+#ren0vate-intro a:hover {
+  text-decoration: underline;
+}
+
+.ren0vate-pricing {
+  background-color: #e8f5e9; /* vert très clair */
+  border: 2px solid #a5d6a7; /* vert pastel */
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'Inter', sans-serif;
+  color: #2e7d32;
+  max-width: 320px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease;
+}
+
+.ren0vate-pricing:hover {
+  transform: translateY(-4px);
+}
+
+.ren0vate-pricing p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ren0vate-pricing p:last-child {
+  font-size: 1rem;
+  color: #4caf50;
+}
