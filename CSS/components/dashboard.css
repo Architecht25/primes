@@ -1,0 +1,69 @@
+
+.container-dashboard {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ren0vate-dashboard {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.ren0vate-dashboard h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3c763d;
+  border-bottom: 2px solid #d9e8cf;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-section {
+  background-color: #f9fdf6;
+  border-left: 5px solid #c2e7b0;
+  border-radius: 12px;
+}
+
+.dashboard-section .list-group-item {
+  border: none;
+  padding: 0.75rem 1rem;
+}
+
+.dashboard-section .badge {
+  font-size: 0.9rem;
+  padding: 0.5em 0.75em;
+  border-radius: 8px;
+}
+
+.progress {
+  background-color: #eef6e6;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  font-weight: 500;
+}
+
+.alert-warning {
+  background-color: #fffbe6;
+  border-left: 5px solid #ffc107;
+  font-weight: 500;
+}
+
+#btn-export-pdf {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#btn-export-pdf:hover {
+  background-color: #d9e8cf;
+  border-color: #a1cf94;
+}
