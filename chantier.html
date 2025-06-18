@@ -22,12 +22,12 @@
   }
 </script>
 </head>
-<body class="p-4 text-center">
-    <h1 class="mb-4">J'enregistre les données du bien et du chantier ici</h1>
+<body class="p-4">
+    <h1 class="mb-4 text-center">J'enregistre les données du bien et du chantier ici</h1>
     <div class="container-chantier">
 
       <div id="form-building" class="form-section mt-3">
-      <h5>Informations sur le bien à rénover</h5>
+      <h5 class="text-center">Informations sur le bien à rénover</h5>
         <div class="mb-3">
           <label for="rue" class="form-label">Rue*</label>
           <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
@@ -99,7 +99,7 @@
       </div>
 
       <div id="form-chantier" class="form-section">
-        <h5 class="mt-4">Informations sur le chantier</h5>
+        <h5 class=" text-center">Informations sur le chantier</h5>
 
         <input type="text" class="form-control mb-2" placeholder="Date de début prévue">
         <input type="text" class="form-control mb-2" placeholder="Date de fin prévue">
@@ -125,15 +125,17 @@
         </button>
       </div>
       </div>
-
     </div>
 
-    <a href="collecte.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
-      Collecter des documents et photos
-    </a>
-    <a href="index.html" class="btn btn-success text-center mt-3 ms-3" id="btn-next-admin">
-    Retour au menu principal
-    </a>
+    <div class="d-flex justify-content-center">
+      <a href="collecte.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
+        Collecter des documents et photos
+      </a>
+
+      <a href="index.html" class="btn btn-success text-center mt-3 ms-3" id="btn-next-admin">
+      Retour au menu principal
+      </a>
+    </div>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
