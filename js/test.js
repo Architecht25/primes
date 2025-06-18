@@ -155,7 +155,7 @@ export function setupEligibilityTest() {
     <p>${msg}</p>
     <div class="btn-group">
       <button type="button" class="btn-custom custom-primary" onclick="location.reload()">Recommencer</button>
-      ${isEligible ? `<a href="analyse.html" class="btn-custom custom-primary">Simulateur</a>` : ''}
+      ${isEligible ? `<a href="simulation.html" class="btn-custom custom-primary">Simulateur</a>` : ''}
     </div>
   `;
 
