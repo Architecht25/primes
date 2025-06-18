@@ -80,7 +80,7 @@
   },
   "condition": "R ≥ 3.0 m²K/W (selon méthode – mur creux: 5 cm de creux et R≥ 2, intérieur:2.0 ou extérieur:3.0)",
   "conseil": "Vérifiez les ponts thermiques, choisissez la méthode adaptée (spouwmuur, intérieur, extérieur).",
-  "document": "Facture + devis ou métré + attestation de l’entrepreneur. si isolation en coulisse, alors numéro STS de l'entrepreneur. si isolation par l'intérieur, alors attestation de l'entrepreneur, il faut un architecte ou un entrepreneur avec numéro BIM.",
+  "document": "Facture + devis ou métré + attestation de l’entrepreneur. Si isolation par l'intérieur, alors attestation de l'entrepreneur, il faut un architecte ou un entrepreneur avec numéro BIM.",
   "specifique": "Si isolation par murs creux/en coulisse - attestation STS et numéro STS présent dans la facture",
   "placeholder": {
     "1": "Surface en m²",
@@ -340,7 +340,7 @@
   "condition": "Uniquement pour bâtiments de plus de 5 ans avec permis d’environnement",
   "conseil": "Vérifiez si le type de pompe est bien éligible et installé par un professionnel agréé + l'installation doit être conforme aux normes PEB, bâtiment de +5 ans.",
   "document": "Facture détaillée + devis ou métré + attestation de conformité de l’installateur - numéro RESERT obligatoire pour toutes les pompes à chaleur + label européen. si Air/eau, fonction réversible soit non active.",
-  "specifique": "Pour une PAC air/eau, si elle n'a pas le refroidissement actif, il faut une attestation de l'entrepreneur. Si elle en dispose, il faut respecter 3 conditions 1/panneaux solaires installés et branchés 2/la PAC = chaudière principale 3/ factures émises au moins depuis 2023 ",
+  "specifique": "Pour une PAC air/eau, si elle n'a pas le refroidissement actif, il faut une attestation de l'entrepreneur. Si elle en dispose, il faut respecter 3 conditions 1/panneaux solaires installés ET enregistrés auprès de Fluvius 2/la PAC = moyen de chauffage principal 3/ factures émises au moins depuis 2023 ",
   "placeholder": {
     "1": "Choisissez le type de pompe",
     "2": "Choisissez le type de pompe",
