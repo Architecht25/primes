@@ -23,77 +23,81 @@
   }
 </script>
 </head>
-<body>
+<body class="p-4 text-center">
 <!--résumé de la situation, avec catégorie de prime, listes de primes sélectionnées avec montant par prime et montant total à recevoir, les primes non retenues (checkup)-->
 <!--statut résumé de la collecte des documents et le degré de complétude du formulaire miroir-->
 <!--alerte ou résumé de ce qui manque, notification des points essentiels-->
 <!-- 🎛️ Tableau de bord Ren0vate -->
   <div class="container-dashboard">
     <section class="ren0vate-dashboard container my-5">
-    <!-- 🧾 Résumé utilisateur -->
-    <div class="dashboard-section card p-4 mb-4 shadow-sm">
-      <h2 class="h4 mb-3">Votre situation</h2>
-      <p><strong>Catégorie de prime :</strong> <span id="dashboard-categorie" class="badge bg-success">Catégorie 2</span></p>
-      <p><strong>Montant total estimé :</strong> <span id="dashboard-total">4.350€</span></p>
-    </div>
-
-    <!-- ✅ Liste des primes sélectionnées -->
-    <div class="dashboard-section card p-4 mb-4 shadow-sm">
-      <h2 class="h4 mb-3">Vos primes sélectionnées</h2>
-      <ul class="list-group" id="dashboard-primes-liste">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Isolation de toiture
-          <span class="badge bg-primary rounded-pill">2.100€</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Ventilation mécanique
-          <span class="badge bg-primary rounded-pill">1.250€</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center text-muted">
-          Chauffe-eau solaire <span class="badge bg-secondary rounded-pill">Non retenue</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- 📎 Statut de collecte des documents -->
-    <div class="dashboard-section card p-4 mb-4 shadow-sm">
-      <h2 class="h4 mb-3">Documents à fournir</h2>
-      <div class="progress mb-3" style="height: 25px;">
-        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 60%;" id="progress-documents">
-          60% complété
-        </div>
+      <!-- 🧾 Résumé utilisateur -->
+      <div class="dashboard-section card p-4 mb-4 shadow-sm">
+        <h2 class="h4 mb-3">Votre situation</h2>
+        <p><strong>Catégorie de prime :</strong> <span id="dashboard-categorie" class="badge bg-success">Catégorie 2</span></p>
+        <p><strong>Montant total estimé :</strong> <span id="dashboard-total">4.350€</span></p>
       </div>
-      <ul class="list-group" id="dashboard-documents-liste">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Devis signé
-          <span class="badge bg-success">Fait ✅</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Attestation entrepreneur
-          <span class="badge bg-warning text-dark">En cours ⌛</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Factures
-          <span class="badge bg-danger">À faire ❌</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- ⚠️ Alerte / checklist finale -->
-    <div class="dashboard-section alert alert-warning">
-      <strong>Il vous manque encore 2 documents obligatoires</strong> pour soumettre votre demande.
-      <br>
-      Veillez à compléter votre formulaire miroir également.
-    </div>
+      <!-- ✅ Liste des primes sélectionnées -->
+      <div class="dashboard-section card p-4 mb-4 shadow-sm">
+        <h2 class="h4 mb-3">Vos primes sélectionnées</h2>
+        <ul class="list-group" id="dashboard-primes-liste">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Isolation de toiture
+            <span class="badge bg-primary rounded-pill">2.100€</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Ventilation mécanique
+            <span class="badge bg-primary rounded-pill">1.250€</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center text-muted">
+            Chauffe-eau solaire <span class="badge bg-secondary rounded-pill">Non retenue</span>
+          </li>
+        </ul>
+      </div>
 
-    <!-- 🚀 Bouton d’action finale -->
-    <div class="text-end mt-4">
-      <button class="btn btn-outline-success" id="btn-export-pdf">
-        📄 Télécharger mon dossier PDF
-      </button>
-    </div>
+      <!-- 📎 Statut de collecte des documents -->
+      <div class="dashboard-section card p-4 mb-4 shadow-sm">
+        <h2 class="h4 mb-3">Documents à fournir</h2>
+        <div class="progress mb-3" style="height: 25px;">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 60%;" id="progress-documents">
+            60% complété
+          </div>
+        </div>
+        <ul class="list-group" id="dashboard-documents-liste">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Devis signé
+            <span class="badge bg-success">Fait ✅</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Attestation entrepreneur
+            <span class="badge bg-warning text-dark">En cours ⌛</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Factures
+            <span class="badge bg-danger">À faire ❌</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ⚠️ Alerte / checklist finale -->
+      <div class="dashboard-section alert alert-warning">
+        <strong>Il vous manque encore 2 documents obligatoires</strong> pour soumettre votre demande.
+        <br>
+        Veillez à compléter votre formulaire miroir également.
+      </div>
+
+      <!-- 🚀 Bouton d’action finale -->
+      <div class="text-end text-center mt-4">
+        <button class="btn btn-outline-success" id="btn-export-pdf">
+          📄 Télécharger mon dossier PDF
+        </button>
+      </div>
     </section>
   </div>
+
+  <a href="index.html" class="btn btn-success text-center mt-3 ms-3" id="btn-next-admin">
+    Retour au menu principal
+  </a>
 
   <script type="module" src=""></script>
 </body>
