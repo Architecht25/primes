@@ -1,0 +1,66 @@
+<!-- 🌿 Page d'accueil stylisée de Ren0vate (template responsive, élégant, professionnel) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ren0vate – Votre parcours de rénovation simplifié</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .ren0vate-hero {
+      background: linear-gradient(to right, #f2fdeb, #d9e8cf);
+    }
+    .card {
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- 🟢 Bannière principale -->
+  <header class="ren0vate-hero text-center py-12 px-4">
+    <h1 class="text-4xl font-bold text-green-700 mb-2">Ren0vate</h1>
+    <h2 class="text-xl text-green-800">Votre parcours de rénovation, simplifié</h2>
+  </header>
+
+  <!-- 🌟 Section 1 : Avantages -->
+  <section class="py-12 px-6 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-6 bg-white">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">🔍 Testez votre éligibilité</h3>
+        <p>Un outil simple pour savoir si vous avez droit à des primes à la rénovation.</p>
+      </div>
+      <div class="card p-6 bg-white">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">📊 Simulez vos montants</h3>
+        <p>Obtenez une estimation claire des montants de prime selon vos travaux.</p>
+      </div>
+      <div class="card p-6 bg-white">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">📎 Générez votre dossier</h3>
+        <p>Collectez automatiquement les documents à joindre à votre demande officielle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📣 Section Appel à action -->
+  <section class="text-center py-12 bg-green-50">
+    <h2 class="text-2xl font-semibold text-green-800 mb-4">Commencez dès maintenant votre parcours de rénovation</h2>
+    <a href="#" class="inline-block bg-green-600 text-white font-medium py-3 px-6 rounded-xl hover:bg-green-700 transition">Lancer le simulateur</a>
+  </section>
+
+  <!-- 📞 Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500">
+    © 2025 Ren0vate – Une initiative pour une rénovation éco-responsable en Belgique
+  </footer>
+
+</body>
+</html>
