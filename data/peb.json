@@ -56,7 +56,7 @@
   "condition": "La rénovation doit faire passer le logement d’un label E/F (ou D pour appartement) à A, B ou C. Le montant dépend de la ventilation installée et du type de logement.",
   "conseil": "Faites réaliser un certificat PEB avant et après travaux. Vérifiez que l'amélioration correspond bien à un saut d'au moins deux lettres pour activer la prime maximale.",
   "document": "Certificat PEB initial et final",
-  "specifique": " ",
+  "specifique": "Normes de ventilation: installation d'un système D(double flux) et/ou placer les invisivents dans toutes les pièces sèches",
   "placeholder": {
     "1": "Label final (ex : B)",
     "2": "Label final (ex : B)",

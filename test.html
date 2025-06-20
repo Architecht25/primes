@@ -41,10 +41,16 @@
     <label><input type="radio" name="demandeur" value="entreprise"> Société</label>
     <label><input type="radio" name="demandeur" value="syndic"> Syndic de copropriété</label>
     <label><input type="radio" name="demandeur" value="bailleur_social"> Bailleur social</label>
-    <label><input type="radio" name="demandeur" value="asbl"> ASBL / Coopérative</label>
+    <label><input type="radio" name="demandeur" value="asbl_cooperative"> ASBL ou Coopérative</label>
     <button type="button" class="btn btn-primary" data-step="1">Suivant ➡️</button>
   </div>
 
+  <!--le particulier passe par toutes les questions-->
+  <!--ajouter le client protégé (partie particulier)-->
+  <!--société se fait couper tout de suite-->
+  <!--syndic - catégorie 1 directement, voir à ne garder que quelques questions relatives-->
+  <!--bailleur - catégorie 4 directement, voir à ne garder que quelques questions relatives et doit passer par le syndic-->
+  <!--asbl ou cooperative, directement en catégorie 1, et voir quelles questions garder-->
 
   <div class="form-card" data-step="2">
     <h2>Le bien est-il destiné à être habité ?</h2>
@@ -103,12 +109,15 @@
   </div>
 
   <div class="form-card" data-step="9">
-    <h2>Êtes-vous domicilié dans ce logement ?</h2>
+    <h2>Êtes-vous ou serez-vous domicilié dans ce logement ?</h2>
     <label><input type="radio" name="domicile" value="oui"> Oui</label>
     <label><input type="radio" name="domicile" value="non"> Non</label>
     <button type="button" class="btn btn-primary" data-prev="8">⬅️Précédent</button>
     <button type="button" class="btn btn-primary" data-step="9">Suivant ➡️</button>
   </div>
+
+  <!-- si le but est de ne pas y être domicilié alors CAT 1
+  si vous serez, alors on est dans le pipe -->
 
   <div class="form-card" data-step="10">
     <h2>Le logement est-il un ancien bâtiment démoli avec un seul mur ou sol conservé et une TVA à 6%?</h2>
@@ -119,7 +128,7 @@
   </div>
 
   <div class="form-card" data-step="11">
-    <h2>Envisagez-vous de réaliser des travaux d'isolation ou de remplacement de châssis ou encore de chaudière?</h2>
+    <h2>Envisagez-vous de réaliser des travaux d'isolation (toit/mur/sol) ou de remplacement de châssis/porte ou encore de système de chauffage?</h2>
     <label><input type="radio" name="travaux" value="oui"> Oui</label>
     <label><input type="radio" name="travaux" value="non"> Non</label>
     <button type="button" class="btn btn-primary" data-prev="10">⬅️Précédent</button>

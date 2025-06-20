@@ -48,6 +48,7 @@
       <option value="societe">Société</option>
       <option value="syndic">Syndicat de copropriété</option>
       <option value="bailleur_social">Bailleur social</option>
+      <option value="asbl_cooperative">ASBL ou Coopérative</option>
     </select>
 
     <label for="nom">Nom du demandeur *</label>
@@ -69,6 +70,9 @@
   <!-- Étape 2 : Données du logement concerné -->
   <section id="section-logement" class="formulaire-prime mt-5">
     <h3 class="mt-4">2. Données du logement concerné</h3>
+
+    <label for="adresse">Votre code EAN*</label>
+    <input type="text" id="ean" name="ean" placeholder="Ex: 54144..." />
 
     <label for="adresse">Adresse du logement *</label>
     <input type="text" id="adresse" name="adresse" required />
@@ -113,6 +117,7 @@
         <option value="reseau-chaleur">Réseau de chaleur</option>
         <option value="bois">Poêle / insert bois / biomasse</option>
         <option value="autre">Autre (à spécifier)</option>
+        <option value="ne_sais_pas">Je ne sais pas</option>
       </select>
   </section>
 
@@ -177,47 +182,20 @@
     <!-- Chauffage (chaudière ou PAC) -->
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="travaux-chauffage" name="travaux[]" value="chauffage">
-      <label class="form-check-label" for="travaux-chauffage">Remplacement de l’installation de chauffage</label>
+      <label class="form-check-label" for="travaux-chauffage">Installation d'une pompe à clhaleur et chauffe-eau thermodynamique</label>
     </div>
     <div id="details-chauffage" class="travaux-details d-none">
       <label for="type-chauffage">Type de système</label>
       <select id="type-chauffage" name="type_chauffage">
         <option value="">-- Sélectionnez --</option>
-        <option value="condensation">Chaudière à condensation gaz</option>
-        <option value="pac-air-eau">Pompe à chaleur air/eau</option>
         <option value="pac-geothermique">Pompe à chaleur géothermique</option>
-        <option value="hybride">Système hybride</option>
+        <option value="pac-air-eau">Pompe à chaleur air/eau</option>
+        <option value="pac-air-air">Pompe à chaleur air/air</option>
+        <option value="hybride">Pompe à chaleur hybride</option>
+        <option value="boiler">Boiler thermodynamique</option>
       </select>
     </div>
 
-    <!-- Ventilation -->
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="travaux-ventilation" name="travaux[]" value="ventilation">
-      <label class="form-check-label" for="travaux-ventilation">Installation d’un système de ventilation</label>
-    </div>
-    <div id="details-ventilation" class="travaux-details d-none">
-      <label for="type-ventilation">Type</label>
-      <select id="type-ventilation" name="type_ventilation">
-        <option value="">-- Sélectionnez --</option>
-        <option value="type-c">Type C</option>
-        <option value="type-d">Type D (avec récupération de chaleur)</option>
-      </select>
-    </div>
-
-    <!-- Chauffe-eau -->
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="travaux-chauffe-eau" name="travaux[]" value="chauffe-eau">
-      <label class="form-check-label" for="travaux-chauffe-eau">Remplacement du chauffe-eau</label>
-    </div>
-    <div id="details-chauffe-eau" class="travaux-details d-none">
-      <label for="type-chauffe-eau">Type</label>
-      <select id="type-chauffe-eau" name="type_chauffe_eau">
-        <option value="">-- Sélectionnez --</option>
-        <option value="thermodynamique">Chauffe-eau thermodynamique</option>
-        <option value="solaire">Chauffe-eau solaire</option>
-        <option value="pac">Chauffe-eau couplé à PAC</option>
-      </select>
-    </div>
   </section>
 
   <!-- Étape 3.1 – Travaux complémentaires et non subventionnés -->
@@ -242,7 +220,7 @@
     <div class="form-check mt-4">
       <input class="form-check-input" type="checkbox" id="travaux-electricite" name="travaux[]" value="electricite">
       <label class="form-check-label fw-bold" for="travaux-electricite">
-        Travaux d’électricité (non subventionnés)
+        Travaux préparatoire sanitaires et électricité
       </label>
     </div>
     <div id="details-electricite" class="travaux-details d-none ms-3">
@@ -251,53 +229,28 @@
       <label for="montant-electricite">Montant estimé ou facturé (€)</label>
       <input type="number" id="montant-electricite" name="montant_electricite" min="0" step="10" class="form-control">
     </div>
-
-    <!-- Travaux sanitaires -->
-    <div class="form-check mt-4">
-      <input class="form-check-input" type="checkbox" id="travaux-sanitaires" name="travaux[]" value="sanitaires">
-      <label class="form-check-label fw-bold" for="travaux-sanitaires">
-        Travaux sanitaires / plomberie (non subventionnés)
-      </label>
-    </div>
-    <div id="details-sanitaires" class="travaux-details d-none ms-3">
-      <label for="type-sanitaires">Nature des travaux</label>
-      <input type="text" id="type-sanitaires" name="type_sanitaires" placeholder="Ex : remplacement WC, douche, tuyauterie…" class="form-control mb-2">
-      <label for="montant-sanitaires">Montant estimé ou facturé (€)</label>
-      <input type="number" id="montant-sanitaires" name="montant_sanitaires" min="0" step="10" class="form-control">
-    </div>
   </section>
 
   <!-- Étape 4 : Revenus et catégorie de prime -->
   <section id="section-revenus" class="formulaire-prime mt-5">
-  <h3>4. Revenus et composition du ménage</h3>
+    <h3>4. Revenus et composition du ménage</h3>
 
-  <!-- Revenus imposables du ménage -->
-  <label for="revenus-annuels">Revenus annuels imposables (ménage complet) *</label>
-  <input type="number" id="revenus-annuels" name="revenus_annuels" min="0" step="100" placeholder="Ex : 42 000" required>
+    <!-- Revenus imposables du ménage -->
+    <label for="revenus-annuels">Revenus annuels imposables (ménage complet) *</label>
+    <input type="number" id="revenus-annuels" name="revenus_annuels" min="0" step="100" placeholder="Ex : 42 000" required>
 
-  <!-- Année de l'AER -->
-  <label for="annee-aer">Année de l’avertissement extrait de rôle utilisé *</label>
-  <select id="annee-aer" name="annee_aer" required>
-    <option disabled selected value="">-- Sélectionnez une année --</option>
-    <option value="2023">2023 (revenus 2022)</option>
-    <option value="2022">2022 (revenus 2021)</option>
-    <option value="2021">2021 (revenus 2020)</option>
-  </select>
+    <!-- Année de l'AER -->
+    <label for="annee-aer">Année de l’avertissement extrait de rôle utilisé *</label>
+    <select id="annee-aer" name="annee_aer" required>
+      <option disabled selected value="">-- Sélectionnez une année --</option>
+      <option value="2023">2023 (revenus 2022)</option>
+      <option value="2022">2022 (revenus 2021)</option>
+      <option value="2021">2021 (revenus 2020)</option>
+    </select>
 
-  <!-- Composition du ménage -->
-  <label for="nombre-personnes-charge">Nombre de personnes à charge *</label>
-  <input type="number" id="nombre-personnes-charge" name="personnes_charge" min="0" max="10" value="0" required>
-
-  <label for="composition-menage">Composition complète du ménage (optionnel)</label>
-  <textarea id="composition-menage" name="composition_menage" rows="3" placeholder="Ex : 2 adultes, 2 enfants de moins de 18 ans…"></textarea>
-
-  <!-- Calcul de catégorie -->
-  <div class="mt-4">
-    <button type="button" class="btn-custom custom-secondary" onclick="calculerCategorie()">Calculer la catégorie de prime</button>
-  </div>
-
-  <!-- Résultat dynamique -->
-  <div id="resultat-categorie" class="mt-3 text-success fw-bold"></div>
+    <!-- Composition du ménage -->
+    <label for="nombre-personnes-charge">Nombre de personnes à charge *</label>
+    <input type="number" id="nombre-personnes-charge" name="personnes_charge" min="0" max="10" value="0" required>
   </section>
 
   <!-- Étape 5 : Documents à fournir -->
@@ -306,17 +259,17 @@
 
   <p class="mb-3">Joignez les documents nécessaires à l’analyse de votre demande. Les formats acceptés sont PDF, JPG ou PNG.</p>
 
-  <!-- Upload AER -->
-  <label for="upload-aer">🧾 Avertissement Extrait de Rôle (AER) *</label>
-  <input type="file" id="upload-aer" name="document_aer" accept=".pdf,.jpg,.jpeg,.png" required>
+  <!-- Devis -->
+  <label for="upload-factures">📎 Devis des travaux *</label>
+  <input type="file" id="upload-devis" name="document_devis" accept=".pdf,.jpg,.jpeg,.png" multiple required>
 
-  <!-- Composition de ménage -->
-  <label for="upload-composition">👨‍👩‍👧 Composition de ménage *</label>
-  <input type="file" id="upload-composition" name="document_composition" accept=".pdf,.jpg,.jpeg,.png" required>
-
-  <!-- Factures ou devis -->
-  <label for="upload-factures">📎 Factures ou devis des travaux *</label>
+  <!-- Factures -->
+  <label for="upload-factures">📎 Factures des travaux *</label>
   <input type="file" id="upload-factures" name="document_factures" accept=".pdf,.jpg,.jpeg,.png" multiple required>
+
+  <!-- Etats d'avancement -->
+  <label for="upload-avancement">📊 Etats d'avancement (si disponible)</label>
+  <input type="file" id="upload-avancement" name="document_avancement" accept=".pdf,.jpg,.jpeg,.png">
 
   <!-- Attestations entrepreneur -->
   <label for="upload-attestations">🧑‍🔧 Attestations des entrepreneurs</label>
@@ -325,6 +278,26 @@
   <!-- PEB -->
   <label for="upload-peb">📊 Certificat PEB (si disponible)</label>
   <input type="file" id="upload-peb" name="document_peb" accept=".pdf,.jpg,.jpeg,.png">
+
+  <!-- photo -->
+  <label for="upload-photo">📊 Photos</label>
+  <input type="file" id="upload-photo" name="document_photo" accept=".pdf,.jpg,.jpeg,.png">
+
+  <!-- label -->
+  <label for="upload-label">📊 label européen</label>
+  <input type="file" id="upload-label" name="document_label" accept=".pdf,.jpg,.jpeg,.png">
+
+  <!-- conformité -->
+  <label for="upload-conformité">📊 Attestations de conformité</label>
+  <input type="file" id="upload-conformité" name="document_conformité" accept=".pdf,.jpg,.jpeg,.png">
+
+  <!-- plans -->
+  <label for="upload-plans">📊 Plans</label>
+  <input type="file" id="upload-plans" name="document_plans" accept=".pdf,.jpg,.jpeg,.png">
+
+  <!-- permis -->
+  <label for="upload-permis">📊 Permis</label>
+  <input type="file" id="upload-permis" name="document_permis" accept=".pdf,.jpg,.jpeg,.png">
 
   <!-- Autres documents -->
   <label for="upload-autres">📂 Autres documents utiles</label>

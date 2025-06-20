@@ -47,9 +47,9 @@ export function initialiserCalculCategorie() {
 
       let couleur = "secondary";
       if (cat.id === "categorie_4") couleur = "success";
-      else if (cat.id === "categorie_3") couleur = "info";
-      else if (cat.id === "categorie_2") couleur = "warning";
-      else if (cat.id === "categorie_1") couleur = "danger";
+      else if (cat.id === "categorie_3") couleur = "primary";
+      else if (cat.id === "categorie_2") couleur = "info";
+      else if (cat.id === "categorie_1") couleur = "warning";
 
       resultElt.className = `alert alert-${couleur} mt-4`;
     }
