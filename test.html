@@ -26,7 +26,7 @@
   <h1>Test d’éligibilité aux primes Rénovation</h1>
 
 <div id="progress-container" style="max-width: 640px; margin: 0 auto 1em;">
-  <div id="progress-label" style="text-align: center; font-weight: 600;">Étape 1 sur 11</div>
+  <div id="progress-label" style="text-align: center; font-weight: 600;">Étape 1 sur 12</div>
   <div style="height: 8px; background: #ddd; border-radius: 4px; overflow: hidden;">
     <div id="progress-bar" style="height: 100%; width: 10%; background: #0077cc; transition: width 0.3s ease;"></div>
   </div>
@@ -45,9 +45,6 @@
     <button type="button" class="btn btn-primary" data-step="1">Suivant ➡️</button>
   </div>
 
-  <!--le particulier passe par toutes les questions-->
-  <!--ajouter le client protégé (partie particulier) si oui alors catégorie 4-->
-  <!--société se fait couper tout de suite-->
   <!--syndic - catégorie 1 directement, voir à ne garder que quelques questions relatives-->
   <!--bailleur - catégorie 4 directement, voir à ne garder que quelques questions relatives et doit passer par le syndic-->
   <!--asbl ou cooperative, directement en catégorie 1, et voir quelles questions garder-->
@@ -132,8 +129,17 @@
     <label><input type="radio" name="travaux" value="oui"> Oui</label>
     <label><input type="radio" name="travaux" value="non"> Non</label>
     <button type="button" class="btn btn-primary" data-prev="10">⬅️Précédent</button>
-    <button type="button" class="btn btn-primary" data-step="11">Voir le résultat</button>
+    <button type="button" class="btn btn-primary" data-step="11">Suivant</button>
   </div>
+
+  <div class="form-card" data-step="12">
+    <h2>Etes-vous un client protégé?</h2>
+    <label><input type="radio" name="protege" value="oui"> Oui</label>
+    <label><input type="radio" name="protege" value="non"> Non</label>
+    <button type="button" class="btn btn-primary" data-prev="11">⬅️Précédent</button>
+    <button type="button" class="btn btn-primary" data-step="12">Voir le résultat</button>
+  </div>
+
 </form>
 
   <div class="result" id="result" style="display: none;"></div>

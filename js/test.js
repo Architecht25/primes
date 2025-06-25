@@ -82,6 +82,14 @@ export function setupEligibilityTest() {
     let message = "✅ Vous êtes éligible aux primes.";
     let categorie = null;
 
+    if (form.demandeur.value === 'syndic') {
+      message += " (Syndic de copropriété → Catégorie 1)";
+      categorie = 1;
+    }
+    if (form.demandeur.value === 'bailleur_social') {
+      message += " (Bailleur social → Catégorie 4)";
+      categorie = 4;
+    }
     if (form.demandeur.value === 'asbl') {
       message += " (ASBL/coopérative → Catégorie 1)";
       categorie = 1;
@@ -101,6 +109,10 @@ export function setupEligibilityTest() {
     if (form.copro.value === 'privee') {
       message += " (Vous devez d'abord passer par la procédure pour les parties communes → Via le syndic)";
       categorie = 1;
+    }
+     if (form.protege.value === 'oui') {
+      message += " (Client protégé → Catégorie 4)";
+      categorie = 4;
     }
 
     // Si aucune des conditions ci-dessus ne s’applique
@@ -184,7 +196,7 @@ export function setupEligibilityTest() {
   function updateProgress(stepNumber) {
     const progressBar = document.getElementById('progress-bar');
     const progressLabel = document.getElementById('progress-label');
-    const totalSteps = 11;
+    const totalSteps = 12;
     const percentage = Math.min((stepNumber / totalSteps) * 100, 100);
     if (progressBar) progressBar.style.width = percentage + '%';
     if (progressLabel) progressLabel.textContent = `Étape ${stepNumber} sur ${totalSteps}`;
