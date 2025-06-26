@@ -24,14 +24,17 @@
 </script>
 </head>
 <body class="p-4 text-center">
-<!--résumé de la situation, avec catégorie de prime, listes de primes sélectionnées avec montant par prime et montant total à recevoir, les primes non retenues (checkup)-->
-<!--statut résumé de la collecte des documents et le degré de complétude du formulaire miroir-->
-<!--alerte ou résumé de ce qui manque, notification des points essentiels-->
+
 <!-- 🎛️ Tableau de bord Ren0vate -->
   <div class="container-dashboard">
     <section class="ren0vate-dashboard container my-5">
       <!-- 🧾 Résumé utilisateur -->
       <div class="dashboard-section card p-4 mb-4 shadow-sm">
+        <h1 class="display-6 mb-4">📁 Projet : Rénovation de la toiture (2025)</h1>
+        <div class="mb-4 text-muted small">
+          Bien concerné : <strong>Rue de l’Énergie 42, 1190 Forest</strong> – Surface : 180 m² – Type : Maison unifamiliale
+        </div>
+
         <h2 class="h4 mb-3">Votre situation</h2>
         <p><strong>Catégorie de prime :</strong> <span id="dashboard-categorie" class="badge bg-success">Catégorie 2</span></p>
         <p><strong>Montant total estimé :</strong> <span id="dashboard-total">4.350€</span></p>
@@ -79,6 +82,54 @@
         </ul>
       </div>
 
+      <!-- 📎 Intervenants -->
+      <div class="card mb-4">
+        <div class="card-header bg-light">
+          <h5 class="mb-0"><i class="bi bi-person-gear me-2"></i> Intervenants</h5>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <label class="col-sm-3 col-form-label fw-bold">Architecte</label>
+            <div class="col-sm-9">
+              <p class="form-control-plaintext">Atelier Dupont Architectes</p>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-3 col-form-label fw-bold">Entrepreneur</label>
+            <div class="col-sm-9">
+              <p class="form-control-plaintext">Toiture & Co SPRL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- historique -->
+      <div class="card mb-4">
+        <div class="card-header bg-light">
+          <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i> Historique du projet</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="bi bi-calendar-check me-2 text-success"></i>
+              <strong>24 juin 2025 :</strong> Prime toiture validée (2 400 €)
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-upload me-2 text-primary"></i>
+              <strong>21 juin 2025 :</strong> Dépôt du devis signé
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-pencil me-2 text-secondary"></i>
+              <strong>18 juin 2025 :</strong> Modification du statut du projet à "En cours"
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-flag me-2 text-muted"></i>
+              <strong>12 juin 2025 :</strong> Création du projet "Rénovation toiture"
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- ⚠️ Alerte / checklist finale -->
       <div class="dashboard-section alert alert-warning">
         <strong>Il vous manque encore 2 documents obligatoires</strong> pour soumettre votre demande.
@@ -89,7 +140,7 @@
       <!-- 🚀 Bouton d’action finale -->
       <div class="text-end text-center mt-4">
         <button class="btn btn-outline-success" id="btn-export-pdf">
-          📄 Télécharger mon dossier PDF
+          📄 Télécharger mon dossier PDF complet
         </button>
       </div>
     </section>
