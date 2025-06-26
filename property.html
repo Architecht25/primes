@@ -51,16 +51,16 @@
           </div>
         </div>
 
-         <div class="mb-3 mt-3">
-        <label for="type-de-propriété" class="form-label">Type de propriété</label>
-        <select id="type-de-propriété" name="type-de-propriété" class="form-select">
-          <option selected disabled>-- Sélectionnez un type de propriété --</option>
-          <option value="propriétaire complet">Propriétaire à 100%</option>
-          <option value="copropriétaire">Copropriétaire avec mon conjoint (quote-part?)</option>
-          <option value="nu-propriétaire">Nu propriétaire</option>
-          <option value="usufruitié">Usufruitié</option>
-        </select>
-      </div>
+        <div class="mb-3 mt-3">
+          <label for="type-de-propriété" class="form-label">Type de propriété</label>
+          <select id="type-de-propriété" name="type-de-propriété" class="form-select">
+            <option selected disabled>-- Sélectionnez un type de propriété --</option>
+            <option value="propriétaire complet">Propriétaire à 100%</option>
+            <option value="copropriétaire">Copropriétaire avec mon conjoint (quote-part?)</option>
+            <option value="nu-propriétaire">Nu propriétaire</option>
+            <option value="usufruitié">Usufruitié</option>
+          </select>
+        </div>
 
         <div class="mb-3 mt-3">
           <label for="type" class="form-label">Type de bien*</label>
@@ -81,6 +81,19 @@
             <option value="autre">Autre</option>
           </select>
         </div>
+
+        <div class="mb-3 mt-3">
+          <h5>Possédez-vous un autre bien/appartement/terrain en pleine propriété ?</h5>
+          <label><input type="radio" name="autre_bien" value="oui"> Oui</label>
+          <label><input type="radio" name="autre_bien" value="non"> Non</label>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <h5>Le certificat PEB indique-t-il un label E ou F avant rénovation ?</h5>
+          <label><input type="radio" name="peb" value="ef"> Oui</label>
+          <label><input type="radio" name="peb" value="autre"> Non</label>
+        </div>
+
         <label for="construction" class="form-label">Année de construction*</label>
         <input  type="number" class="form-control"
                   id="construction" name="construction"
