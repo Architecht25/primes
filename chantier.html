@@ -23,7 +23,7 @@
 </script>
 </head>
 <body class="p-4">
-    <h1 class="mb-4 text-center">J'enregistre les données du bien et du chantier ici</h1>
+    <h1 class="mb-4 text-center">Mon chantier</h1>
     <div class="container-chantier">
 
       <div id="form-building" class="form-section mt-3">
@@ -50,6 +50,18 @@
             <input type="text" class="form-control" id="région" name="région" placeholder="Flandre">
           </div>
         </div>
+
+         <div class="mb-3 mt-3">
+        <label for="type-de-propriété" class="form-label">Type de propriété</label>
+        <select id="type-de-propriété" name="type-de-propriété" class="form-select">
+          <option selected disabled>-- Sélectionnez un type de propriété --</option>
+          <option value="propriétaire complet">Propriétaire à 100%</option>
+          <option value="copropriétaire">Copropriétaire avec mon conjoint (quote-part?)</option>
+          <option value="nu-propriétaire">Nu propriétaire</option>
+          <option value="usufruitié">Usufruitié</option>
+        </select>
+      </div>
+
         <div class="mb-3 mt-3">
           <label for="type" class="form-label">Type de bien*</label>
           <select id="type" name="type" class="form-select">
@@ -91,12 +103,18 @@
                   id="cadastre" name="cadastre"
                   placeholder="136E"
                   required>
+
         <div class="d-flex justify-content-center">
           <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-bien">
-            Enregistrer les données de votre bien
+            Enregistrer!
           </button>
         </div>
       </div>
+
+
+
+
+
 
       <div id="form-chantier" class="form-section">
         <h5 class=" text-center">Informations sur le chantier</h5>
@@ -119,17 +137,18 @@
         <label for="notes-chantier" class="form-label">Notes / remarques</label>
         <textarea id="notes-chantier" class="form-control" rows="4" placeholder="Ajoutez ici vos remarques, observations, éléments importants…"></textarea>
       </div>
+
       <div class="d-flex justify-content-center">
         <button type="button" class="btn btn-success text-center mt-3" id="btn-toggle-chantier">
-          Enregistrer les données du chantier
+          Enregistrer!
         </button>
       </div>
       </div>
     </div>
 
     <div class="d-flex justify-content-center">
-      <a href="collecte.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
-        Collecter des documents et photos
+      <a href="dashboard.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
+        Visualiser ma progression >>
       </a>
 
       <a href="index.html" class="btn btn-success text-center mt-3 ms-3" id="btn-next-admin">

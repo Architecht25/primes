@@ -23,25 +23,15 @@
 </script>
 </head>
 <body class="p-4 text-center">
-    <h1 class="mb-4">J'enregistre mes données administratives ici</h1>
+    <h1 class="mb-4">Mon profil</h1>
 
     <div id="section-formulaires" class="mb-5">
       <div id="form-prive" class="form-section">
-      <h5>Données relatives au propriétaire principal/demandeur des primes</h5>
+      <h5>Données relatives uniquement au propriétaire/demandeur des primes</h5>
         <input type="text" class="form-control mb-2" placeholder="Nom complet">
         <input type="text" class="form-control mb-2" placeholder="Prénom">
         <input type="email" class="form-control mb-2" placeholder="Email">
         <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
-        <input type="text" class="form-control mb-2" placeholder="date de naissance (jj/mm/aaaa)">
-        <input type="text" class="form-control mb-2" placeholder="Numéro de registre national">
-
-      <h5>Données relatives à votre conjoint (si situation familiale = "couple")</h5>
-        <input type="text" class="form-control mb-2" placeholder="Nom complet du conjoint">
-        <input type="text" class="form-control mb-2" placeholder="Prénom du conjoint">
-        <input type="email" class="form-control mb-2" placeholder="Email du conjoint">
-        <input type="tel" class="form-control mb-2" placeholder="ex. 0471 23 45 67">
-        <input type="text" class="form-control mb-2" placeholder="date de naissance (jj/mm/aaaa)">
-        <input type="text" class="form-control mb-2" placeholder="Numéro de registre national du conjoint">
 
       <h5>Compte bancaire</h5>
         <input type="text" class="form-control mb-2" placeholder="IBAN du compte bancaire - BExx xxxx xxxx xxxx">
@@ -51,7 +41,6 @@
         <label for="rue" class="form-label">Rue</label>
         <input type="text" class="form-control" id="rue" name="rue" placeholder="ex. Rue de l'Énergie">
       </div>
-
       <div class="row g-2">
         <div class="col-md-4">
           <label for="numero" class="form-label">Numéro</label>
@@ -66,7 +55,6 @@
           <input type="text" class="form-control" id="commune" name="commune" placeholder="ex. Forest">
         </div>
       </div>
-
       <div class="mb-3 mt-3">
         <label for="region" class="form-label">Région</label>
         <select id="region" name="region" class="form-select">
@@ -77,25 +65,16 @@
         </select>
       </div>
 
-      <div class="mb-3 mt-3">
-        <label for="type-de-propriété" class="form-label">Type de propriété</label>
-        <select id="type-de-propriété" name="type-de-propriété" class="form-select">
-          <option selected disabled>-- Sélectionnez un type de propriété --</option>
-          <option value="propriétaire complet">Propriétaire à 100%</option>
-          <option value="copropriétaire">Copropriétaire avec mon conjoint (quote-part?)</option>
-          <option value="nu-propriétaire">Nu propriétaire</option>
-          <option value="usufruitié">Usufruitié</option>
-        </select>
-      </div>
       <div class="d-flex justify-content-center">
         <button type="button" class="btn btn-success text-center mt-3" id="btn-submit-block-donnees-personnelles">
-            Enregistrer vos données personnelles
+            Enregistrer!
         </button>
       </div>
       </div>
     </div>
+
     <a href="chantier.html" class="btn btn-primary text-center mt-3 ms-3" id="btn-next-admin">
-      Enregistrez vos données chantier>>
+      Vos données de chantier>>
     </a>
     <a href="index.html" class="btn btn-success text-center mt-3 ms-3" id="btn-next-admin">
       Retour au menu principal
