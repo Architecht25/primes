@@ -44,7 +44,8 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/isolation_toiture.webp"
+  "image": "images/isolation_toiture.webp",
+  "region": "flandre"
 },
 {
   "id": "isolation_murs_cat12",
@@ -86,7 +87,8 @@
     "1": "Surface en m²",
     "2": "Surface en m²"
   },
-  "image": "images/isolation_murs_ext.webp"
+  "image": "images/isolation_murs_ext.webp",
+  "region": "flandre"
 },
 {
   "id": "isolation_murs_cat34",
@@ -118,7 +120,8 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/isolation_murs_ext.webp"
+  "image": "images/isolation_murs_ext.webp",
+  "region": "flandre"
 },
 {
   "id": "isolation_sol",
@@ -165,7 +168,8 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/isolation_sol.webp"
+  "image": "images/isolation_sol.webp",
+  "region": "flandre"
 },
 {
   "id": "chassis_portes",
@@ -212,7 +216,8 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/remplacement_chassis.webp"
+  "image": "images/remplacement_chassis.webp",
+  "region": "flandre"
 },
 {
   "id": "preparatifs_isolation",
@@ -255,7 +260,8 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/preparation_isolation.webp"
+  "image": "images/preparation_isolation.webp",
+  "region": "flandre"
 },
 {
   "id": "preparatifs_techniques",
@@ -286,7 +292,8 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/electricité.webp"
+  "image": "images/electricité.webp",
+  "region": "flandre"
 },
 {
   "id": "pompe_a_chaleur",
@@ -347,7 +354,8 @@
     "3": "Choisissez le type de pompe",
     "4": "Choisissez le type de pompe"
   },
-  "image": "images/pac_géothermique.webp"
+  "image": "images/pac_géothermique.webp",
+  "region": "flandre"
 },
 {
   "id": "chauffe_eau_thermodynamique",
@@ -388,7 +396,8 @@
     "3": "Montant total de la facture",
     "4": "Montant total de la facture"
   },
-  "image": "images/pac_hybride.webp"
+  "image": "images/pac_hybride.webp",
+  "region": "flandre"
 },
 {
   "id": "renovation_toiture",
@@ -419,7 +428,8 @@
     "3": "Montant total des travaux toiture hors isolation",
     "4": "Montant total des travaux toiture hors isolation"
   },
-  "image": "images/renovation_toiture.webp"
+  "image": "images/renovation_toiture.webp",
+  "region": "flandre"
 },
 {
   "id": "renovation_murs",
@@ -449,7 +459,8 @@
     "3": "Montant total des travaux murs hors isolation",
     "4": "Montant total des travaux murs hors isolation"
   },
-  "image": "images/renovation_murs.webp"
+  "image": "images/renovation_murs.webp",
+   "region": "flandre"
 },
 {
   "id": "renovation_sol",
@@ -479,6 +490,7 @@
     "3": "Montant total des travaux sols hors isolation",
     "4": "Montant total des travaux sols hors isolation"
   },
-  "image": "images/renovation_sol.webp"
+  "image": "images/renovation_sol.webp",
+   "region": "flandre"
 }
 ]
